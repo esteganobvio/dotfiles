@@ -1,0 +1,14 @@
+[helpers]
+
+[nvim.files]
+nvim = "~/.config/nvim"
+
+[alacritty.files]
+alacritty = "~/.config/alacritty"
+
+[default]
+depends = []
+
+[default.files]
+
+[default.variables]
