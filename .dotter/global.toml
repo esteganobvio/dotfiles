@@ -6,6 +6,9 @@ nvim = "~/.config/nvim"
 [alacritty.files]
 alacritty = "~/.config/alacritty"
 
+[tmux.files]
+tmux = "~/.tmux.conf"
+
 [default]
 depends = []
 
