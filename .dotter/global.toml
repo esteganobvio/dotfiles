@@ -4,7 +4,7 @@
 nvim = "~/.config/nvim"
 
 [alacritty.files]
-alacritty = "~/.config/alacritty"
+alacritty = "~/.config/alacritty/alacritty.yml"
 
 [tmux.files]
 tmux = "~/.tmux.conf"

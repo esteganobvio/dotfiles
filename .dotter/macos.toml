@@ -1,0 +1,4 @@
+[alacritty.variables]
+decorations = "full"
+font_family = "FiraCode Nerd Font"
+font_size = "11"

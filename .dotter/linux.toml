@@ -1,0 +1,4 @@
+[alacritty.variables]
+decorations = "none"
+font_family = "Fira Code Retina"
+font_size = "8"
