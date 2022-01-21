@@ -1,5 +1,5 @@
 set -g default-terminal "screen-256color"
-set-option -ga terminal-overrides ',xterm-256color:RGB'
+set-option -ga terminal-overrides ',alacritty:RGB'
 #set-option -ga terminal-overrides ',XXX:Tc'
 #Prefix is Ctrl-a
 set -g prefix C-a
