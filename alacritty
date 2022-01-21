@@ -323,3 +323,5 @@ schemes:
 colors: *nord
 
 background_opacity: 0.98
+
+# vim: set ft=yaml:
