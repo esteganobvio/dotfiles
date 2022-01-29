@@ -9,6 +9,14 @@ alacritty = "~/.config/alacritty/alacritty.yml"
 [tmux.files]
 tmux = "~/.tmux.conf"
 
+[i3.files]
+i3 = "~/.config/i3/config"
+i3status-top = "~/.config/i3/i3status-top.toml"
+i3status-bottom = "~/.config/i3/i3status-bottom.toml"
+
+[rofi.files]
+rofi = "~/.config/rofi/config.rasi"
+
 [default]
 depends = []
 

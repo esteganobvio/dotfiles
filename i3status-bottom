@@ -1,0 +1,39 @@
+theme = "slick"
+icons = "awesome"
+
+[[block]]
+block = "net"
+device = "wlp4s0"
+format = "{ssid} {signal_strength} {frequency}"
+interval = 5
+hide_missing = true
+hide_inactive = true
+
+[[block]]
+block = "memory"
+display_type = "memory"
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "cpu"
+format = "{utilization} {frequency}"
+interval = 1
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+chip = "zenpower-pci-*"
+format = "{min} min, {max} max, {average} avg"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+chip = "amdgpu-pci-*"
+format = "{min} min, {max} max, {average} avg"
+

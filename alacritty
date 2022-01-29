@@ -2,6 +2,7 @@ window:
   decorations: {{decorations}}
   startup_mode: Maximized
   gtk_theme_variant: dark
+  opacity: 0.98
   padding:
     x: 5
     y: 5
@@ -322,6 +323,6 @@ schemes:
 
 colors: *nord
 
-background_opacity: 0.98
+#background_opacity: 0.98
 
 # vim: set ft=yaml:
