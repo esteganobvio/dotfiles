@@ -1,4 +1,9 @@
-require'nvim-tree'.setup {
+local status_ok, nvimtree = pcall(require, "nvim-tree")
+if not status_ok then
+  return
+end
+
+nvimtree.setup({
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -56,5 +61,4 @@ require'nvim-tree'.setup {
     cmd = "trash",
     require_confirm = true
   }
-}
-
+})

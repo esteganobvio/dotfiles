@@ -42,20 +42,17 @@ return require("packer").startup(function()
 	})
 
 	use("L3MON4D3/LuaSnip") -- Snippets plugin
-
-	use({
-		"hrsh7th/nvim-cmp",
-	})
-
+  use("rafamadriz/friendly-snippets") 
+	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+  use("hrsh7th/cmp-nvim-lua")
 	use("lukas-reineke/cmp-rg")
 
-	use("nvim-lua/lsp-status.nvim")
 	use({
-		"hoob3rt/lualine.nvim",
+		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 

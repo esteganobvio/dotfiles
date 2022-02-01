@@ -1,11 +1,14 @@
-require "_options"
-require "_plugins"
+require "user.options"
+require "user.plugins"
+require "user.cmp"
 require "user.lsp"
-require "_whichkey"
-require "_toggleterm"
-require "_autopairs"
-require "_nvim-tree"
-require "_treesitter"
+require "user.whichkey"
+require "user.toggleterm"
+require "user.autopairs"
+require "user.nvim-tree"
+require "user.treesitter"
+require "user.lualine"
+
 vim.g.nord_contrast = true
 vim.g.nord_borders = true
 vim.g.nord_disable_background = true
