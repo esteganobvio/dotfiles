@@ -84,12 +84,26 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+---Common format-on-save for lsp servers that implements formatting
+---@param client table
+local function lsp_fmt_on_save(client)
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd([[
+            augroup FORMATTING
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+        ]])
+    end
+end
+
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+  lsp_fmt_on_save(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
