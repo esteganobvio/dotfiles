@@ -35,7 +35,7 @@ return require("packer").startup(function()
 	--use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
 	-- Nord colorscheme
 	use("shaunsingh/nord.nvim")
-
+  use("sainnhe/sonokai")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",

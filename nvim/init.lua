@@ -9,8 +9,6 @@ require "user.nvim-tree"
 require "user.treesitter"
 require "user.lualine"
 
-vim.g.nord_contrast = false
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-require('nord').set()
+vim.g.sonokai_transparent_background = '2'
+vim.g.sonokai_style = 'espresso'
+vim.cmd[[colorscheme sonokai]]
