@@ -2,12 +2,9 @@ theme = "modern"
 icons = "material-nf"
 
 [[block]]
-block = "net"
-device = "wlan0"
-format = "{ssid} {signal_strength} {frequency}"
-interval = 5
-hide_missing = true
-hide_inactive = true
+block = "networkmanager"
+interface_name_exclude = ['br\-[0-9a-f]{12}', 'docker\d+']
+ap_format = "{ssid}"
 
 [[block]]
 block = "memory"
@@ -27,7 +24,7 @@ interval = 1
 block = "temperature"
 collapsed = true
 interval = 10
-chip = "zenpower-pci-*"
+chip = "coretemp-isa-*"
 format = "{min} min, {max} max, {average} avg"
 
 [[block]]
@@ -36,4 +33,9 @@ collapsed = true
 interval = 10
 chip = "amdgpu-pci-*"
 format = "{min} min, {max} max, {average} avg"
-
+#[[block]]
+#block = "temperature"
+#collapsed = false
+#interval = 10
+#chip = "nvme-pci-*"
+#format = "{min} min, {max} max, {average} avg"

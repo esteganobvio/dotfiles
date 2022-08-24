@@ -11,11 +11,19 @@ tmux = "~/.tmux.conf"
 
 [i3.files]
 i3 = "~/.config/i3/config"
-i3status-top = "~/.config/i3/i3status-top.toml"
-i3status-bottom = "~/.config/i3/i3status-bottom.toml"
 
 [rofi.files]
 rofi = "~/.config/rofi/config.rasi"
+
+[sway.files]
+sway = "~/.config/sway/config"
+configd = "~/.config/sway/config.d"
+
+[i3status.files]
+i3status-top = "~/.config/i3status/i3status-top.toml"
+i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
+
+
 
 [default]
 depends = []

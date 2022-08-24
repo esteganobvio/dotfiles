@@ -40,26 +40,26 @@ hide_disconnected = true
 ##icon_off = "nf-mdi-coffee_outline"
 #interval = 2
 
-[[block]]
-block = "notify"
+#[[block]]
+#block = "notify"
 
 [[block]]
 block = "sound"
 format = "{volume}"
 on_click = "pavucontrol"
 
-#[[block]]
-#block = "backlight"
-#device = "intel_backlight"
+[[block]]
+block = "backlight"
+device = "intel_backlight"
 
 [[block]]
 block = "time"
 interval = 60
 format = "%a %d/%m %R"
 
-#[[block]]
-#block = "battery"
-#interval = 10
-#format = "{percentage}"
-#driver= "upower"
-#device = "DisplayDevice"
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}"
+driver= "upower"
+device = "DisplayDevice"

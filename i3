@@ -230,7 +230,7 @@ client.unfocused      #2f343f   #2f343f       #ffffff  #676E7D #2f343f
 bar {
   id top
   position top
-  status_command i3status-rs ~/.config/i3/i3status-top.toml
+  status_command i3status-rs ~/.config/i3status/i3status-top.toml
   mode dock
   colors {
     background $bg-color
@@ -246,7 +246,7 @@ bar {
 bar {
   id bottom
   position bottom
-  status_command i3status-rs ~/.config/i3/i3status-bottom.toml
+  status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
   mode dock
   tray_output none
   colors {
@@ -259,9 +259,9 @@ bar {
 }
 
 # Gnome
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id /usr/libexec/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 #exec --no-startup-id gnome-flashback
 
 
