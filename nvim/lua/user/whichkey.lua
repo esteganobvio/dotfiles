@@ -90,7 +90,7 @@ local which_key = {
                 ":Telescope diagnostics<cr>",
                 "Workspace Diagnostics",
             },
-            f = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+            f = { ":lua vim.lsp.buf.format{async=true}<cr>", "Format" },
             i = { ":LspInfo<cr>", "Info" },
             I = { ":LspInstallInfo<cr>", "Installer Info" },
             r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
