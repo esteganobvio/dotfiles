@@ -1,9 +1,9 @@
-theme = "slick"
-icons = "awesome"
+theme = "modern"
+icons = "material-nf"
 
 [[block]]
 block = "net"
-device = "wlp4s0"
+device = "wlan0"
 format = "{ssid} {signal_strength} {frequency}"
 interval = 5
 hide_missing = true
@@ -25,14 +25,14 @@ interval = 1
 
 [[block]]
 block = "temperature"
-collapsed = false
+collapsed = true
 interval = 10
 chip = "zenpower-pci-*"
 format = "{min} min, {max} max, {average} avg"
 
 [[block]]
 block = "temperature"
-collapsed = false
+collapsed = true
 interval = 10
 chip = "amdgpu-pci-*"
 format = "{min} min, {max} max, {average} avg"

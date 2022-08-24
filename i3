@@ -169,6 +169,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
 
 bindsym $mod+m exec dunstctl close
 bindsym $mod+Shift+m exec dunstctl close-all
@@ -266,3 +269,5 @@ for_window [class="KeePassXC"] floating enable
 for_window [class="openrgb"] floating enable
 for_window [class="corectrl"] floating enable
 for_window [class="Blueman-manager"] floating enable
+for_window [class="Virt-manager"] floating enable
+for_window [class="Qemu-system-x86_64"] floating enable
