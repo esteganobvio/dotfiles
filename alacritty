@@ -1,7 +1,6 @@
 window:
   decorations: {{decorations}}
-  startup_mode: Maximized
-  gtk_theme_variant: dark
+  #  startup_mode: Maximized
   opacity: 0.98
   padding:
     x: 5
@@ -321,7 +320,7 @@ schemes:
         cyan: '#6d96a5'
         white: '#aeb3bb'
 
-colors: *molokai
+colors: *monokaipro
 
 #background_opacity: 0.98
 

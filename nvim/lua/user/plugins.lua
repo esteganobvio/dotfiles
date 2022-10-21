@@ -70,6 +70,7 @@ return require("packer").startup(function()
 	use("airblade/vim-gitgutter")
 	use({ "ellisonleao/glow.nvim" })
   use("cappyzawa/starlark.vim")
+  use('moevis/base64.nvim')
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
