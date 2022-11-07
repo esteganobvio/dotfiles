@@ -23,7 +23,7 @@ configd = "~/.config/sway/config.d"
 i3status-top = "~/.config/i3status/i3status-top.toml"
 i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 
-[kitty]
+[kitty.files]
 kitty = "~/.config/kitty/kitty.conf"
 
 [default]
