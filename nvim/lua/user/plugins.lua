@@ -32,15 +32,12 @@ return require("packer").startup(function()
   -- lsp-config
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
-  --use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
-  -- Nord colorscheme
-  use("shaunsingh/nord.nvim")
-  use("sainnhe/sonokai")
+  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
-
+  use('folke/lsp-colors.nvim')
   use("L3MON4D3/LuaSnip") -- Snippets plugin
   use("rafamadriz/friendly-snippets")
   use("hrsh7th/nvim-cmp")
@@ -65,12 +62,21 @@ return require("packer").startup(function()
   use({ "windwp/nvim-autopairs" })
   use("simrat39/symbols-outline.nvim")
 
-	use("tpope/vim-fugitive")
-	use("tpope/vim-rhubarb")
-	use("airblade/vim-gitgutter")
-	use({ "ellisonleao/glow.nvim" })
+  use("tpope/vim-fugitive")
+  use("tpope/vim-rhubarb")
+  use("airblade/vim-gitgutter")
+  use({ "ellisonleao/glow.nvim" })
   use("cappyzawa/starlark.vim")
   use('moevis/base64.nvim')
+  use('folke/tokyonight.nvim')
+  use {
+    "cuducos/yaml.nvim",
+    ft = { "yaml" }, -- optional
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim" -- optional
+    },
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

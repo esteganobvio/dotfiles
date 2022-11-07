@@ -9,6 +9,4 @@ require "user.nvim-tree"
 require "user.treesitter"
 require "user.lualine"
 
-vim.g.sonokai_transparent_background = '2'
-vim.g.sonokai_style = 'espresso'
-vim.cmd[[colorscheme sonokai]]
+vim.cmd[[colorscheme tokyonight]]
