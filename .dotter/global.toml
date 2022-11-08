@@ -3,6 +3,9 @@
 [nvim.files]
 nvim = "~/.config/nvim"
 
+[asdf.files]
+asdfrc = "~/.asdfrc"
+
 [alacritty.files]
 alacritty = "~/.config/alacritty/alacritty.yml"
 
