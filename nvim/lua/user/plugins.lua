@@ -31,7 +31,9 @@ return require("packer").startup(function()
   })
   -- lsp-config
   use("neovim/nvim-lspconfig")
-  use("williamboman/nvim-lsp-installer")
+  --use("williamboman/nvim-lsp-installer")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
   use({
     "nvim-treesitter/nvim-treesitter",
