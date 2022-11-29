@@ -101,6 +101,11 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
+  if client.name == "yamlls" then
+    if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+      vim.diagnostic.disable()
+    end
+  end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
   lsp_fmt_on_save(client)

@@ -69,6 +69,7 @@ return require("packer").startup(function()
   use("airblade/vim-gitgutter")
   use({ "ellisonleao/glow.nvim" })
   use("cappyzawa/starlark.vim")
+  use("towolf/vim-helm")
   use('moevis/base64.nvim')
   use('folke/tokyonight.nvim')
   use {
