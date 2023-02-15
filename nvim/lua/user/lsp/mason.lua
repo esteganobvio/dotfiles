@@ -1,19 +1,19 @@
 local servers = {
 	"sumneko_lua",
-  "pylsp",
-  "terraformls",
-  "yamlls",
-  "jsonls",
-  "svelte",
-  "eslint",
   "bashls",
   "dockerls",
+  "eslint",
   "gopls",
-  "rome",
+  "jsonls",
   "marksman",
-  "tflint",
-  "taplo",
+  "pylsp",
+  "rome",
   "solargraph",
+  "svelte",
+  "taplo",
+  "terraformls",
+  "tflint",
+  "yamlls",
 }
 
 local settings = {

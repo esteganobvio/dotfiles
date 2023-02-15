@@ -30,10 +30,9 @@ return require("packer").startup(function()
     requires = "kyazdani42/nvim-web-devicons",
   })
   -- lsp-config
-  use("neovim/nvim-lspconfig")
-  --use("williamboman/nvim-lsp-installer")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
   use({
     "nvim-treesitter/nvim-treesitter",
