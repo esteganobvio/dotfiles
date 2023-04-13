@@ -12,25 +12,34 @@ alacritty = "~/.config/alacritty/alacritty.yml"
 [tmux.files]
 tmux = "~/.tmux.conf"
 
-[i3.files]
-i3 = "~/.config/i3/config"
-
 [rofi.files]
 rofi = "~/.config/rofi/config.rasi"
-
-[sway.files]
-sway = "~/.config/sway/config"
-configd = "~/.config/sway/config.d"
 
 [i3status.files]
 i3status-top = "~/.config/i3status/i3status-top.toml"
 i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 
+[dunst.files]
+dunstrc = "~/.config/dunst/dunstrc"
+
+[i3]
+depends = ["rofi", "i3status", "dunst"]
+
+[i3.files]
+i3 = "~/.config/i3/config"
+
+[sway]
+depends = ["rofi", "i3status"]
+
+[sway.files]
+sway = "~/.config/sway/config"
+configd = "~/.config/sway/config.d"
+
 [kitty.files]
 kitty = "~/.config/kitty/kitty.conf"
 
 [default]
-depends = []
+depends = ["nvim", "asdf"]
 
 [default.files]
 

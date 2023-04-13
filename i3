@@ -17,17 +17,17 @@ set $gnome-schema org.gnome.desktop.interface
 #    gsettings set $gnome-schema font-name 'Roboto 8'
 #}
 
-#set $background nitrogen --restore
+#set $background c
 
-set $term alacritty
+set $term kitty
 
 set $menu rofi -show
 
-set $lock i3lock -n -i /home/dixie/Pictures/wp6600254-serial-experiments-lain-wallpapers.png
+set $lock i3lock -n -i ~/Pictures/nwp_1440x900.jpg -c 000000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:FuraCode Nerd Font 9
+font pango:{{font_family}} {{font_size}}
 for_window [class="^.*"] border pixel 1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -63,8 +63,7 @@ exec picom
 
 exec dunst
 
-#exec keepassxc
-
+exec nm-applet
 
 # change focus
 bindsym $mod+$left focus left
@@ -221,8 +220,8 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #5294e2
 
 # windows           Border    Background    Text     Indicator
-client.focused        #2f343f   #2f343f       #676E7D  #5294e2 #5294e2
-client.unfocused      #2f343f   #2f343f       #ffffff  #676E7D #2f343f
+client.focused        #2f343f   #2f343f       #f3f4f5  #5294e2 #5294e2
+client.unfocused      #2f343f   #2f343f       #676E7D  #676E7D #2f343f
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -262,7 +261,7 @@ bar {
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-#exec --no-startup-id gnome-flashback
+exec --no-startup-id gnome-flashback
 
 
 for_window [class="KeePassXC"] floating enable
@@ -271,3 +270,5 @@ for_window [class="corectrl"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Virt-manager"] floating enable
 for_window [class="Qemu-system-x86_64"] floating enable
+for_window [class="zoom"] floating enable
+for_window [class="protonvpn"] floating enable

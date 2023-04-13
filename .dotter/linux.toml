@@ -1,4 +1,5 @@
 [alacritty.variables]
 decorations = "none"
+[default.variables]
 font_family = "FiraCode Nerd Font"
 font_size = "9"
