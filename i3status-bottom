@@ -66,5 +66,18 @@ critical_updates_regex = "(linux|linux-lts|linux-zen)"
 # aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
 aur_command = "yay -Qua"
 {{/if}}
+{{#if distro fedora}}
+[[block]]
+block = "dnf"
+interval = 1800
+format = " $icon $count.eng(w:1) updates available "
+format_singular = " $icon One update available "
+format_up_to_date = " $icon system up to date "
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+[[block.click]]
+# shows dmenu with cached available updates. Any dmenu alternative should also work.
+button = "left"
+cmd = "dnf list -q --upgrades | tail -n +2 | rofi -dmenu"
+{{/if}}
 
 # vim: set ft=toml:
