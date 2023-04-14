@@ -12,9 +12,17 @@ short = " $title.str(max_w:10) |"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
+device_kind = "source"
+format = " $icon $output_description{ $volume|}"
+[block.mappings]
+"alsa_input.usb-GN_Netcom_A_S_Jabra_EVOLVE_20_MS_A00CDE2CB1020A-00.mono-fallback" = "Jabra"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
 headphones_indicator = true
 show_volume_when_muted = true
-format = " $icon { $volume|} "
+format = " $icon $output_description{ $volume|} "
 [block.mappings]
 "alsa_output.usb-GN_Netcom_A_S_Jabra_EVOLVE_20_MS_A00CDE2CB1020A-00.2.analog-stereo" = "Jabra"
 
@@ -26,8 +34,8 @@ format = " $icon {$combo.str(max_w:20) $play $next |}"
 format = " $icon BT "
 block = "toggle"
 command_state = "bluetoothctl show | grep Powered | grep -v no"
-command_on = "bluetoothctl power on"
-command_off = "bluetoothctl power off"
+command_on = "rfkill unblock bluetooth; sleep 1 && bluetoothctl power on"
+command_off = "rfkill block bluetooth; sleep 1 && bluetoothctl power off"
 interval = 5
 
 [[block]]
