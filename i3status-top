@@ -42,9 +42,11 @@ mac = "00:42:79:A1:4C:C3"
 format = "JBL Flip 4"
 disconnected_format = ""
 
+{{#if laptop}}
 [[block]]
 block = "backlight"
 device = "intel_backlight"
+{{/if}}
 
 [[block]]
 block = "time"
@@ -60,10 +62,12 @@ driver = "localebus"
 format = " $layout $variant "
 interval = 15
 
+{{#if laptop}}
 [[block]]
 block = "battery"
 interval = 10
 format = " $percentage {$time |}"
 driver= "upower"
 device = "DisplayDevice"
+{{/if}}
 # vim: set ft=toml:
