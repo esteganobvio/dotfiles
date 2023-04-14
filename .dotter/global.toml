@@ -22,8 +22,11 @@ i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
 
+[picom.files]
+picom = "~/.config/picom.conf"
+
 [i3]
-depends = ["rofi", "i3status", "dunst"]
+depends = ["rofi", "i3status", "dunst", "picom"]
 
 [i3.files]
 i3 = "~/.config/i3/config"
@@ -32,14 +35,13 @@ i3 = "~/.config/i3/config"
 depends = ["rofi", "i3status"]
 
 [sway.files]
-sway = "~/.config/sway/config"
-configd = "~/.config/sway/config.d"
+sway = "~/.config/sway"
 
 [kitty.files]
 kitty = "~/.config/kitty/kitty.conf"
 
 [default]
-depends = ["nvim", "asdf"]
+depends = ["nvim", "asdf", "tmux"]
 
 [default.files]
 

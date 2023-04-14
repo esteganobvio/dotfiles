@@ -1,41 +1,70 @@
+[theme]
 theme = "modern"
+[icons]
 icons = "material-nf"
 
 [[block]]
-block = "networkmanager"
-interface_name_exclude = ['br\-[0-9a-f]{12}', 'docker\d+']
-ap_format = "{ssid}"
+block = "net"
+format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device "
 
 [[block]]
 block = "memory"
-display_type = "memory"
+format = " $icon $mem_used_percents.eng(w:1) "
+format_alt = " $icon_swap $swap_free.eng(w:3,u:B,p:M)/$swap_total.eng(w:3,u:B,p:M)($swap_used_percents.eng(w:2)) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
 
 [[block]]
 block = "load"
+format = " $icon 1min avg: $1m.eng(w:4) "
 interval = 1
-format = "{1m}"
 
 [[block]]
 block = "cpu"
-format = "{utilization} {frequency}"
+interval = 1
+format = " $icon $frequency{ $boost|} "
+
+{{#if amd_cpu}}
+[[block]]
+block = "temperature"
+interval = 10
+chip = "zenpower-pci-*"
+format = " $icon $max max "
+format_alt = " $icon $min min, $max max, $average avg "
+{{/if}}
+{{#if amd_gpu}}
+[[block]]
+block = "amd_gpu"
+format = " $icon $utilization "
+format_alt = " $icon MEM: $vram_used_percents ($vram_used/$vram_total) "
 interval = 1
 
 [[block]]
 block = "temperature"
-collapsed = true
-interval = 10
-chip = "coretemp-isa-*"
-format = "{min} min, {max} max, {average} avg"
-
-[[block]]
-block = "temperature"
-collapsed = true
 interval = 10
 chip = "amdgpu-pci-*"
-format = "{min} min, {max} max, {average} avg"
-#[[block]]
-#block = "temperature"
-#collapsed = false
-#interval = 10
-#chip = "nvme-pci-*"
-#format = "{min} min, {max} max, {average} avg"
+format = " $icon $max max "
+format_alt = " $icon $min min, $max max, $average avg "
+{{/if}}
+
+[[block]]
+block = "docker"
+interval = 2
+format = " $icon $running/$total "
+
+{{#if distro archlinux}}
+[[block]]
+block = "pacman"
+interval = 600
+signal = 1
+error_interval = 300
+format = " $icon $pacman + $aur = $both updates available "
+format_singular = " $icon $both update available "
+format_up_to_date = " $icon system up to date "
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+# aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
+aur_command = "yay -Qua"
+{{/if}}
+
+# vim: set ft=toml:

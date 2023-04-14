@@ -133,3 +133,5 @@ wintypes:
   dock = {full-shadow = true;};
   dropdown_menu = { full-shadow = true;};
 };
+
+# vim: set ft=conf :
