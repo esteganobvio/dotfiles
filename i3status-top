@@ -13,19 +13,23 @@ short = " $title.str(max_w:10) |"
 block = "sound"
 driver = "pulseaudio"
 device_kind = "source"
-format = " $icon $output_description{ $volume|}"
+format = " $icon $output_name{ $volume|} "
+show_volume_when_muted = true
+mappings_use_regex = true
 [block.mappings]
-"alsa_input.usb-GN_Netcom_A_S_Jabra_EVOLVE_20_MS_A00CDE2CB1020A-00.mono-fallback" = "Jabra"
+"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
+"^.*HiFi__Mic1.*$" = "Mic"
 
 [[block]]
 block = "sound"
 driver = "pulseaudio"
 headphones_indicator = true
 show_volume_when_muted = true
-format = " $icon $output_description{ $volume|} "
+format = " $icon $output_name{ $volume|} "
+mappings_use_regex = true
 [block.mappings]
-"alsa_output.usb-GN_Netcom_A_S_Jabra_EVOLVE_20_MS_A00CDE2CB1020A-00.2.analog-stereo" = "Jabra"
-
+"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
+"^.*HiFi__Speaker.*$" = "Speaker"
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:20) $play $next |}"
