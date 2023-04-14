@@ -25,14 +25,16 @@ block = "cpu"
 interval = 1
 format = " $icon $frequency{ $boost|} "
 
-{{#if amd_cpu}}
 [[block]]
 block = "temperature"
 interval = 10
+{{#if amd_cpu}}
 chip = "zenpower-pci-*"
+{{else}}
+chip = "coretemp-isa-*"
+{{/if}}
 format = " $icon $max max "
 format_alt = " $icon $min min, $max max, $average avg "
-{{/if}}
 {{#if amd_gpu}}
 [[block]]
 block = "amd_gpu"
@@ -48,12 +50,19 @@ format = " $icon $max max "
 format_alt = " $icon $min min, $max max, $average avg "
 {{/if}}
 
+{{#if nvidia_gpu}}
+[[block]]
+block = "nvidia_gpu"
+interval = 1
+format = " $icon GTX 1050 Ti Mobile $utilization $temperature $clocks "
+{{/if}}
+
 [[block]]
 block = "docker"
 interval = 2
 format = " $icon $running/$total "
 
-{{#if distro archlinux}}
+{{#if (is_executable "yay")}}
 [[block]]
 block = "pacman"
 interval = 600
@@ -66,7 +75,7 @@ critical_updates_regex = "(linux|linux-lts|linux-zen)"
 # aur_command should output available updates to stdout (ie behave as echo -ne "update\n")
 aur_command = "yay -Qua"
 {{/if}}
-{{#if distro fedora}}
+{{#if  (is_executable "dnf")}}
 [[block]]
 block = "dnf"
 interval = 1800
