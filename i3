@@ -7,7 +7,7 @@ set $right l
 
 
 exec xrdb -load ~/.Xresources
-
+#exec xrandr --output eDP-1 --mode 2048x1152
 set $gnome-schema org.gnome.desktop.interface
 
 #exec_always {
@@ -162,10 +162,10 @@ bindsym $mod+Shift+Mod1+Down move workspace to output down
 bindsym $mod+Shift+Mod1+Up move workspace to output up
 bindsym $mod+Shift+Mod1+Right move workspace to output right
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 bindsym XF86AudioNext exec playerctl next
