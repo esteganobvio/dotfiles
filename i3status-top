@@ -19,6 +19,8 @@ mappings_use_regex = true
 [block.mappings]
 "^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
 "^.*HiFi__Mic1.*$" = "Mic"
+"^.*analog-stereo.monitor" = "None"
+"^.*C922_Pro_Stream_Webcam_4CAC8CDF.*$" = "C922 Pro Stream Webcam"
 
 [[block]]
 block = "sound"
@@ -30,6 +32,8 @@ mappings_use_regex = true
 [block.mappings]
 "^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
 "^.*HiFi__Speaker.*$" = "Speaker"
+"^.*pci-0000_0d.*$" = "Speaker"
+
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:20) $play $next |}"
