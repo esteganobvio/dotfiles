@@ -23,7 +23,7 @@ set $term kitty
 
 set $menu rofi -show
 
-set $lock i3lock -n -i ~/Pictures/nwp_1440x900.jpg -c 000000
+#set $lock i3lock -n -i ~/Pictures/nwp_1440x900.jpg -c 000000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -57,7 +57,7 @@ bindsym $mod+p exec $menu
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 exec $background
 
-exec xss-lock -- $lock
+#exec xss-lock -- $lock
 
 exec picom
 
@@ -177,7 +177,7 @@ bindsym $mod+Shift+m exec dunstctl close-all
 bindsym $mod+Mod1+m exec dunstctl history-pop
 bindsym $mod+Ctrl+m exec dunstctl context
 
-bindsym $mod+x exec $lock
+bindsym $mod+x exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
