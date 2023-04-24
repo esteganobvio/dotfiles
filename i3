@@ -19,7 +19,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 #set $background c
 
-set $term kitty
+set $term alacritty
 
 set $menu rofi -show
 
@@ -258,9 +258,14 @@ bar {
 }
 
 # Gnome
+{{#if (is_executable "yay")}}
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+{{else}}
 exec --no-startup-id /usr/libexec/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+{{/if}}
+exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id gnome-flashback
 
 

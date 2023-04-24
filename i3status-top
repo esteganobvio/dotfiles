@@ -22,7 +22,7 @@ mappings_use_regex = true
 "^.*analog-stereo.monitor" = "None"
 "^.*C922_Pro_Stream_Webcam_4CAC8CDF.*$" = "C922 Pro Stream Webcam"
 "·*alsa_input.*.analog-stereo.*$" = "Mic"
-"bluez_input.20_1B_88_59_AF_4F.1" = "EBs"
+"^.*.20_1B_88_59_AF_4F.*$" = "EBs"
 
 [[block]]
 block = "sound"
@@ -36,7 +36,7 @@ mappings_use_regex = true
 "^.*HiFi__.*$" = "Speaker"
 "^.*pci-0000_0d.*$" = "Speaker"
 "^·*alsa_output.*.analog-stereo.*$" = "Speaker"
-"bluez_output.20_1B_88_59_AF_4F.1" = "EBs"
+"bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
 
 [[block]]
 block = "music"

@@ -60,7 +60,8 @@ bind -r L resize-pane -R 5
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin "arcticicestudio/nord-tmux"
+set -g @plugin "sigugo/tokyo-night-tmux"
+#set -g @plugin "arcticicestudio/nord-tmux"
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
