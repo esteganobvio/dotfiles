@@ -3,5 +3,3 @@ packages = ["default", "sway", "i3", "kitty"]
 [variables]
 amd_cpu = true
 amd_gpu = true
-distro = "archlinux"
-

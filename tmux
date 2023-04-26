@@ -2,9 +2,9 @@ set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ',alacritty:RGB'
 #set-option -ga terminal-overrides ',XXX:Tc'
 #Prefix is Ctrl-a
+unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
-unbind C-b
 
 set -sg escape-time 1
 set -g base-index 1
@@ -20,7 +20,6 @@ bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "se
 #set -g mouse-select-window on
 
 setw -g monitor-activity on
-set -g visual-activity on
 
 set -g mode-keys vi
 set -g history-limit 10000
@@ -35,8 +34,8 @@ bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
 bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
 
 # easy-to-remember split pane commands
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 
@@ -61,8 +60,7 @@ bind -r L resize-pane -R 5
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin "sigugo/tokyo-night-tmux"
-#set -g @plugin "arcticicestudio/nord-tmux"
-
+set -g @plugin 'tmux-plugins/tmux-yank'
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com:user/plugin'
