@@ -277,3 +277,4 @@ for_window [class="Virt-manager"] floating enable
 for_window [class="Qemu-system-x86_64"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="protonvpn"] floating enable
+for_window [class="gnome-calculator"] floating enable
