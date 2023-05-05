@@ -91,7 +91,7 @@ local which_key = {
       },
       f = { ":lua vim.lsp.buf.format{async=true}<cr>", "Format" },
       i = { ":LspInfo<cr>", "Info" },
-      I = { ":LspInstallInfo<cr>", "Installer Info" },
+      I = { ":Mason<cr>", "Installer Info" },
       r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
     },
     s = {
