@@ -14,13 +14,15 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show
 
-#exec ~/.azotebg
+exec dunst
+
+exec nm-applet
 
 ### Output configuration
 #
@@ -278,6 +280,7 @@ bar {
   }
 }
 
-exec swaync
 
 include /etc/sway/config.d/*
+
+# vim: ft=swayconfig :

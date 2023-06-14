@@ -10,39 +10,6 @@ full = " $title.str(max_w:15) |"
 short = " $title.str(max_w:10) |"
 
 [[block]]
-block = "sound"
-driver = "pulseaudio"
-device_kind = "source"
-format = " $icon $output_name{ $volume|} "
-show_volume_when_muted = true
-mappings_use_regex = true
-[block.mappings]
-"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
-"^.*HiFi__.*$" = "Mic"
-"^.*analog-stereo.monitor" = "None"
-"^.*C922_Pro_Stream_Webcam_4CAC8CDF.*$" = "C922 Pro Stream Webcam"
-"·*alsa_input.*.analog-stereo.*$" = "Mic"
-"^.*.20_1B_88_59_AF_4F.*$" = "EBs"
-
-[[block]]
-block = "sound"
-driver = "pulseaudio"
-headphones_indicator = true
-show_volume_when_muted = true
-format = " $icon $output_name{ $volume|} "
-mappings_use_regex = true
-[block.mappings]
-"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
-"^.*HiFi__.*$" = "Speaker"
-"^.*pci-0000_0d.*$" = "Speaker"
-"^·*alsa_output.*.analog-stereo.*$" = "Speaker"
-"bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
-
-[[block]]
-block = "music"
-format = " $icon {$combo.str(max_w:20) $play $next |}"
-
-[[block]]
 block = "toggle"
 format = " $icon "
 command_state = "bluetoothctl show | grep Powered | grep -v no"
@@ -80,6 +47,40 @@ mac = "00:42:79:A1:4C:C3"
 "21..70" = "warning"
 "71..100" = "good"
 
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+device_kind = "source"
+format = " $icon $output_name{ $volume|} "
+show_volume_when_muted = true
+mappings_use_regex = true
+[block.mappings]
+"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
+"^.*HiFi__.*$" = "Mic"
+"^.*analog-stereo.monitor" = "None"
+"^.*C922_Pro_Stream_Webcam_4CAC8CDF.*$" = "C922 Pro Stream Webcam"
+"·*alsa_input.*.analog-stereo.*$" = "Mic"
+"^.*.20_1B_88_59_AF_4F.*$" = "EBs"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+headphones_indicator = true
+show_volume_when_muted = true
+format = " $icon $output_name{ $volume|} "
+mappings_use_regex = true
+[block.mappings]
+"^.*Jabra_EVOLVE_20_MS.*$" = "Jabra"
+"^.*HiFi__.*$" = "Speaker"
+"^.*pci-0000_0d.*$" = "Speaker"
+"^·*alsa_output.*.analog-stereo.*$" = "Speaker"
+"bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
+
 {{#if laptop}}
 [[block]]
 block = "backlight"
@@ -87,12 +88,12 @@ device = "intel_backlight"
 {{/if}}
 
 [[block]]
-block = "time"
-interval = 60
-
-[[block]]
 block = "notify"
 format = " $icon {$paused{Off}|On} {($notification_count.eng(w:1)) |}"
+
+[[block]]
+block = "time"
+interval = 60
 
 [[block]]
 block = "keyboard_layout"
