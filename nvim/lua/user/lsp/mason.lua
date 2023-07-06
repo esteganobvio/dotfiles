@@ -14,6 +14,7 @@ local servers = {
   "terraformls",
   "tflint",
   "yamlls",
+  "helm_ls"
 }
 
 local settings = {
