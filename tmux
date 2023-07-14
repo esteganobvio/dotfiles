@@ -1,6 +1,6 @@
 set -g default-terminal "screen-256color"
-set-option -ga terminal-overrides ',alacritty:RGB'
-#set-option -ga terminal-overrides ',XXX:Tc'
+set-option -ga terminal-overrides ',xterm-kitty:RGB'
+#set-option -ga terminal-overrides ',xterm-kitty:Tc'
 #Prefix is Ctrl-a
 unbind C-b
 set -g prefix C-a
@@ -24,6 +24,9 @@ setw -g monitor-activity on
 set -g mode-keys vi
 set -g history-limit 10000
 
+set-option -g set-titles on
+set -g set-titles-string '#{pane_title}'
+#set-option -g set-titles-string "#S / #W"
 # y and p as in vim
 bind Escape copy-mode
 unbind p
