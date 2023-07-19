@@ -19,7 +19,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 #set $background c
 
-set $term alacritty
+set $term kitty
 
 set $menu rofi -show
 
