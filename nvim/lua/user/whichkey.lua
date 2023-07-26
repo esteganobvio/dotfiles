@@ -140,8 +140,8 @@ local which_key = {
 		},
 		g = {
 			name = "+Git",
-      s = { "<cmd>G<cr>", "Status"},
-      c = { "<cmd>G commit<cr>", "Commit"},
+			s = { "<cmd>G<cr>", "Status" },
+			c = { "<cmd>G commit<cr>", "Commit" },
 		},
 	},
 }
