@@ -1,4 +1,4 @@
-local chatgpt = require("chatgpt")
+--local chatgpt = require("chatgpt")
 
 local which_key = {
 	setup = {
@@ -56,15 +56,15 @@ local which_key = {
 	vmappings = {},
 	mappings = {
 		["c"] = { ":BufferClose!<CR>", "Close Buffer" },
-		i = {
-			name = "ChatGPT",
-			e = {
-				function()
-          chatgpt.edit_with_instructions()
-        end,
-        "Edit with instructions",
-			},
-		},
+		--i = {
+		--	name = "ChatGPT",
+		--	e = {
+		--		function()
+		--      chatgpt.edit_with_instructions()
+		--    end,
+		--    "Edit with instructions",
+		--	},
+		--},
 		n = {
 			name = "NvimTree",
 			n = { ":NvimTreeToggle<CR>", "Toggle" },
@@ -137,6 +137,11 @@ local which_key = {
 			q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
 			l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
 			r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+		},
+		g = {
+			name = "+Git",
+      s = { "<cmd>G<cr>", "Status"},
+      c = { "<cmd>G commit<cr>", "Commit"},
 		},
 	},
 }

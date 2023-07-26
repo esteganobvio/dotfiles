@@ -80,18 +80,33 @@ return require("packer").startup(function()
 		},
 	})
 	use({
-		"jackMort/ChatGPT.nvim",
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
 		config = function()
-			require("chatgpt").setup({
-        --api_key_cmd = "keepassxc-cli show -sa password ~/Sync/Passwords.kdbx chatgpt.nvim",
-			})
+			require("copilot").setup({})
 		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
 	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	})
+	--	use({
+	--		"jackMort/ChatGPT.nvim",
+	--		config = function()
+	--			require("chatgpt").setup({
+	--        --api_key_cmd = "keepassxc-cli show -sa password ~/Sync/Passwords.kdbx chatgpt.nvim",
+	--			})
+	--		end,
+	--		requires = {
+	--			"MunifTanjim/nui.nvim",
+	--			"nvim-lua/plenary.nvim",
+	--			"nvim-telescope/telescope.nvim",
+	--		},
+	--	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
