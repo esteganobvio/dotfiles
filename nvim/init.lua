@@ -8,5 +8,6 @@ require "user.autopairs"
 require "user.nvim-tree"
 require "user.treesitter"
 require "user.lualine"
+require "user.tokyonight"
 
 vim.cmd[[colorscheme tokyonight]]
