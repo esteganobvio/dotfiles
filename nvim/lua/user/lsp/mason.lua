@@ -1,20 +1,22 @@
 local servers = {
+	"bashls",
+	"dockerls",
+	"gopls",
+	"helm_ls",
+	"jsonls",
 	"lua_ls",
-  "bashls",
-  "dockerls",
-  "eslint",
-  "gopls",
-  "jsonls",
-  "marksman",
-  "pylsp",
-  "rome",
-  "solargraph",
-  "svelte",
-  "taplo",
-  "terraformls",
-  "tflint",
-  "yamlls",
-  "helm_ls"
+	"pylsp",
+	"terraformls",
+	"tflint",
+	"yamlls",
+}
+
+local tools = {
+  "yamllint",
+  "yamlfix",
+  "tfsec",
+  "shellcheck",
+  "prettier"
 }
 
 local settings = {
@@ -34,6 +36,10 @@ require("mason").setup(settings)
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,
+})
+require("mason-null-ls").setup({
+	ensure_installed = tools,
+	handlers = {},
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")

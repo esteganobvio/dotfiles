@@ -11,7 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	})
 end
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
@@ -33,7 +33,8 @@ return require("packer").startup(function()
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
-	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
+	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("jay-babu/mason-null-ls.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -66,7 +67,12 @@ return require("packer").startup(function()
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
 	use("airblade/vim-gitgutter")
-	use({ "ellisonleao/glow.nvim" })
+	use({
+		"ellisonleao/glow.nvim",
+		config = function()
+			require("glow").setup()
+		end,
+	})
 	use("cappyzawa/starlark.vim")
 	use("towolf/vim-helm")
 	use("moevis/base64.nvim")
@@ -94,20 +100,8 @@ return require("packer").startup(function()
 			require("copilot_cmp").setup()
 		end,
 	})
-  use "b0o/schemastore.nvim"
-	--	use({
-	--		"jackMort/ChatGPT.nvim",
-	--		config = function()
-	--			require("chatgpt").setup({
-	--        --api_key_cmd = "keepassxc-cli show -sa password ~/Sync/Passwords.kdbx chatgpt.nvim",
-	--			})
-	--		end,
-	--		requires = {
-	--			"MunifTanjim/nui.nvim",
-	--			"nvim-lua/plenary.nvim",
-	--			"nvim-telescope/telescope.nvim",
-	--		},
-	--	})
+	use("b0o/schemastore.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
