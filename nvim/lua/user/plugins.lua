@@ -94,6 +94,7 @@ return require("packer").startup(function()
 			require("copilot_cmp").setup()
 		end,
 	})
+  use "b0o/schemastore.nvim"
 	--	use({
 	--		"jackMort/ChatGPT.nvim",
 	--		config = function()
