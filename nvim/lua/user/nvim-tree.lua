@@ -43,6 +43,9 @@ nvim_tree.setup {
       },
     },
   },
+  filters = {
+    git_ignored = false
+  },
   diagnostics = {
     enable = false,
     show_on_dirs = true,
