@@ -17,7 +17,7 @@ set $gnome-schema org.gnome.desktop.interface
 #    gsettings set $gnome-schema font-name 'Roboto 8'
 #}
 
-#set $background c
+set $background nitrogen --restore
 
 set $term kitty
 
@@ -55,7 +55,7 @@ bindsym $mod+p exec $menu
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-exec $background
+exec --no-startup-id $background
 
 #exec xss-lock -- $lock
 
