@@ -53,6 +53,9 @@ vim.opt.mouse = 'a'
 vim.opt.showtabline = 2 -- always show tabs
 vim.opt.laststatus = 2 -- hide statusline
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 vim.cmd([[autocmd BufRead,BufNewFile Tiltfile,*.tiltfile set filetype=tiltfile]])
