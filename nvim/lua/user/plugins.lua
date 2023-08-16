@@ -102,7 +102,6 @@ return require("packer").startup(function(use)
 			require("copilot_cmp").setup()
 		end,
 	})
-	use("b0o/schemastore.nvim")
 	use({
 		"pwntester/octo.nvim",
 		requires = {
