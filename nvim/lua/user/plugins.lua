@@ -66,42 +66,6 @@ return require("packer").startup(function(use)
 	use({ "windwp/nvim-autopairs" })
 	use("simrat39/symbols-outline.nvim")
 
-	use("tpope/vim-fugitive")
-	use("tpope/vim-rhubarb")
-	use("airblade/vim-gitgutter")
-	use({
-		"ellisonleao/glow.nvim",
-		config = function()
-			require("glow").setup()
-		end,
-	})
-	use("cappyzawa/starlark.vim")
-	use("towolf/vim-helm")
-	use("moevis/base64.nvim")
-	use("folke/tokyonight.nvim")
-	use({
-		"cuducos/yaml.nvim",
-		ft = { "yaml" }, -- optional
-		requires = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim", -- optional
-		},
-	})
-	use({
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({})
-		end,
-	})
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
 	use({
 		"pwntester/octo.nvim",
 		requires = {
@@ -113,11 +77,6 @@ return require("packer").startup(function(use)
 			require("octo").setup()
 		end,
 	})
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")
 	use("airblade/vim-gitgutter")
