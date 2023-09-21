@@ -42,6 +42,8 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
+  -- Copilot nerfont icon
+  Copilot = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -98,10 +100,11 @@ cmp.setup {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
+        copilot = "[COPILOT]",
         nvim_lua = "[NVIM_LUA]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
@@ -113,6 +116,7 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "copilot" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
@@ -123,9 +127,9 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  --documentation = {
-  --  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  --},
+  -- documentation = {
+  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  -- },
   experimental = {
     ghost_text = false,
     native_menu = false,
