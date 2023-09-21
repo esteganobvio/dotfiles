@@ -142,6 +142,11 @@ local which_key = {
 			name = "+Git",
 			s = { "<cmd>G<cr>", "Status" },
 			c = { "<cmd>G commit<cr>", "Commit" },
+			w = {
+				name = "Worktrees",
+				c = { ":lua require('telescope).extensions.git_worktree.create_git_worktree()<cr>", "Create Worktree" },
+				l = { ":lua require('telescope).extensions.git_worktree.git_worktrees()<cr>", "List Worktrees" },
+			},
 		},
 	},
 }
