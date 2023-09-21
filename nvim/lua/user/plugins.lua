@@ -168,7 +168,7 @@ return require("packer").startup(function(use)
 		},
 	})
 	use({
-		"ThePrimagen/git-worktree.nvim",
+		"ThePrimeagen/git-worktree.nvim",
 		config = function()
 			require("telescope").load_extension("git_worktree")
 		end,
