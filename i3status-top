@@ -41,6 +41,7 @@ mappings_use_regex = true
 "^.*pci-0000_0d.*$" = "Speaker"
 "^·*alsa_output.*.analog-stereo.*$" = "Speaker"
 "bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
+"bluez_output.B8_9A_2A_D3_39_01.*$" = "dragonfly"
 
 {{#if laptop}}
 [[block]]
