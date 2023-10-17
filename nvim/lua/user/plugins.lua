@@ -156,17 +156,17 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("b0o/schemastore.nvim")
-	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup()
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
+--	use({
+--		"jackMort/ChatGPT.nvim",
+--		config = function()
+--			require("chatgpt").setup()
+--		end,
+--		requires = {
+--			"MunifTanjim/nui.nvim",
+--			"nvim-lua/plenary.nvim",
+--			"nvim-telescope/telescope.nvim",
+--		},
+--	})
 	use({
 		"ThePrimeagen/git-worktree.nvim",
 		config = function()
