@@ -5,10 +5,10 @@ local servers = {
 	"helm_ls",
 	"jsonls",
 	"lua_ls",
-	"pylsp",
 	"terraformls",
 	"tflint",
 	"yamlls",
+  "pyright",
 }
 
 local tools = {
@@ -16,7 +16,8 @@ local tools = {
   "yamlfix",
   "tfsec",
   "shellcheck",
-  "prettier"
+  "prettier",
+  "pyproject-flake8",
 }
 
 local settings = {
