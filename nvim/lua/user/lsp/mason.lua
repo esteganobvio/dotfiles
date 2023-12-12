@@ -17,7 +17,7 @@ local tools = {
   "tfsec",
   "shellcheck",
   "prettier",
-  "pyproject-flake8",
+  "ruff"
 }
 
 local settings = {
