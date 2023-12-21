@@ -1,13 +1,16 @@
-require "user.options"
-require "user.plugins"
-require "user.cmp"
-require "user.lsp"
-require "user.whichkey"
-require "user.toggleterm"
-require "user.autopairs"
-require "user.nvim-tree"
-require "user.treesitter"
-require "user.lualine"
-require "user.tokyonight"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd[[colorscheme tokyonight]]
+require("user.options")
+require("lazy").setup("plugins")
+-- require('user.whichkey')

@@ -19,7 +19,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 set $background nitrogen --restore
 
-set $term kitty
+set $term alacritty
 
 set $menu rofi -show
 
