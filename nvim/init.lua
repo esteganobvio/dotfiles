@@ -13,4 +13,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require("user.options")
 require("lazy").setup("plugins")
--- require('user.whichkey')
