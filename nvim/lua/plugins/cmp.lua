@@ -36,7 +36,7 @@ return {
         Operator = "",
         TypeParameter = "",
         -- Copilot source
-        Copilot = "פּ", -- פּ ﯟ  
+        Copilot = "", -- פּ ﯟ  
       }
       -- find more here: https://www.nerdfonts.com/cheat-sheet
       cmp.setup({

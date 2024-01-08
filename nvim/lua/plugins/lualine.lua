@@ -21,7 +21,33 @@ return {
           },
         },
         lualine_x = {
-          'copilot', 'encoding', 'fileformat', 'filetype'
+          {
+            'copilot',
+            symbols = {
+                status = {
+                    icons = {
+                        enabled = "",
+                        disabled = "",
+                        warning = "",
+                        unknown = ""
+                    },
+                    hl = {
+                        enabled = "#50FA7B",
+                        disabled = "#6272A4",
+                        warning = "#FFB86C",
+                        unknown = "#FF5555"
+                    }
+                },
+                spinners = require("copilot-lualine.spinners").dots,
+                spinner_color = "#6272A4"
+            },
+
+            show_colors = true,
+            show_loading = true
+          },
+          'encoding',
+          'fileformat',
+          'filetype',
         }, -- I added copilot here
       },
     })

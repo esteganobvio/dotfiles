@@ -88,13 +88,11 @@ return {
           p = { ":bp<cr>", "Previous" },
         },
         p = {
-          name = "Packer",
-          c = { ":PackerCompile<cr>", "Compile" },
-          i = { ":PackerInstall<cr>", "Install" },
-          r = { ":lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
-          s = { ":PackerSync<cr>", "Sync" },
-          S = { ":PackerStatus<cr>", "Status" },
-          u = { ":PackerUpdate<cr>", "Update" },
+          name = "Plugins",
+          i = { ":Lazy install<cr>", "Install" },
+          s = { ":Lazy sync<cr>", "Sync" },
+          S = { ":Lazy show<cr>", "Show" },
+          u = { ":Lazy update<cr>", "Update" },
         },
         l = {
           name = "LSP",
