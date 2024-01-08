@@ -36,7 +36,7 @@ exec nm-applet
 
 output eDP-1 resolution 1680x1050 subpixel vrgb
 output "Goldstar Company Ltd 23MP55 " mode 1920x1080 subpixel vrgb
-
+output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@74.973Hz subpixel vrgb adaptive_sync on
 ### Idle configuration
 #
 # Example configuration:
@@ -229,7 +229,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 
-bindsym $mod+m exec swaync-client -t -sw
+bindsym $mod+m exec dunstctl close
 
 #
 # Status Bar:
