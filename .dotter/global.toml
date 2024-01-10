@@ -7,7 +7,7 @@ nvim = "~/.config/nvim"
 asdfrc = "~/.asdfrc"
 
 [alacritty.files]
-alacritty = "~/.config/alacritty/alacritty.yml"
+alacritty = "~/.config/alacritty/alacritty.toml"
 
 [tmux.files]
 tmux = "~/.tmux.conf"
