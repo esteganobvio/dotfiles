@@ -32,13 +32,16 @@ depends = ["rofi", "i3status", "dunst", "picom"]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst"]
+depends = ["rofi", "i3status", "dunst", "systemd-user"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 [kitty.files]
 kitty = "~/.config/kitty/kitty.conf"
+
+[systemd-user.files]
+systemd-user = "~/.config/systemd/user"
 
 [default]
 depends = ["nvim", "asdf", "tmux"]
