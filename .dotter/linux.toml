@@ -2,4 +2,5 @@
 decorations = "none"
 [default.variables]
 font_family = "FiraCode Nerd Font"
-font_size = "9"
+font_size = "11"
+kb_layout = "us_intl"
