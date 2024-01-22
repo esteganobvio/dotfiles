@@ -43,6 +43,11 @@ mappings_use_regex = true
 "bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
 "bluez_output.B8_9A_2A_D3_39_01.*$" = "dragonfly"
 
+[[block]]
+block = "hueshift"
+hue_shifter = "gammastep"
+step = 50
+click_temp = 4000
 {{#if laptop}}
 [[block]]
 block = "backlight"
@@ -51,7 +56,7 @@ device = "intel_backlight"
 
 [[block]]
 block = "notify"
-format = " $icon {$paused{Off}|On} {($notification_count.eng(w:1)) |}"
+format = " $icon {($notification_count.eng(w:1)) |}"
 
 [[block]]
 block = "time"
