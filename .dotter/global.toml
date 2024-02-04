@@ -37,6 +37,12 @@ depends = ["rofi", "i3status", "dunst", "systemd-user"]
 [sway.files]
 sway = "~/.config/sway"
 
+[hyprland.files]
+hypr = "~/.config/hypr"
+
+[eww.files]
+eww = "~/.config/eww"
+
 [kitty.files]
 kitty = "~/.config/kitty/kitty.conf"
 
