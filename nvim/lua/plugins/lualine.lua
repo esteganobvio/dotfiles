@@ -28,7 +28,7 @@ return {
                     icons = {
                         enabled = "",
                         disabled = "",
-                        warning = "",
+                        warning = "",
                         unknown = ""
                     },
                     hl = {
