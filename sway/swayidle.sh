@@ -3,11 +3,10 @@
 killall -q swayidle
 
 exec swayidle -w \
-  timeout 300 'swaymsg "output * dpms off"; swaylock -f -c 000000' \
+  timeout 300 'swaylock' \
+  timeout 600 'swaymsg "output * dpms off' \
     resume 'swaymsg "output * dpms on"' \
-  timeout 600 'systemctl suspend' \
-    resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock -f -c 000000' \
+  before-sleep 'swaylock' \
   after-resume 'swaymsg "output * dpms on"' \
-  lock 'swaylock -f -c 000000' \
+  lock 'swaylock' \
   &

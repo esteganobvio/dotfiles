@@ -32,13 +32,19 @@ depends = ["rofi", "i3status", "dunst", "picom"]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst", "systemd-user"]
+depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock"]
 
 [sway.files]
 sway = "~/.config/sway"
 
+[hyprland]
+depends = ["rofi", "eww", "dunst", "systemd-user", "swaylock"]
+
 [hyprland.files]
 hypr = "~/.config/hypr"
+
+[swaylock.files]
+swaylock = "~/.config/swaylock/config"
 
 [eww.files]
 eww = "~/.config/eww"
