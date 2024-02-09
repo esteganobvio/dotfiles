@@ -32,13 +32,13 @@ depends = ["rofi", "i3status", "dunst", "picom"]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock"]
+depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 [hyprland]
-depends = ["rofi", "eww", "dunst", "systemd-user", "swaylock"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -46,8 +46,11 @@ hypr = "~/.config/hypr"
 [swaylock.files]
 swaylock = "~/.config/swaylock/config"
 
-[eww.files]
-eww = "~/.config/eww"
+[kanshi.files]
+kanshi = "~/.config/kanshi/config"
+
+[waybar.files]
+waybar = "~/.config/waybar"
 
 [kitty.files]
 kitty = "~/.config/kitty/kitty.conf"

@@ -1,0 +1,56 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+window#waybar {
+	background: #292b2e;
+	color: #fdf6e3;
+}
+
+
+#workspaces,
+#wireplumber,
+#upower,
+#tray {
+	background: #1a1a1a;
+}
+
+#workspaces button {
+	padding: 0 2px;
+	color: #fdf6e3;
+}
+#workspaces button.active {
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+
+#wireplumber {
+	color: #268bd2;
+}
+#upower {
+	color: #859900;
+}
+#taskbar,
+#idle_inhibitor,
+#clock,
+#wireplumber,
+#network,
+#backlight,
+#keyboard-state,
+#tray,
+#custom-ddcutil,
+#custom-dunst,
+#upower {
+	padding: 0 10px;
+}
+

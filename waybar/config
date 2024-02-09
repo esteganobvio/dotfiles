@@ -1,0 +1,152 @@
+{
+  "layer": "top",
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  // "width": 1280, // Waybar width
+  "spacing": 4, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "custom/dunst",
+    "wireplumber",
+    "network",
+    "custom/ddcutil",
+    "backlight",
+    "upower",
+    "keyboard-state",
+    "clock",
+    "tray"
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": " {icon} ",
+    "format-icons": {
+      "1": "",
+      "4": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "keyboard-state": {
+    "numlock": false,
+    "capslock": true,
+    "format": {
+      "numlock": "N {icon}",
+      "capslock": "C {icon}"
+    },
+    "format-icons": {
+      "locked": " ",
+      "unlocked": " "
+    }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
+    }
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "timezone": "America/Buenos_Aires",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "upower": {
+    "format": "{percentage} {time}",
+    "icon-size": 14,
+    "hide-if-empty": true,
+    "tooltip": true,
+    "tooltip-spacing": 20
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/dunst": {
+    "exec": "~/.config/waybar/scripts/dunst.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Paper",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "Alacritty",
+    ],
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+  "custom/ddcutil": {
+    "format": "{percentage}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "exec": "~/.config/waybar/scripts/ddcutil.sh",
+    "return-type": "json",
+    "on-scroll-up": "echo '+' > /tmp/waybar-ddc-module-rx",
+    "on-scroll-down": "echo '-' > /tmp/waybar-ddc-module-rx",
+    "on-click": "echo 'min' > /tmp/waybar-ddc-module-rx",
+    "on-click-right": "echo 'max' > /tmp/waybar-ddc-module-rx",
+    "tooltip": false
+  }
+}
+// vim: set filetype=json :

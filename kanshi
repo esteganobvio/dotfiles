@@ -1,0 +1,33 @@
+profile silverfly-undocked {
+  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2
+}
+
+profile silverfly-docked {
+  output "Sharp Corporation 0x148D Unknown" disable
+  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
+}
+
+profile silverfly-mh {
+  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position 0,1080
+  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
+}
+
+profile wonderfly-docked {
+	output "AU Optronics 0xD291 Unknown" disable
+	output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
+}
+
+profile wonderfly-undocked {
+	output "AU Optronics 0xD291 Unknown" enable mode 1920x1200 scale 1
+}
+
+profile wonderfly-mh {
+  output "AU Optronics 0xD291 Unknown" enable mode 1920x1200 scale 1 position 0,1080
+  output "Samsung Electric Company LF24T35 H9VT204063" enable mode 1920x1080@75 position 0,0
+}
+
+profile dragonfly {
+  output "Samsung Electric Company LF24T35 H9VT204063" enable mode 1920x1080@75 position 0,0
+}
+
+# vim: ft=swayconfig :
