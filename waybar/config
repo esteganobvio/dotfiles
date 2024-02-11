@@ -6,7 +6,6 @@
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces"
-    //"wlr/taskbar"
   ],
   "modules-center": [
     "hyprland/window"
@@ -33,7 +32,7 @@
       "1": "",
       "4": "",
       "urgent": "",
-      "focused": "",
+      "active": "",
       "default": ""
     }
   },
@@ -147,6 +146,19 @@
     "on-click": "echo 'min' > /tmp/waybar-ddc-module-rx",
     "on-click-right": "echo 'max' > /tmp/waybar-ddc-module-rx",
     "tooltip": false
+  },
+  "mpris": {
+	"format": "{player_icon} {artist} {album} {title}",
+	"format-paused": "{status_icon} {artist} {album} {title}",
+  "internal": "1",
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	}
+	// "ignored-players": ["firefox"]
   }
 }
 // vim: set filetype=json :
