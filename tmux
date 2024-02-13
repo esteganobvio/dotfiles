@@ -58,6 +58,8 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
+bind C-o display-popup -E "tms"
+bind C-j display-popup -E "tms switch"
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
