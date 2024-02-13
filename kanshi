@@ -17,8 +17,8 @@ profile wonderfly-docked {
 	output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
 }
 
-profile wonderfly-undocked {
-	output "AU Optronics 0xD291 Unknown" enable mode 1920x1200 scale 1
+profile wonderfly-undocked{
+	output "AU Optronics 0xD291 Unknown" enable mode --custom 1920x1200 scale 1
 }
 
 profile wonderfly-mh {
