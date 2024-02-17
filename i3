@@ -27,7 +27,7 @@ set $menu rofi -show
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:{{font_family}} {{font_size}}
+font pango:{{font_family}} 10
 for_window [class="^.*"] border pixel 1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -117,9 +117,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1:"
+set $ws2 "2:󰖟"
+set $ws3 "3:"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -177,7 +177,7 @@ bindsym $mod+Shift+m exec dunstctl close-all
 bindsym $mod+Mod1+m exec dunstctl history-pop
 bindsym $mod+Ctrl+m exec dunstctl context
 
-bindsym $mod+x exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+Escape exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -213,6 +213,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+gaps inner 2
+gaps outer 2
+
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
@@ -231,6 +234,9 @@ bar {
   position top
   status_command i3status-rs ~/.config/i3status/i3status-top.toml
   mode dock
+  tray_output primary
+  strip_workspace_numbers no
+  strip_workspace_name no
   colors {
     background $bg-color
     separator #757575
@@ -248,6 +254,7 @@ bar {
   status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
   mode dock
   tray_output none
+  workspace_buttons no
   colors {
     background $bg-color
     separator #757575
@@ -275,7 +282,8 @@ for_window [class="corectrl"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Virt-manager"] floating enable
 for_window [class="Qemu-system-x86_64"] floating enable
-for_window [class="zoom"] floating enable
+#for_window [class="zoom"] floating enable
+for_window [title="^zoom$" class="[zoom]*"] floating enable
 for_window [class="protonvpn"] floating enable
 for_window [class="gnome-calculator"] floating enable
 for_window [class="battle.net.exe"] floating enable

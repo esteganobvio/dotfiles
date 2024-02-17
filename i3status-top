@@ -55,6 +55,16 @@ device = "intel_backlight"
 {{/if}}
 
 [[block]]
+block = "toggle"
+format = " $icon "
+command_state = "xset q | grep 'DPMS is Enabled'"
+command_on = "xset s on +dpms"
+command_off = "xset s off -dpms"
+interval = 5
+icon_off = "pomodoro_break" # DPMS dissabled
+icon_on = "time" # DPMS enabled
+
+[[block]]
 block = "notify"
 format = " $icon {($notification_count.eng(w:1)) |}"
 
@@ -64,7 +74,7 @@ interval = 60
 
 [[block]]
 block = "keyboard_layout"
-driver = "localebus"
+driver = "setxkbmap"
 format = " $layout $variant "
 interval = 15
 
