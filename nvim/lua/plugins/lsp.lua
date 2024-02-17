@@ -1,26 +1,24 @@
 local servers = {
-	"bashls",
 	"dockerls",
 	"gopls",
 	"helm_ls",
 	"jsonls",
 	"lua_ls",
+	"pyright",
 	"terraformls",
 	"tflint",
 	"yamlls",
-	"pyright",
 }
 
 local tools = {
-	"yamllint",
-	"yamlfix",
-	"tfsec",
-	"shellcheck",
+	"black",
 	"prettier",
 	"ruff",
-	"trivy",
-	"black",
+	"shellcheck",
 	"stylua",
+	"tfsec",
+	"yamlfix",
+	"yamllint",
 }
 
 return {

@@ -142,9 +142,6 @@ return {
 		"hrsh7th/cmp-nvim-lua",
 	},
 	{
-		"lukas-reineke/cmp-rg",
-	},
-	{
 		"saadparwaiz1/cmp_luasnip",
 	},
 	{
