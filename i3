@@ -120,13 +120,13 @@ bindsym $mod+a focus parent
 set $ws1 "1:"
 set $ws2 "2:󰖟"
 set $ws3 "3:"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -235,7 +235,7 @@ bar {
   status_command i3status-rs ~/.config/i3status/i3status-top.toml
   mode dock
   tray_output primary
-  strip_workspace_numbers no
+  strip_workspace_numbers yes
   strip_workspace_name no
   colors {
     background $bg-color
