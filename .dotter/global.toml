@@ -32,7 +32,7 @@ depends = ["rofi", "i3status", "dunst", "picom", "systemd-user"]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi"]
+depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi", "waybar"]
 
 [sway.files]
 sway = "~/.config/sway"

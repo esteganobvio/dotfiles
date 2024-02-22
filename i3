@@ -23,7 +23,7 @@ set $term alacritty
 
 set $menu rofi -show
 
-#set $lock i3lock -n -i ~/Pictures/nwp_1440x900.jpg -c 000000
+set $lock loginctl lock-session
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -57,13 +57,13 @@ bindsym $mod+p exec $menu
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 exec --no-startup-id $background
 
-#exec xss-lock -- $lock
+#exec --no-startup-id xss-lock $lock
 
-exec picom
+exec --no-startup-id picom
 
-exec dunst
+exec --no-startup-id dunst
 
-exec nm-applet
+exec --no-startup-id nm-applet
 
 # change focus
 bindsym $mod+$left focus left
@@ -162,12 +162,12 @@ bindsym $mod+Shift+Mod1+Down move workspace to output down
 bindsym $mod+Shift+Mod1+Up move workspace to output up
 bindsym $mod+Shift+Mod1+Right move workspace to output right
 
-bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 1%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +1%
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -177,7 +177,7 @@ bindsym $mod+Shift+m exec dunstctl close-all
 bindsym $mod+Mod1+m exec dunstctl history-pop
 bindsym $mod+Ctrl+m exec dunstctl context
 
-bindsym $mod+Escape exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+Escape exec $lock
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
@@ -213,19 +213,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 2
-gaps outer 2
+gaps inner 0
+gaps outer 0
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #5294e2
+set $bg-color            #0D0F14
+set $inactive-bg-color   #0D0F14
+set $text-color          #5294e2
+set $inactive-text-color #30343D
+set $urgent-bg-color     #900000
 
-# windows           Border    Background    Text     Indicator
-client.focused        #2f343f   #2f343f       #f3f4f5  #5294e2 #5294e2
-client.unfocused      #2f343f   #2f343f       #676E7D  #676E7D #2f343f
-
+# windows               border    backgr.   text     indicator child_border
+client.focused          #5294e2   #0D0F14   #f3f4f5   #5294e2  #5294e2
+client.unfocused        #0D0F14   #0D0F14   #30343D   #30343D  #0D0F14
+client.focused_inactive #0D0F14   #0D0F14   #30343D   #30343D  #0D0F14
+client.urgent           #0D0F14   #900000   #f3f4f5   #900000  #900000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -237,10 +238,13 @@ bar {
   tray_output primary
   strip_workspace_numbers yes
   strip_workspace_name no
+  workspace_buttons no
+  output primary
   colors {
     background $bg-color
-    separator #757575
+    separator #30343D
     focused_workspace  $bg-color          $bg-color          $text-color
+    active_workspace  $bg-color          $bg-color          $inactive-text-color
     inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
     urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
   }
@@ -254,17 +258,19 @@ bar {
   status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
   mode dock
   tray_output none
-  workspace_buttons no
+  workspace_buttons yes
+  strip_workspace_numbers yes
+  strip_workspace_name no
   colors {
     background $bg-color
-    separator #757575
+    separator #30343D
     focused_workspace  $bg-color          $bg-color          $text-color
+    active_workspace  $bg-color          $bg-color          $inactive-text-color
     inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
     urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
   }
 }
 
-# Gnome
 {{#if (is_executable "yay")}}
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

@@ -1,12 +1,12 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 window#waybar {
-	background: #1a1a1a;
-	color: #fdf6e3;
+	background: #0D0F14;
+	color: #f3f4f5;
 }
 
 
@@ -14,28 +14,31 @@ window#waybar {
 #wireplumber,
 #upower,
 #tray {
-	background: #1a1a1a;
+	background: #0D0F14;
 }
 
 #workspaces button {
 	padding: 0 2px;
-	color: #fdf6e3;
+	color: #f3f4f5;
 }
 #workspaces button.active {
-	color: #268bd2;
+	color: #5294E2;
+}
+#workspaces button.focused {
+	color: #5294E2;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
+	background: #0D0F14;
+	border: #0D0F14;
 	padding: 0 3px;
 }
 
 #wireplumber {
-	color: #268bd2;
+	color: #5294E2;
 }
 #upower {
 	color: #859900;
