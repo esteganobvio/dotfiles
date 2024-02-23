@@ -32,13 +32,13 @@ depends = ["rofi", "i3status", "dunst", "picom", "systemd-user"]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi", "waybar"]
+depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -57,6 +57,9 @@ kitty = "~/.config/kitty/kitty.conf"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
+
+[gammastep.files]
+gammastep = "~/.config/gammastep/config.ini"
 
 [default]
 depends = ["nvim", "asdf", "tmux"]

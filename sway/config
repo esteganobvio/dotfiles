@@ -31,7 +31,7 @@ set $inactive-text-color #30343D
 set $urgent-bg-color     #900000
 
 # windows                Border    Background Text      Indicator Child_border
-client.focused           #0D0F14   #5294e2    #0D0F14   #5294e2   #0D0F14
+client.focused           #0D0F14   #5294e2    #0D0F14   #0D0F14   #0D0F14
 client.unfocused         #0D0F14   #30343D    #f3f4f5   #30343D   #0D0F14
 client.focused_inactive  #0D0F14   #30343D    #f3f4f5   #30343D   #0D0F14
 client.urgent            #900000   #900000    #0D0F14   #900000   #900000
