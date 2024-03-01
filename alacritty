@@ -2,15 +2,15 @@
 size = {{ font_size }}
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "{{ font_family }}"
 style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "{{ font_family }}"
 style = "Italic"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "{{ font_family }}"
 style = "Regular"
 
 # TokyoNight
@@ -39,8 +39,8 @@ background = "#1a1b26"
 foreground = "#a9b1d6"
 
 [window]
-decorations = "none"
-opacity = 0.9
+decorations = "{{ decorations }}"
+opacity = 1
 
 [window.padding]
 x = 5
