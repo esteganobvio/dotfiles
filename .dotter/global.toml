@@ -26,7 +26,7 @@ dunstrc = "~/.config/dunst/dunstrc"
 picom = "~/.config/picom.conf"
 
 [i3]
-depends = ["rofi", "i3status", "dunst", "picom", "systemd-user"]
+depends = ["rofi", "i3status", "dunst", "picom", "systemd-user", "gammastep"]
 
 [i3.files]
 i3 = "~/.config/i3/config"

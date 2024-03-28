@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python3_host_prog = "/usr/bin/python"
 vim.g.border_style = "rounded"
 vim.g.markdown_fenced_languages = {
   "bash=sh",

@@ -223,8 +223,8 @@ set $inactive-text-color #30343D
 set $urgent-bg-color     #900000
 
 # windows               border    backgr.   text     indicator child_border
-client.focused          #5294e2   #0D0F14   #f3f4f5   #5294e2  #5294e2
-client.unfocused        #0D0F14   #0D0F14   #30343D   #30343D  #0D0F14
+client.focused          #5294e2   #5294e2   #0D0F14   #5294e2  #5294e2
+client.unfocused        #0D0F14   #0D0F14   #f3f4f5   #30343D  #0D0F14
 client.focused_inactive #0D0F14   #0D0F14   #30343D   #30343D  #0D0F14
 client.urgent           #0D0F14   #900000   #f3f4f5   #900000  #900000
 
@@ -235,11 +235,10 @@ bar {
   position top
   status_command i3status-rs ~/.config/i3status/i3status-top.toml
   mode dock
-  tray_output primary
+  #tray_output primary
   strip_workspace_numbers yes
   strip_workspace_name no
   workspace_buttons no
-  output primary
   colors {
     background $bg-color
     separator #30343D

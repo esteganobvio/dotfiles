@@ -123,7 +123,7 @@ aur_command = "yay -Qua"
 [[block.click]]
 # pop-up a menu showing the available updates. Replace wofi with your favourite menu command.
 button = "left"
-cmd = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-i3statusrs/ | wofi --show dmenu"
+cmd = "fakeroot pacman -Qu --dbpath /tmp/checkup-db-i3statusrs/ | rofi -dmenu"
 {{/if}}
 {{#if  (is_executable "dnf")}}
 [[block]]
