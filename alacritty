@@ -46,4 +46,10 @@ opacity = 1
 x = 5
 y = 5
 
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+
+[mouse]
+hide_when_typing = true
+
 # vim: set filetype=toml:

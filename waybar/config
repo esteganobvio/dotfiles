@@ -19,8 +19,6 @@
     "custom/ddcutil",
     "backlight",
     "upower",
-    "memory",
-    "temperature",
     "keyboard-state",
     "clock",
     "tray"
@@ -166,9 +164,9 @@
   "custom/ddcutil": {
     "format": "{percentage}% {icon}",
     "format-icons": [
-      "",
-      "",
-      ""
+      "",
+      "",
+      ""
     ],
     "exec": "~/.config/waybar/scripts/ddcutil.sh",
     "return-type": "json",

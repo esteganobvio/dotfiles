@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-	background: #0D0F14;
+	background: #30343D;
 	color: #f3f4f5;
 }
 
@@ -14,7 +14,7 @@ window#waybar {
 #wireplumber,
 #upower,
 #tray {
-	background: #0D0F14;
+	background: #30343D;
 }
 
 #workspaces button {
