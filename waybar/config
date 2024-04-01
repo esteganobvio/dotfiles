@@ -15,11 +15,10 @@
   "modules-right": [
     "idle_inhibitor",
     "custom/dunst",
-    "wireplumber",
+    "pulseaudio",
     "custom/ddcutil",
     "backlight",
     "upower",
-    "keyboard-state",
     "clock",
     "tray"
   ],
@@ -112,9 +111,10 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
-  "wireplumber": {
+  "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-muted": " {format_source}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
     "format-icons": {
       "headphone": "",
       "hands-free": "",

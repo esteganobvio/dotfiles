@@ -37,7 +37,7 @@ window#waybar {
 	padding: 0 3px;
 }
 
-#wireplumber {
+#pulseaudio {
 	color: #5294E2;
 }
 #upower {
@@ -47,7 +47,7 @@ window#waybar {
 #taskbar,
 #idle_inhibitor,
 #clock,
-#wireplumber,
+#pulseaudio,
 #network,
 #backlight,
 #keyboard-state,
