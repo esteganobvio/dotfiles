@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 window#waybar {
@@ -18,7 +18,7 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 2px;
+	padding: 0 0px;
 	color: #f3f4f5;
 }
 #workspaces button.active {
@@ -34,7 +34,7 @@ window#waybar {
 #workspaces button:hover {
 	background: #0D0F14;
 	border: #0D0F14;
-	padding: 0 3px;
+	padding: 0 0px;
 }
 
 #pulseaudio {
@@ -55,6 +55,6 @@ window#waybar {
 #custom-ddcutil,
 #custom-dunst,
 #upower {
-	padding: 0 10px;
+	padding: 0 8px;
 }
 
