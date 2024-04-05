@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "top", // Waybar position (top|bottom|left|right)
+  "position": "bottom", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
   "height": 10,
   "spacing": 1, // Gaps between modules (4px)
