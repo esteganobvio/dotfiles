@@ -27,7 +27,7 @@ set $lock loginctl lock-session
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:{{font_family}} 10
+font pango:{{font_family}} {{font_size}}
 for_window [class="^.*"] border pixel 1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -64,6 +64,8 @@ exec --no-startup-id picom
 exec --no-startup-id dunst
 
 exec --no-startup-id nm-applet
+
+exec --no-startup-id polybar
 
 # change focus
 bindsym $mod+$left focus left
@@ -213,8 +215,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 0
-gaps outer 0
+gaps inner 2
+gaps outer 2
 
 set $bg-color            #0D0F14
 set $inactive-bg-color   #0D0F14
@@ -223,52 +225,52 @@ set $inactive-text-color #30343D
 set $urgent-bg-color     #900000
 
 # windows               border    backgr.   text     indicator child_border
-client.focused          #5294e2   #5294e2   #0D0F14   #5294e2  #5294e2
-client.unfocused        #0D0F14   #0D0F14   #f3f4f5   #30343D  #0D0F14
-client.focused_inactive #0D0F14   #0D0F14   #30343D   #30343D  #0D0F14
-client.urgent           #0D0F14   #900000   #f3f4f5   #900000  #900000
+client.focused          #0D0F14   #5294e2   #0D0F14   #0D0F14  #0D0F14
+client.unfocused        #0D0F14   #30343D   #f3f4f5   #30343D  #0D0F14
+client.focused_inactive #0D0F14   #30343D   #f3f4f5   #30343D  #0D0F14
+client.urgent           #900000   #900000   #0D0F14   #900000  #900000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  id top
-  position top
-  status_command i3status-rs ~/.config/i3status/i3status-top.toml
-  mode dock
-  #tray_output primary
-  strip_workspace_numbers yes
-  strip_workspace_name no
-  workspace_buttons no
-  colors {
-    background $bg-color
-    separator #30343D
-    focused_workspace  $bg-color          $bg-color          $text-color
-    active_workspace  $bg-color          $bg-color          $inactive-text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+#bar {
+#  id top
+#  position top
+#  status_command i3status-rs ~/.config/i3status/i3status-top.toml
+#  mode dock
+#  #tray_output primary
+#  strip_workspace_numbers yes
+#  strip_workspace_name no
+#  workspace_buttons no
+#  colors {
+#    background $bg-color
+#    separator #30343D
+#    focused_workspace  $bg-color          $bg-color          $text-color
+#    active_workspace  $bg-color          $bg-color          $inactive-text-color
+#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  }
+#}
 
 
 
-bar {
-  id bottom
-  position bottom
-  status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
-  mode dock
-  tray_output none
-  workspace_buttons yes
-  strip_workspace_numbers yes
-  strip_workspace_name no
-  colors {
-    background $bg-color
-    separator #30343D
-    focused_workspace  $bg-color          $bg-color          $text-color
-    active_workspace  $bg-color          $bg-color          $inactive-text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+#bar {
+#  id bottom
+#  position bottom
+#  status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
+#  mode dock
+#  tray_output none
+#  workspace_buttons yes
+#  strip_workspace_numbers yes
+#  strip_workspace_name no
+#  colors {
+#    background $bg-color
+#    separator #30343D
+#    focused_workspace  $bg-color          $bg-color          $text-color
+#    active_workspace  $bg-color          $bg-color          $inactive-text-color
+#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  }
+#}
 
 {{#if (is_executable "yay")}}
 exec --no-startup-id /usr/lib/gsd-xsettings

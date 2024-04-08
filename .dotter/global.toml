@@ -26,13 +26,13 @@ dunstrc = "~/.config/dunst/dunstrc"
 picom = "~/.config/picom.conf"
 
 [i3]
-depends = ["rofi", "i3status", "dunst", "picom", "systemd-user", "gammastep"]
+depends = ["rofi", "polybar", "dunst", "picom", "systemd-user", "gammastep"]
 
 [i3.files]
 i3 = "~/.config/i3/config"
 
 [sway]
-depends = ["rofi", "i3status", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
 
 [sway.files]
 sway = "~/.config/sway"
@@ -60,6 +60,9 @@ systemd-user = "~/.config/systemd/user"
 
 [gammastep.files]
 gammastep = "~/.config/gammastep/config.ini"
+
+[polybar.files]
+polybar = "~/.config/polybar/config.ini"
 
 [default]
 depends = ["nvim", "asdf", "tmux"]
