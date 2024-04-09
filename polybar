@@ -17,8 +17,8 @@
 ;==========================================================
 
 [colors]
-background = #0D0F14
-background-alt = #30343D
+background = #30343D
+background-alt = #0D0F14
 foreground = #f3f4f5
 primary = #5294e2
 secondary = #f3f4f5
@@ -51,7 +51,7 @@ separator-foreground = ${colors.disabled}
 font-0 = {{font_family}}:size={{font_size}};2
 
 modules-left = xworkspaces xwindow
-modules-right = filesystem pulseaudio xkeyboard memory cpu date battery systray
+modules-right = filesystem pulseaudio backlight xkeyboard memory cpu date battery systray
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -109,20 +109,32 @@ label-unmounted-foreground = ${colors.disabled}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-prefix = "VOL "
 format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 
-label-muted = muted
-label-muted-foreground = ${colors.disabled}
+label-muted = 󰸈 muted
+label-muted-foreground = ${colors.alert}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+; Right and Middle click
+click-right = pavucontrol
+; click-middle =
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-label-layout = %layout%
+label-layout = 󰌓 %layout%
 label-layout-foreground = ${colors.primary}
 
 label-indicator-padding = 2
@@ -178,6 +190,115 @@ type = internal/battery
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = AC
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging>  <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity>  <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Format used when battery level drops to low-at
+; If not defined, format-discharging is used instead.
+; Available tags:
+;   <label-low>
+;   <animation-low>
+;   <bar-capacity>
+;   <ramp-capacity>
+; New in version 3.6.0
+;format-low = <label-low> <animation-low>
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+; Only applies if <animation-low> is used
+; New in version 3.6.0
+animation-low-0 = !
+animation-low-1 = 
+animation-low-framerate = 200
+
+
+[module/backlight]
+type = internal/backlight
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <ramp> <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
 
 [settings]
 screenchange-reload = true
