@@ -60,6 +60,8 @@ bind -r L resize-pane -R 5
 
 bind C-o display-popup -E "tms"
 bind C-j display-popup -E "tms switch"
+bind C-w display-popup -E "tms windows"
+bind C-r command-prompt -p "Rename active session to: " "run-shell 'tms rename %1'"
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
