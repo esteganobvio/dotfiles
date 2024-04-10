@@ -214,7 +214,7 @@ format-discharging = <ramp-capacity>  <label-discharging>
 ;   <label-full> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
-;format-full = <ramp-capacity> <label-full>
+format-full = <ramp-capacity> 
 
 ; Format used when battery level drops to low-at
 ; If not defined, format-discharging is used instead.
@@ -224,7 +224,7 @@ format-discharging = <ramp-capacity>  <label-discharging>
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ; New in version 3.6.0
-;format-low = <label-low> <animation-low>
+format-low = <label-low> <animation-low>
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
