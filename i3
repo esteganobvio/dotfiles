@@ -23,7 +23,7 @@ set $term alacritty
 
 set $menu rofi -show
 
-set $lock loginctl lock-session
+set $lock i3lock -c 000000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -119,16 +119,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:󰖟"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -283,7 +283,7 @@ exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id gnome-flashback
 
 
-for_window [class="KeePassXC"] floating enable
+#for_window [class="KeePassXC"] floating enable
 for_window [class="openrgb"] floating enable
 for_window [class="corectrl"] floating enable
 for_window [class="Blueman-manager"] floating enable
