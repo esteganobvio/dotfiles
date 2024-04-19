@@ -215,8 +215,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 2
-gaps outer 2
+gaps inner 0
+gaps outer 0
 
 set $bg-color            #0D0F14
 set $inactive-bg-color   #0D0F14
