@@ -23,12 +23,11 @@ set $term alacritty
 
 set $menu rofi -show
 
-set $lock i3lock -c 000000
+set $lock i3lock -c 000000 -i ~/Pictures/estrella-federal.png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:{{font_family}} {{font_size}}
-for_window [class="^.*"] border pixel 1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -173,6 +172,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
 
 bindsym $mod+m exec dunstctl close
 bindsym $mod+Shift+m exec dunstctl close-all
@@ -217,7 +217,13 @@ bindsym $mod+r mode "resize"
 
 gaps inner 0
 gaps outer 0
-
+#default_border pixel
+#default_floating_border pixel
+hide_edge_borders smart
+#title_align center
+for_window [all] title_window_icon on
+for_window [all] title_window_icon padding 5px
+#for_window [class="^.*"] border pixel 1
 set $bg-color            #0D0F14
 set $inactive-bg-color   #0D0F14
 set $text-color          #5294e2
@@ -225,7 +231,7 @@ set $inactive-text-color #30343D
 set $urgent-bg-color     #900000
 
 # windows               border    backgr.   text     indicator child_border
-client.focused          #0D0F14   #5294e2   #0D0F14   #0D0F14  #0D0F14
+client.focused          #5294e2   #5294e2   #0D0F14   #5294e2  #5294e2
 client.unfocused        #0D0F14   #30343D   #f3f4f5   #30343D  #0D0F14
 client.focused_inactive #0D0F14   #30343D   #f3f4f5   #30343D  #0D0F14
 client.urgent           #900000   #900000   #0D0F14   #900000  #900000
