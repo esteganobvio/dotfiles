@@ -62,7 +62,7 @@ systemd-user = "~/.config/systemd/user"
 gammastep = "~/.config/gammastep/config.ini"
 
 [polybar.files]
-polybar = "~/.config/polybar/config.ini"
+polybar = "~/.config/polybar"
 
 [default]
 depends = ["nvim", "asdf", "tmux"]

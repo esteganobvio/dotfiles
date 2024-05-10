@@ -64,7 +64,7 @@ exec --no-startup-id dunst
 
 exec --no-startup-id nm-applet
 
-exec --no-startup-id polybar
+exec --no-startup-id polybar -r
 
 # change focus
 bindsym $mod+$left focus left
