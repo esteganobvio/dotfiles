@@ -16,7 +16,7 @@ require("lazy").setup("plugins")
 
 if vim.g.neovide then
   vim.o.guifont = "FiraCode Nerd Font:h10"
-  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_transparency = 1
   vim.g.transparency = 1
   vim.g.neovide_cursor_animation_lenght = 0
   vim.g.neovide_cursor_trail_size = 0
