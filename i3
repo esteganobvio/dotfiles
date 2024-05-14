@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 
-exec xrdb -load ~/.Xresources
+exec --no-startup-id xrdb -load ~/.Xresources
 #exec xrandr --output eDP-1 --mode 2048x1152
 set $gnome-schema org.gnome.desktop.interface
 
@@ -187,7 +187,7 @@ bindsym $mod+Escape exec $lock
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exit
+bindsym $mod+Shift+q exec gnome-session-quit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -302,4 +302,5 @@ for_window [class="protonvpn"] floating enable
 for_window [class="gnome-calculator"] floating enable
 for_window [class="battle.net.exe"] floating enable
 for_window [class="bottles"] floating enable
+for_window [class="steam"] floating enable
 # vim: ft=i3config :
