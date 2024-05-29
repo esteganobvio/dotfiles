@@ -9,10 +9,11 @@
 # ░█░░░█░█░█▀▄░█░█░█▀▀░█▀▄░▀▀█
 # ░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀
 
-corner-radius = 0;
+corner-radius = 5;
 rounded-corners-exclude = [
-  # "class_g ?= 'rofi'",
+  "class_g ?= 'rofi'",
   "class_g ?= 'peek'",
+  "class_g ?= 'dunst'",
   "window_type *= 'dock'",
   "window_type = 'menu'",
   "window_type = 'tooltip'",
@@ -49,7 +50,7 @@ shadow-exclude = [
 # ░█▀▀░█▀█░█░█░░█░░█░█░█░█
 # ░▀░░░▀░▀░▀▀░░▀▀▀░▀░▀░▀▀▀
 
-fading = false;
+fading = true;
 fade-in-step = 0.03;
 fade-out-step = 0.03;
 fade-delta = 5;
