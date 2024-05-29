@@ -216,8 +216,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 0
-gaps outer 0
+gaps inner 3
+gaps outer 3
 #default_border pixel
 #default_floating_border pixel
 hide_edge_borders smart
