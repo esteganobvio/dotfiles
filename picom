@@ -50,7 +50,7 @@ shadow-exclude = [
 # ░█▀▀░█▀█░█░█░░█░░█░█░█░█
 # ░▀░░░▀░▀░▀▀░░▀▀▀░▀░▀░▀▀▀
 
-fading = true;
+fading = false;
 fade-in-step = 0.03;
 fade-out-step = 0.03;
 fade-delta = 5;
