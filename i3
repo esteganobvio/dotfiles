@@ -219,9 +219,9 @@ bindsym $mod+r mode "resize"
 gaps inner 2
 gaps outer 2
 gaps top 0
-default_border pixel 0
-default_floating_border pixel 0
-hide_edge_borders smart
+default_border pixel 3
+default_floating_border pixel 3
+#hide_edge_borders smart
 #title_align center
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 5px
