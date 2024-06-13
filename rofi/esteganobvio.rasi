@@ -78,7 +78,7 @@ listview {
     lines: 7;
     columns: 1;
     border: 0px 1px 1px 1px; 
-    /* border-radius: 0px 0px 6px 6px; */
+    border-radius: 0px 0px 6px 6px;
     border-color: @primary;
     dynamic: false;
 }
@@ -135,3 +135,5 @@ button selected normal {
     border: 2px 0px 2px 2px;
     border-color: @primary;
 }
+
+/* vim: set ft=rasi : */

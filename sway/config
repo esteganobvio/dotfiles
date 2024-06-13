@@ -26,18 +26,23 @@ set $menu rofi -show
 
 set $bg-color            #0D0F14
 set $inactive-bg-color   #0D0F14
-set $text-color          #5294E2
+set $text-color          #5294e2
 set $inactive-text-color #30343D
 set $urgent-bg-color     #900000
 
 # windows                Border    Background Text      Indicator Child_border
-client.focused           #0D0F14   #5294e2    #0D0F14   #0D0F14   #0D0F14
-client.unfocused         #0D0F14   #30343D    #f3f4f5   #30343D   #0D0F14
-client.focused_inactive  #0D0F14   #30343D    #f3f4f5   #30343D   #0D0F14
+client.focused           #0D0F14   #5294e2    #0D0F14   #0D0F14   #5294e2
+client.unfocused         #0D0F14   #30343D    #f3f4f5   #30343D   #5294e2
+client.focused_inactive  #0D0F14   #30343D    #f3f4f5   #30343D   #5294e2
 client.urgent            #900000   #900000    #0D0F14   #900000   #900000
-default_border pixel 1
 
-font {{font_family}} 10
+default_border pixel 3
+default_floating_border pixel 3
+gaps inner 2
+gaps outer 2
+gaps top 0
+
+font FiraCode Nerd Font 9
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
