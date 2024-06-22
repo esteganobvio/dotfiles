@@ -1,24 +1,24 @@
 local servers = {
---	"dockerls",
---	"gopls",
---	"helm_ls",
---	"jsonls",
---	"lua_ls",
---	"pyright",
---	"terraform-ls",
---	"tflint",
---	"yaml-language-server",
+	"dockerls",
+	"gopls",
+	"helm_ls",
+	"jsonls",
+	"lua_ls",
+	"pyright",
+	"terraformls",
+	"tflint",
+	"yamlls",
 }
 
 local tools = {
---	"black",
---	"prettier",
---	"ruff",
---	"shellcheck",
---	"stylua",
---	"tfsec",
---	"yamlfix",
---	"yamllint",
+	"black",
+	"prettier",
+	"ruff",
+	"shellcheck",
+	"stylua",
+	"tfsec",
+	"yamlfix",
+	"yamllint",
 }
 
 return {
@@ -59,7 +59,7 @@ return {
 		config = function()
 			require("mason-null-ls").setup({
 				ensure_installed = tools,
-        automatic_instalation = true,
+				automatic_instalation = true,
 				handlers = {},
 			})
 		end,
