@@ -29,7 +29,7 @@ picom = "~/.config/picom.conf"
 depends = ["rofi", "polybar", "dunst", "picom", "systemd-user", "gammastep"]
 
 [i3.files]
-i3 = "~/.config/i3/config"
+i3 = "~/.config/i3"
 
 [sway]
 depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
