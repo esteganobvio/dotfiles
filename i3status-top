@@ -74,7 +74,7 @@ interval = 60
 
 [[block]]
 block = "keyboard_layout"
-driver = "setxkbmap"
+driver = "localebus"
 format = " $layout $variant "
 interval = 15
 
