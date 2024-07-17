@@ -27,6 +27,7 @@ mappings_use_regex = true
 "^.*C922_Pro_Stream_Webcam_4CAC8CDF.*$" = "C922 Pro Stream Webcam"
 "·*alsa_input.*.analog-stereo.*$" = "Mic"
 "^.*.20_1B_88_59_AF_4F.*$" = "EBs"
+"bluez_input.23:06:16:AB:D8:54" = "Moto XT220"
 
 [[block]]
 block = "sound"
@@ -42,6 +43,7 @@ mappings_use_regex = true
 "^·*alsa_output.*.analog-stereo.*$" = "Speaker"
 "bluez_output.20_1B_88_59_AF_4F.*$" = "EBs"
 "bluez_output.B8_9A_2A_D3_39_01.*$" = "dragonfly"
+"bluez_output.23_06_16_AB_D8_54.*$" = "Moto XT220"
 
 [[block]]
 block = "hueshift"
