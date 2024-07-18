@@ -9,28 +9,42 @@ window#waybar {
 	color: #f3f4f5;
 }
 
-
+#tags,
 #workspaces,
 #wireplumber,
 #upower,
 #tray {
 	background: #30343D;
 }
+#tags button {
+	padding: 0 0px;
+	color: #f3f4f5;
+}
+#tags button.active {
+	color: #5294E2;
+}
+#tags button.focused {
+	color: #5294E2;
+}
 
 #workspaces button {
 	padding: 0 0px;
 	color: #f3f4f5;
 }
+
 #workspaces button.active {
 	color: #5294E2;
 }
+
 #workspaces button.focused {
 	color: #5294E2;
 }
+
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
+
 #workspaces button:hover {
 	background: #0D0F14;
 	border: #0D0F14;
@@ -55,6 +69,6 @@ window#waybar {
 #custom-ddcutil,
 #custom-dunst,
 #upower {
-	padding: 0 8px;
+	padding: 0 6px;
 }
 

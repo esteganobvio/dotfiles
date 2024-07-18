@@ -2,16 +2,18 @@
   "layer": "top",
   "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
-  "height": 10,
+  "height": 6,
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces"
+    "river/tags",
+    "sway/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "hyprland/window",
-    "sway/window"
+    "river/window",
+    "sway/window",
+    "hyprland/window"
   ],
   "modules-right": [
     "idle_inhibitor",
