@@ -10,7 +10,7 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-riverctl keyboard-layout us_intl
+riverctl keyboard-layout {{ kb_layout }}
 riverctl input pointer-1739-52824-SYNA8008:00_06CB:CE58_Touchpad natural-scroll enabled
 riverctl input pointer-1739-52824-SYNA8008:00_06CB:CE58_Touchpad disable-while-trackpointing enabled
 riverctl input pointer-1739-52824-SYNA8008:00_06CB:CE58_Touchpad disable-white-typing enabled
