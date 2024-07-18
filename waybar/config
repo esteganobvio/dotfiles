@@ -3,6 +3,7 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
   "height": 6,
+  "margin": 2,
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
@@ -30,7 +31,7 @@
     "disable-scroll": true,
     "all-outputs": false,
     "warp-on-scroll": false,
-    "format": " {icon} ",
+    "format": "{id}",
     "format-icons": {
       "1": "",
       "2": "󰖟",
@@ -69,6 +70,7 @@
     }
   },
   "idle_inhibitor": {
+    "start-activated": true,
     "format": "{icon}",
     "format-icons": {
       "activated": "󰅶",
@@ -77,7 +79,7 @@
   },
   "tray": {
     // "icon-size": 21,
-    "spacing": 10
+    "spacing": 8
   },
   "clock": {
     "timezone": "America/Buenos_Aires",

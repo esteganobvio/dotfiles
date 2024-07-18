@@ -2,6 +2,8 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Fira Mono, FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
+    border-radius: 3px;
+    border: 0;
 }
 
 window#waybar {
@@ -28,28 +30,28 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 0px;
+	padding: 0 8px;
 	color: #f3f4f5;
 }
 
 #workspaces button.active {
-	color: #5294E2;
+  padding: 0 8px;
+  color: #f3f4f5;
+	background: #5294E2;
 }
 
 #workspaces button.focused {
-	color: #5294E2;
+  padding: 0 8px;
+  color: #f3f4f5;
+	background: #5294E2;
 }
 
 #workspaces button:hover {
+  padding: 0 8px;
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
 
-#workspaces button:hover {
-	background: #0D0F14;
-	border: #0D0F14;
-	padding: 0 0px;
-}
 
 #pulseaudio {
 	color: #5294E2;
