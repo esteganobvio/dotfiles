@@ -18,7 +18,7 @@ profile wonderfly-docked {
 }
 
 profile wonderfly-undocked {
-	output "AU Optronics 0xD291 Unknown" enable mode --custom 1920x1200 scale 1
+	output "AU Optronics 0xD291 Unknown" enable mode 1920x1200 scale 1
 }
 
 profile wonderfly-mh {
