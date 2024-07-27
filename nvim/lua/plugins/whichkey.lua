@@ -1,160 +1,73 @@
 return {
   'folke/which-key.nvim',
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.nvim",
+  },
   event = 'VeryLazy',
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
-  config = function()
-    local wk = require('which-key')
-    local which_key = {
-      setup = {
-        plugins = {
-          marks = true,
-          registers = true,
-          presets = {
-            operators = false,
-            motions = false,
-            text_objects = false,
-            windows = true,
-            nav = true,
-            z = true,
-            g = true,
-          },
-          spelling = { enabled = true, suggestions = 20 },
-        },
-        icons = {
-          breadcrumb = "»",
-          separator = "➜",
-          group = "+",
-        },
-        window = {
-          border = "none",     -- none, single, double, shadow
-          position = "bottom", -- bottom, top
-          margin = { 1, 0, 1, 0 },
-          padding = { 2, 2, 2, 2 },
-        },
-        layout = {
-          height = { min = 4, max = 25 },
-          width = { min = 20, max = 50 },
-          spacing = 3,
-        },
-        hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
-        show_help = true,
-      },
-      opts = {
-        mode = "n",
-        prefix = "<leader>",
-        buffer = nil,
-        silent = true,
-        noremap = true,
-        nowait = true,
-      },
-      vopts = {
-        mode = "v",
-        prefix = "<leader>",
-        buffer = nil,
-        silent = true,
-        noremap = true,
-        nowait = true,
-      },
-      -- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
-      -- see https://neovim.io/doc/user/map.html#:map-cmd
-      vmappings = {},
-      mappings = {
-        ["c"] = { ":BufferClose!<CR>", "Close Buffer" },
-        --i = {
-        --	name = "ChatGPT",
-        --	e = {
-        --		function()
-        --      chatgpt.edit_with_instructions()
-        --    end,
-        --    "Edit with instructions",
-        --	},
-        --},
-        n = {
-          name = "NvimTree",
-          n = { ":NvimTreeToggle<CR>", "Toggle" },
-          r = { ":NvimTreeRefresh<CR>", "Refresh" },
-          f = { ":NvimTreeFindFile<CR>", "Find File" },
-        },
-        b = {
-          name = "Buffers",
-          l = { ":Telescope buffers<CR>", "List Buffers" },
-          b = { ":b#<cr>", "Previous" },
-          d = { ":bd<cr>", "Delete" },
-          f = { ":Telescope buffers <cr>", "Find" },
-          n = { ":bn<cr>", "Next" },
-          p = { ":bp<cr>", "Previous" },
-        },
-        p = {
-          name = "Plugins",
-          i = { ":Lazy install<cr>", "Install" },
-          s = { ":Lazy sync<cr>", "Sync" },
-          S = { ":Lazy show<cr>", "Show" },
-          u = { ":Lazy update<cr>", "Update" },
-        },
-        l = {
-          name = "LSP",
-          a = { ":Telescope lsp_code_actions<cr>", "Code Action" },
-          d = {
-            ":Telescope lsp_document_diagnostics<cr>",
-            "Document Diagnostics",
-          },
-          w = {
-            ":Telescope diagnostics<cr>",
-            "Workspace Diagnostics",
-          },
-          f = { ":lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-          i = { ":LspInfo<cr>", "Info" },
-          I = { ":Mason<cr>", "Installer Info" },
-          r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
-        },
-        s = {
-          name = "Search",
-          b = { ":Telescope git_branches <cr>", "Checkout branch" },
-          c = { ":Telescope colorscheme <cr>", "Colorscheme" },
-          C = { ":Telescope commands <cr>", "Commands" },
-          f = { ":Telescope find_files <cr>", "Find File" },
-          g = { ":Telescope git_files <cr>", "Find Git File" },
-          h = { ":Telescope help_tags <cr>", "Find Help" },
-          j = { ":Telescope jumplist <cr>", "Jumplist" },
-          k = { ":Telescope keymaps <cr>", "Keymaps" },
-          M = { ":Telescope man_pages <cr>", "Man Pages" },
-          r = { ":Telescope oldfiles <cr>", "Open Recent File" },
-          R = { ":Telescope registers <cr>", "Registers" },
-          t = { ":Telescope live_grep <cr>", "Text" },
-          n = { ":Telescope live_grep search_dirs={os.getenv('NOTES')} <cr>", "Notes" },
-          p = {
-            ":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-            "Colorscheme with Preview",
-          },
-        },
-        T = {
-          name = "Treesitter",
-          i = { ":TSConfigInfo<cr>", "Info" },
-        },
-        t = {
-          name = "Diagnostics",
-          t = { "<cmd>TroubleToggle<cr>", "trouble" },
-          w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
-          d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
-          q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
-          l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
-          r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
-        },
-        g = {
-          name = "+Git",
-          s = { "<cmd>G<cr>", "Status" },
-          c = { "<cmd>G commit<cr>", "Commit" },
-          w = {
-            name = "Worktrees",
-            c = { ":lua require('telescope).extensions.git_worktree.create_git_worktree()<cr>", "Create Worktree" },
-            l = { ":lua require('telescope).extensions.git_worktree.git_worktrees()<cr>", "List Worktrees" },
-          },
-        },
-      },
+  opts_extend = { "spec" },
+  opts = {
+    defaults = {},
+    spec = {
+      -- stylua: ignore
+      { "<leader>T", group = "Treesitter", nowait = true, remap = false },
+      { "<leader>Ti", ":TSConfigInfo<cr>", desc = "Info", nowait = true, remap = false },
+      { "<leader>b", group = "Buffers", nowait = true, remap = false },
+      { "<leader>bb", ":b#<cr>", desc = "Previous", nowait = true, remap = false },
+      { "<leader>bd", ":bd<cr>", desc = "Delete", nowait = true, remap = false },
+      { "<leader>bf", ":Telescope buffers <cr>", desc = "Find", nowait = true, remap = false },
+      { "<leader>bl", ":Telescope buffers<CR>", desc = "List Buffers", nowait = true, remap = false },
+      { "<leader>bn", ":bn<cr>", desc = "Next", nowait = true, remap = false },
+      { "<leader>bp", ":bp<cr>", desc = "Previous", nowait = true, remap = false },
+      { "<leader>c", ":BufferClose!<CR>", desc = "Close Buffer", nowait = true, remap = false },
+      { "<leader>g", group = "Git", nowait = true, remap = false },
+      { "<leader>gc", "<cmd>G commit<cr>", desc = "Commit", nowait = true, remap = false },
+      { "<leader>gs", "<cmd>G<cr>", desc = "Status", nowait = true, remap = false },
+      { "<leader>gw", group = "Worktrees", nowait = true, remap = false },
+      { "<leader>gwc", ":lua require('telescope).extensions.git_worktree.create_git_worktree()<cr>", desc = "Create Worktree", nowait = true, remap = false },
+      { "<leader>gwl", ":lua require('telescope).extensions.git_worktree.git_worktrees()<cr>", desc = "List Worktrees", nowait = true, remap = false },
+      { "<leader>l", group = "LSP", nowait = true, remap = false },
+      { "<leader>lI", ":Mason<cr>", desc = "Installer Info", nowait = true, remap = false },
+      { "<leader>la", ":Telescope lsp_code_actions<cr>", desc = "Code Action", nowait = true, remap = false },
+      { "<leader>ld", ":Telescope lsp_document_diagnostics<cr>", desc = "Document Diagnostics", nowait = true, remap = false },
+      { "<leader>lf", ":lua vim.lsp.buf.format{async=true}<cr>", desc = "Format", nowait = true, remap = false },
+      { "<leader>li", ":LspInfo<cr>", desc = "Info", nowait = true, remap = false },
+      { "<leader>lr", ":lua vim.lsp.buf.rename()<cr>", desc = "Rename", nowait = true, remap = false },
+      { "<leader>lw", ":Telescope diagnostics<cr>", desc = "Workspace Diagnostics", nowait = true, remap = false },
+      { "<leader>n", group = "NvimTree", nowait = true, remap = false },
+      { "<leader>nf", ":NvimTreeFindFile<CR>", desc = "Find File", nowait = true, remap = false },
+      { "<leader>nn", ":NvimTreeToggle<CR>", desc = "Toggle", nowait = true, remap = false },
+      { "<leader>nr", ":NvimTreeRefresh<CR>", desc = "Refresh", nowait = true, remap = false },
+      { "<leader>p", group = "Plugins", nowait = true, remap = false },
+      { "<leader>pS", ":Lazy show<cr>", desc = "Show", nowait = true, remap = false },
+      { "<leader>pi", ":Lazy install<cr>", desc = "Install", nowait = true, remap = false },
+      { "<leader>ps", ":Lazy sync<cr>", desc = "Sync", nowait = true, remap = false },
+      { "<leader>pu", ":Lazy update<cr>", desc = "Update", nowait = true, remap = false },
+      { "<leader>s", group = "Search", nowait = true, remap = false },
+      { "<leader>sC", ":Telescope commands <cr>", desc = "Commands", nowait = true, remap = false },
+      { "<leader>sM", ":Telescope man_pages <cr>", desc = "Man Pages", nowait = true, remap = false },
+      { "<leader>sR", ":Telescope registers <cr>", desc = "Registers", nowait = true, remap = false },
+      { "<leader>sb", ":Telescope git_branches <cr>", desc = "Checkout branch", nowait = true, remap = false },
+      { "<leader>sc", ":Telescope colorscheme <cr>", desc = "Colorscheme", nowait = true, remap = false },
+      { "<leader>sf", ":Telescope find_files <cr>", desc = "Find File", nowait = true, remap = false },
+      { "<leader>sg", ":Telescope git_files <cr>", desc = "Find Git File", nowait = true, remap = false },
+      { "<leader>sh", ":Telescope help_tags <cr>", desc = "Find Help", nowait = true, remap = false },
+      { "<leader>sj", ":Telescope jumplist <cr>", desc = "Jumplist", nowait = true, remap = false },
+      { "<leader>sk", ":Telescope keymaps <cr>", desc = "Keymaps", nowait = true, remap = false },
+      { "<leader>sn", ":Telescope live_grep search_dirs={os.getenv('NOTES')} <cr>", desc = "Notes", nowait = true, remap = false },
+      { "<leader>sp", ":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", desc = "Colorscheme with Preview", nowait = true, remap = false },
+      { "<leader>sr", ":Telescope oldfiles <cr>", desc = "Open Recent File", nowait = true, remap = false },
+      { "<leader>st", ":Telescope live_grep <cr>", desc = "Text", nowait = true, remap = false },
+      { "<leader>t", group = "Diagnostics", nowait = true, remap = false },
+      { "<leader>td", ":Trouble diagnostics toggle filter.buf=0 <cr>", desc = "document", nowait = true, remap = false },
+      { "<leader>tl", ":Trouble loclist toggle <cr>", desc = "loclist", nowait = true, remap = false },
+      { "<leader>tq", ":Trouble qflist toggle <cr>", desc = "quickfix", nowait = true, remap = false },
+      { "<leader>tr", ":Trouble lsp toggle focus=false win.position=right <cr>", desc = "references", nowait = true, remap = false },
+      { "<leader>tt", ":Trouble diagnostics toggle <cr>", desc = "trouble", nowait = true, remap = false },
     }
+  },
+  config = function(_, ops)
+    local wk = require('which-key')
     function Map_key(mode, lhs, rhs, opts)
       local options = { noremap = true, silent = true }
       if opts then
@@ -176,20 +89,6 @@ return {
 
     Map_key("c", "W!", "w !sudo tee % >/dev/null")
 
-    wk.setup(which_key.setup)
-    local opts = which_key.opts
-    local vopts = which_key.vopts
-    local mappings = which_key.mappings
-    local vmappings = which_key.vmappings
-    wk.register(mappings, opts)
-    wk.register(vmappings, vopts)
-    if which_key.on_config_done then
-      which_key.on_config_done(wk)
-    end
+    wk.setup(ops)
   end,
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
 }
