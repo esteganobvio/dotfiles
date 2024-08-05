@@ -2,6 +2,7 @@ local servers = {
 	"dockerls",
 	"gopls",
 	"helm_ls",
+  "bashls",
 	"jsonls",
 	"lua_ls",
 	"pyright",

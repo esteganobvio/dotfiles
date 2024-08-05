@@ -2,7 +2,7 @@
 size = {{ font_size }}
 [font.offset]
 x = 0
-y = 0
+y = 1
 [font.bold]
 family = "{{ font_family }}"
 style = "Bold"
