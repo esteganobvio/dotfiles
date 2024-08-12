@@ -41,10 +41,13 @@ depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gam
 sway = "~/.config/sway"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep", "nwg-dock-hyprland"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
+
+[nwg-dock-hyprland.files]
+nwg-dock-hyprland = "~/.config/nwg-dock-hyprland"
 
 [swaylock.files]
 swaylock = "~/.config/swaylock/config"
