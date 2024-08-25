@@ -6,7 +6,7 @@ vim.g.markdown_fenced_languages = {
 }
 
 vim.opt.backup = false -- creates a backup file
-vim.opt.clipboard = "" -- don't use clipboard
+vim.opt.clipboard = "unnamedplus" -- don't use clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.colorcolumn = "99999" -- fixes indentline for now
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
