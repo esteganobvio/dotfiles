@@ -5,13 +5,13 @@ return {
   config = function()
     local tokyonight = require("tokyonight")
     tokyonight.setup({
-      -- style = "night",
+      style = "night",
       -- style = "storm",
       -- style = "day",
       -- style = "night",
       -- style = "storm,
-      transparent = true,
+      transparent = false,
     })
-    vim.cmd [[colorscheme tokyonight]]
+    vim.cmd [[colorscheme tokyonight-night]]
   end
 }

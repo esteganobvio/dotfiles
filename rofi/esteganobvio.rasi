@@ -10,7 +10,7 @@
     hv: #5294e2; 
     primary: #0D0F14; 
     ug: #0B2447;
-    font: "Fira Mono 9";
+    font: "{{font_family}} {{font_size}}";
     background-color: @bg;
     //dark: @bg;
     border: 0px;
@@ -22,11 +22,11 @@
 
 // defines different aspects of the window
 window {
-    width: 600;
+    width: 800;
     /*since line wont work with height, i comment it out 
     if you rather control the size via height
     just comment it out */
-    //height: 500;
+    height: 300;
 
     orientation: horizontal;
     location: center;
