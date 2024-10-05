@@ -76,6 +76,9 @@ gammastep = "~/.config/gammastep/config.ini"
 [polybar.files]
 polybar = "~/.config/polybar"
 
+[wezterm.files]
+"wezterm.lua" = "~/.wezterm.lua"
+
 [default]
 depends = ["nvim", "asdf", "tmux"]
 
