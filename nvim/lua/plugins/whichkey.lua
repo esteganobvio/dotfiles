@@ -82,10 +82,19 @@ return {
     Map_key("n", "<tab>", ":tabnext<CR>")
     Map_key("n", "<S-tab>", ":tabprevious<CR>")
 
-    Map_key("n", "<C-h>", ":wincmd h<CR>")
-    Map_key("n", "<C-j>", ":wincmd j<CR>")
-    Map_key("n", "<C-k>", ":wincmd k<CR>")
-    Map_key("n", "<C-l>", ":wincmd l<CR>")
+    Map_key("n", "<C-h>", ":SmartCursorMoveLeft<CR>")
+    Map_key("n", "<C-j>", ":SmartCursorMoveDown<CR>")
+    Map_key("n", "<C-k>", ":SmartCursorMoveUp<CR>")
+    Map_key("n", "<C-l>", ":SmartCursorMoveRight<CR>")
+    Map_key("n", "<A-h>", ":SmartResizeLeft<CR>")
+    Map_key("n", "<A-j>", ":SmartResizeDown<CR>")
+    Map_key("n", "<A-k>", ":SmartResizeUp<CR>")
+    Map_key("n", "<A-l>", ":SmartResizeRight<CR>")
+    Map_key("n", "<leader><leader>h", ":SmartSwapLeft<CR>")
+    Map_key("n", "<leader><leader>j", ":SmartSwapDown<CR>")
+    Map_key("n", "<leader><leader>k", ":SmartSwapUp<CR>")
+    Map_key("n", "<leader><leader>l", ":SmartSwapRight<CR>")
+
 
     Map_key("c", "W!", "w !sudo tee % >/dev/null")
 
