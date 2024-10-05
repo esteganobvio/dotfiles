@@ -15,9 +15,6 @@ tmux = "~/.tmux.conf"
 [rofi.files]
 rofi = "~/.config/rofi"
 
-[i3bar-river.files]
-i3bar-river = "~/.config/i3bar-river"
-
 [i3status.files]
 i3status-top = "~/.config/i3status/i3status-top.toml"
 i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
@@ -46,26 +43,14 @@ depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gam
 [hyprland.files]
 hypr = "~/.config/hypr"
 
-[nwg-dock-hyprland.files]
-nwg-dock-hyprland = "~/.config/nwg-dock-hyprland"
-
 [swaylock.files]
 swaylock = "~/.config/swaylock/config"
-
-[river]
-depends = ["rofi", "dunst", "systemd-user", "kanshi", "gammastep", "i3bar-river", "i3status"]
-
-[river.files]
-river = "~/.config/river"
 
 [kanshi.files]
 kanshi = "~/.config/kanshi/config"
 
 [waybar.files]
 waybar = "~/.config/waybar"
-
-[kitty.files]
-kitty = "~/.config/kitty/kitty.conf"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
