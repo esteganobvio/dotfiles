@@ -3,7 +3,7 @@ local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smar
 local config = wezterm.config_builder()
 
 config.font = wezterm.font("FiraCode Nerd Font")
-config.font_size = 9
+config.font_size = {{ font_size }}
 config.line_height = 1.0
 config.color_scheme = "tokyonight"
 
