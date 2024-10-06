@@ -24,6 +24,11 @@ config.keys = {
 		key = "|",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
+  {
+		mods = "LEADER",
+		key = "|",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
 	{
 		mods = "LEADER",
 		key = "m",
