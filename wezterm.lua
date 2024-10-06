@@ -25,7 +25,7 @@ config.keys = {
 		key = "|",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
-  {
+	{
 		mods = "LEADER",
 		key = "|",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
@@ -47,10 +47,15 @@ config.keys = {
 			mode = "SwapWithActive",
 		}),
 	},
-  {
-    key = 'Enter',
-    mods = 'LEADER',
-    action = wezterm.action.ActivateCopyMode
+	{
+		key = "Enter",
+		mods = "LEADER",
+		action = wezterm.action.ActivateCopyMode,
+	},
+	{
+		key = "c",
+		mods = "LEADER",
+    action = wezterm.action.SpawnTab 'CurrentPaneDomain',
   },
 }
 
@@ -75,8 +80,8 @@ smart_splits.apply_to_config(config, {
 })
 
 local projects = {
-    "~/evolve",
-    "~/work"
+	"~/evolve",
+	"~/work",
 }
 
 sessionizer.set_projects(projects)
