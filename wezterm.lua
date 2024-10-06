@@ -20,8 +20,8 @@ config.keys = {
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		mods = "LEADER",
-		key = "=",
+		mods = "LEADER|SHIFT",
+		key = "|",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
