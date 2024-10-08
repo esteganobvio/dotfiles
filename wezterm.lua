@@ -7,7 +7,7 @@ config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = {{ font_size }}
 config.line_height = 1.0
 config.color_scheme = "tokyonight"
-
+config.disable_default_key_bindings = true
 config.window_frame = {
 	font = wezterm.font({ family = "Fira Code Nerd Font" }),
 	font_size = {{ font_size }},
@@ -57,6 +57,16 @@ config.keys = {
 		mods = "LEADER",
     action = wezterm.action.SpawnTab 'CurrentPaneDomain',
   },
+  {
+    key = "n",
+    mods = "LEADER",
+    action = wezterm.action.ActivateTabRelative(1),
+  },
+  {
+    key = "p",
+    mods = "LEADER",
+    action = wezterm.action.ActivateTabRelative(-1),
+  }
 }
 
 smart_splits.apply_to_config(config, {
