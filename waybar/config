@@ -16,6 +16,8 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "keyboard-state",
+    "tray",
     "power-profiles-daemon",
     "idle_inhibitor",
     "custom/dunst",
@@ -23,7 +25,6 @@
     "backlight",
     "upower",
     "clock",
-    "tray"
   ],
   // Modules configuration
   "hyprland/workspaces": {
@@ -66,7 +67,8 @@
     }
   },
   "tray": {
-    "spacing": 8
+    "spacing": 8,
+    "icon-size": 14
   },
   "clock": {
     "timezone": "America/Buenos_Aires",
@@ -99,7 +101,7 @@
     "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰝟 {volume}%",
     "format-icons": {
-      "headphone": "",
+      "headphone": " ",
       "hands-free": "",
       "headset": "",
       "phone": "",
@@ -134,8 +136,8 @@
     "tooltip": false
   },
   "mpris": {
-	"format": "{player_icon} {artist} {album} {title}",
-	"format-paused": "{status_icon} {artist} {album} {title}",
+	"format": "{player_icon} ({status}) {dynamic}",
+	"format-paused": "{status_icon} ({status}) {dynamic}",
   "internal": "1",
 	"player-icons": {
 		"default": "▶",
@@ -143,7 +145,18 @@
 	},
 	"status-icons": {
 		"paused": "⏸"
-	}
+	},
+  "power-profiles-daemon": {
+  "format": "{icon}   {profile}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
   }
+}
+ }
 }
 // vim: set filetype=json :
