@@ -10,20 +10,16 @@
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "river/tags",
-    "sway/workspaces",
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "river/window",
-    "sway/window",
     "hyprland/window"
   ],
   "modules-right": [
+    "power-profiles-daemon",
     "idle_inhibitor",
     "custom/dunst",
     "pulseaudio",
-    "custom/ddcutil",
     "backlight",
     "upower",
     "clock",
@@ -34,7 +30,7 @@
     "disable-scroll": true,
     "all-outputs": false,
     "warp-on-scroll": false,
-    "format": "{id}",
+    "format": "{id}: {icon} ",
     "format-icons": {
       "1": "",
       "2": "󰖟",
@@ -45,20 +41,9 @@
       "default": ""
     }
   },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "warp-on-scroll": false,
-    "format": " {icon} ",
-    "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "urgent": "",
-      "active": "",
-      "default": ""
-    }
+  "hyprland/window": {
+    "icon": true,
+    "icon-size": 14
   },
   "keyboard-state": {
     "numlock": false,
@@ -81,7 +66,6 @@
     }
   },
   "tray": {
-    // "icon-size": 21,
     "spacing": 8
   },
   "clock": {
@@ -90,7 +74,6 @@
     "format-alt": "{:%Y-%m-%d}"
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": [
       "",
@@ -111,18 +94,10 @@
     "tooltip": true,
     "tooltip-spacing": 20
   },
-  "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -131,46 +106,20 @@
       "portable": "",
       "car": "",
       "default": [
-        "",
-        "",
-        ""
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     },
     "on-click": "pavucontrol"
   },
-  "memory": {
-    "interval": 30,
-    "format": "{}% "
-  },
-  "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    // "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C "
-    },
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/dunst.sh",
     "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1,
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Paper",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty",
-    ],
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
-    }
+    "restart-interval": 1
   },
   "custom/ddcutil": {
-    "format": "{percentage}% {icon}",
+    "format": "{icon} {percentage}%",
     "format-icons": [
       "",
       "",
@@ -195,7 +144,6 @@
 	"status-icons": {
 		"paused": "⏸"
 	}
-	// "ignored-players": ["firefox"]
   }
 }
 // vim: set filetype=json :

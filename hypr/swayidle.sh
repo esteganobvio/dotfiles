@@ -3,11 +3,11 @@
 killall -q swayidle
 
 exec swayidle -w \
-  timeout 300 'swaylock' \
+  timeout 300 'hyprlock' \
   timeout 600 'hyprctl  dispatch dpms off' \
     resume 'hyprctl dispatch dpms on' \
   timeout 900 'systemctl suspend' \
-  before-sleep 'swaylock' \
+  before-sleep 'hyprlock' \
   after-resume 'hyprctl dispatch dpms on' \
-  lock 'swaylock' \
+  lock 'hyprlock' \
   &
