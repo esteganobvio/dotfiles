@@ -92,6 +92,7 @@ smart_splits.apply_to_config(config, {
 local projects = {
 	"~/evolve",
 	"~/work",
+  "~/proyectos",
 }
 
 sessionizer.set_projects(projects)
