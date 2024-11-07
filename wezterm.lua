@@ -7,6 +7,7 @@ config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = {{ font_size }}
 config.line_height = 1.1
 config.color_scheme = "tokyonight"
+config.window_decorations = "TITLE | RESIZE"
 --config.disable_default_key_bindings = true
 config.window_frame = {
 	font = wezterm.font({ family = "FiraCode Nerd Font" }),
