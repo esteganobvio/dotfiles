@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+if [ ! -f ./dotter ]; then
+  curl https://github.com/SuperCuber/dotter/releases/latest/download/dotter-linux-x64-musl -sL --output dotter
+  chmod +x dotter
+fi

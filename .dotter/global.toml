@@ -1,17 +1,5 @@
 [helpers]
 
-[nvim.files]
-nvim = "~/.config/nvim"
-
-[asdf.files]
-asdfrc = "~/.asdfrc"
-
-[alacritty.files]
-alacritty = "~/.config/alacritty/alacritty.toml"
-
-[tmux.files]
-tmux = "~/.tmux.conf"
-
 [rofi.files]
 rofi = "~/.config/rofi"
 
@@ -22,23 +10,26 @@ i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
 
-[picom.files]
-picom = "~/.config/picom.conf"
-
 [i3]
 depends = ["rofi", "polybar", "dunst", "picom", "systemd-user", "gammastep"]
 
 [i3.files]
 i3 = "~/.config/i3"
 
+[polybar.files]
+polybar = "~/.config/polybar"
+
+[picom.files]
+picom = "~/.config/picom.conf"
+
 [sway]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep", "i3status", "polybar"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "waybar", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -58,14 +49,27 @@ systemd-user = "~/.config/systemd/user"
 [gammastep.files]
 gammastep = "~/.config/gammastep/config.ini"
 
-[polybar.files]
-polybar = "~/.config/polybar"
+# Terminals
+[alacritty.files]
+alacritty = "~/.config/alacritty/alacritty.toml"
+
+[tmux.files]
+tmux = "~/.tmux.conf"
 
 [wezterm.files]
 "wezterm.lua" = "~/.wezterm.lua"
 
+[zsh.files]
+zshrc = "~/.zshrc"
+zshenv = "~/.zshenv"
+zprofile = "~/.zprofile"
+
+[nvim.files]
+nvim = "~/.config/nvim"
+
+# Default
 [default]
-depends = ["nvim", "asdf", "tmux"]
+depends = ["zsh", "nvim", "tmux"]
 
 [default.files]
 
