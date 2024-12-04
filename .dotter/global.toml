@@ -29,7 +29,7 @@ depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gam
 sway = "~/.config/sway"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "ironbar", "waybar", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -42,6 +42,9 @@ kanshi = "~/.config/kanshi/config"
 
 [waybar.files]
 waybar = "~/.config/waybar"
+
+[ironbar.files]
+ironbar = "~/.config/ironbar"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
