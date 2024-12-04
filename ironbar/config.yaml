@@ -1,0 +1,48 @@
+#---
+name: "dock"
+position: "right"
+height: 50
+icon_theme: "Paper"
+margin:
+  top: 30
+  bottom: 30
+start:
+  - bar:
+    - label: 
+      name: power-btn
+      on_click: popup:toggle
+      type: button
+    class: power-menu
+    popup:
+    - orientation: vertical
+      type: box
+      widgets:
+      - label: Power menu
+        name: header
+        type: label
+      - type: box
+        widgets:
+        - class: power-btn
+          label: <span font-size='12pt'>  </span>
+          on_click: '!loginctl lock-session'
+          type: button
+        - class: power-btn
+          label: <span font-size='12pt'>  </span>
+          on_click: '!loginctl lock-session'
+          type: button
+    type: custom
+  - type: clock
+    format: "%H:%M"
+  - type: "launcher"
+    favorites:
+      - neovide
+      - org.wezfurlong.wezterm
+      - vesktop
+      - brave-browser
+    show_name: false
+    show_icons: true
+    icon_size: 48
+
+end:
+  - type: "workspaces"
+    all_monitors: false
