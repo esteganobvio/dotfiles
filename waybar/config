@@ -1,30 +1,27 @@
 {
   "layer": "top",
   "position": "top", // Waybar position (top|bottom|left|right)
-  // "width": 1280, // Waybar width
+  "width": 0, // Waybar width
   "height": 6,
   "margin-top": 2,
   "margin-left": 2,
   "margin-right": 2,
-  "margin-bottom": 0,
+  "margin-bottom": 2,
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "hyprland/window"
   ],
   "modules-right": [
     "keyboard-state",
     "tray",
-    "power-profiles-daemon",
     "idle_inhibitor",
     "custom/dunst",
     "pulseaudio",
     "backlight",
-    "upower",
-    "clock",
+    "upower"
   ],
   // Modules configuration
   "hyprland/workspaces": {

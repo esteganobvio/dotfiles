@@ -1,12 +1,14 @@
-#---
+---
 name: "dock"
 position: "right"
 height: 50
 icon_theme: "Paper"
 margin:
-  top: 30
-  bottom: 30
+  top: 0
+  bottom: 5
 start:
+  - type: clock
+    format: "%H:%M"
   - bar:
     - label: 
       name: power-btn
@@ -31,8 +33,6 @@ start:
           on_click: '!loginctl lock-session'
           type: button
     type: custom
-  - type: clock
-    format: "%H:%M"
   - type: "launcher"
     favorites:
       - neovide
@@ -43,6 +43,6 @@ start:
     show_icons: true
     icon_size: 48
 
-end:
-  - type: "workspaces"
-    all_monitors: false
+#end:
+#  - type: "workspaces"
+#    all_monitors: false
