@@ -71,6 +71,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			lspconfig.tilt_ls.setup({})
+      lspconfig.kcl.setup({})
 			local opts = {}
 			for _, server in pairs(servers) do
 				opts = {
