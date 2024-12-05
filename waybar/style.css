@@ -3,7 +3,7 @@
     font-family: Fira Mono, FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
     border-radius: 3px;
-    border: 0;
+    border: 1;
 }
 
 window#waybar {
@@ -11,12 +11,25 @@ window#waybar {
 	color: #f3f4f5;
 }
 
+.modules-right {
+  background: #30343D;
+}
+
+.modules-left {
+  background: #30343D;
+}
+
 #tags,
 #workspaces,
 #wireplumber,
 #upower,
+#keyboard-state,
+#pulseaudio,
+#idle_inhibitor,
+#custom-dunst,
+#backlight,
 #tray {
-	background: #30343D;
+	/* background: #30343D; */
 }
 #tags button {
 	padding: 0 0px;
@@ -59,18 +72,16 @@ window#waybar {
 #upower {
 	color: #859900;
 }
-#mpris,
 #taskbar,
 #idle_inhibitor,
 #clock,
 #pulseaudio,
-#network,
 #backlight,
 #keyboard-state,
 #tray,
 #custom-ddcutil,
 #custom-dunst,
 #upower {
-	padding: 0 6px;
+	padding: 0 8px;
 }
 

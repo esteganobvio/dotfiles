@@ -110,3 +110,9 @@
 .popup-power-menu .power-btn:hover {
     background-color: @color_border_active;
 }
+
+.guacho {
+  margin: 2px;
+  border: 2px solid @color_bg;
+  background-color: @color_bg;
+}

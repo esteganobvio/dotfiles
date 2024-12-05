@@ -7,6 +7,13 @@ margin:
   top: 0
   bottom: 5
 start:
+  - bar:
+    - type: image
+      name: logo
+      src: file://Pictures/Wallpapers/estrella-federal.svg
+      size: 48
+    class: guacho
+    type: custom
   - type: clock
     format: "%H:%M"
   - bar:
