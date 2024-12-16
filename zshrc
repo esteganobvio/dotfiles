@@ -70,7 +70,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch fzf)
+plugins=(git git-auto-fetch fzf kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 eval "$(~/.local/bin/mise activate zsh)"
@@ -104,3 +104,6 @@ export EDITOR=nvim
 alias vim=nvim
 
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+
+PS1='$(kube_ps1)'$PROMPT

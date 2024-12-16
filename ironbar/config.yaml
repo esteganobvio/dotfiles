@@ -1,54 +1,55 @@
 ---
 name: "dock"
-position: "right"
-height: 50
+position: "bottom"
+anchor_to_edges: false
+height: 36
 icon_theme: "Paper"
 margin:
   top: 0
   bottom: 5
 start:
-  - bar:
-    - type: image
-      name: logo
-      src: file://Pictures/Wallpapers/estrella-federal.svg
-      size: 48
-    class: guacho
-    type: custom
-  - type: clock
-    format: "%H:%M"
-  - bar:
-    - label: 
-      name: power-btn
-      on_click: popup:toggle
-      type: button
-    class: power-menu
-    popup:
-    - orientation: vertical
-      type: box
-      widgets:
-      - label: Power menu
-        name: header
-        type: label
-      - type: box
-        widgets:
-        - class: power-btn
-          label: <span font-size='12pt'>  </span>
-          on_click: '!loginctl lock-session'
-          type: button
-        - class: power-btn
-          label: <span font-size='12pt'>  </span>
-          on_click: '!loginctl lock-session'
-          type: button
-    type: custom
+  #- bar:
+  #  - type: image
+  #    name: logo
+  #    src: file://Pictures/Wallpapers/estrella-federal.svg
+  #    size: 48
+  #  class: guacho
+  #  type: custom
+  #- type: clock
+  #  format: "%H:%M"
+  #- bar:
+  #  - label: 
+  #    name: power-btn
+  #    on_click: popup:toggle
+  #    type: button
+  #  class: power-menu
+  #  popup:
+  #  - orientation: vertical
+  #    type: box
+  #    widgets:
+  #    - label: Power menu
+  #      name: header
+  #      type: label
+  #    - type: box
+  #      widgets:
+  #      - class: power-btn
+  #        label: <span font-size='12pt'>  </span>
+  #        on_click: '!loginctl lock-session'
+  #        type: button
+  #      - class: power-btn
+  #        label: <span font-size='12pt'>  </span>
+  #        on_click: '!loginctl lock-session'
+  #        type: button
+  #  type: custom
   - type: "launcher"
     favorites:
       - neovide
       - org.wezfurlong.wezterm
-      - vesktop
+      - discord
       - brave-browser
     show_name: false
     show_icons: true
-    icon_size: 48
+    icon_size: 36
 
 #end:
 #  - type: "workspaces"

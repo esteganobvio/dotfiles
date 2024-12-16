@@ -21,7 +21,8 @@
     "custom/dunst",
     "pulseaudio",
     "backlight",
-    "upower"
+    "upower",
+    "clock"
   ],
   // Modules configuration
   "hyprland/workspaces": {
