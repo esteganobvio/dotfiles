@@ -107,3 +107,15 @@ export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 
 PS1='$(kube_ps1)'$PROMPT
+
+if [ -f /run/.toolboxenv -o -f /run/.containerenv ]; then
+    export IS_CONTAINER=1
+    PS1=' '$PS1
+else
+    export IS_CONTAINER=0
+fi
+
+# https://wezfurlong.org/wezterm/config/lua/pane/get_user_vars.html
+if [ "$TERM" != "linux" -a "$TERM" != "dumb" ]; then
+    printf "\033]1337;SetUserVar=%s=%s\007" is_toolbox `echo -n $IS_CONTAINER | base64`
+fi
