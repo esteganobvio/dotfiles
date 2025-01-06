@@ -10,7 +10,7 @@ return {
       -- style = "day",
       -- style = "night",
       -- style = "storm,
-      transparent = false,
+      transparent = true,
     })
     vim.cmd [[colorscheme tokyonight-night]]
   end

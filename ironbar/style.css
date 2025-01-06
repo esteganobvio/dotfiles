@@ -11,7 +11,7 @@
 }
 
 * {
-  font-family: "FiraCode Nerd Font";
+  font-family: "{{ font_family }}";
   font-weight: normal;
   font-size: 12px;
   border: none;

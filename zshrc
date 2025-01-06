@@ -110,7 +110,7 @@ PS1='$(kube_ps1)'$PROMPT
 
 if [ -f /run/.toolboxenv -o -f /run/.containerenv ]; then
     export IS_CONTAINER=1
-    PS1=' '$PS1
+    PS1=' ($CONTAINER_ID)'$PS1
 else
     export IS_CONTAINER=0
 fi

@@ -8,7 +8,10 @@ config.font_size = {{ font_size }}
 config.line_height = 1.0
 config.color_scheme = "tokyonight"
 config.window_background_opacity = 0.8
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "TITLE|RESIZE"
+config.integrated_title_button_style = "Gnome"
+config.integrated_title_buttons = { 'Close' }
+config.enable_wayland = true
 --config.disable_default_key_bindings = true
 config.window_frame = {
     font = wezterm.font({ family = "{{ font_family }}" }),
