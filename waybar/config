@@ -10,7 +10,9 @@
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "sway/workspaces",
+    "wlr/workspaces"
   ],
   "modules-center": [
   ],
@@ -25,6 +27,36 @@
     "clock"
   ],
   // Modules configuration
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{name}: {icon} ",
+    "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "urgent": "",
+      //"active": "",
+      "default": ""
+    }
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{name}: {icon} ",
+    "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "urgent": "",
+      //"active": "",
+      "default": ""
+    }
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,

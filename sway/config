@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -42,41 +42,41 @@ gaps inner 2
 gaps outer 2
 #gaps top 0
 
-corner_radius 5
+#corner_radius 5
 
-font FiraCode Nerd Font 9
+font {{ font_family }} {{ font_size }}
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  id top
-  position top
-  status_command i3status-rs ~/.config/i3status/i3status-top.toml
-  mode dock
-  icon_theme "Paper"
-  colors {
-    background #30343Df1
-    separator #757575
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+#bar {
+#  id top
+#  position top
+#  status_command i3status-rs ~/.config/i3status/i3status-top.toml
+#  mode dock
+#  icon_theme "Paper"
+#  colors {
+#    background #30343Df1
+#    separator #757575
+#    focused_workspace  $bg-color          $bg-color          $text-color
+#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  }
+#}
 
-bar {
-  id bottom
-  position bottom
-  status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
-  mode dock
-  tray_output none
-  workspace_buttons no
-  colors {
-    background #30343D00
-    separator #757575
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-}
+#bar {
+#  id bottom
+#  position bottom
+#  status_command i3status-rs ~/.config/i3status/i3status-bottom.toml
+#  mode dock
+#  tray_output none
+#  workspace_buttons no
+#  colors {
+#    background #30343D00
+#    separator #757575
+#    focused_workspace  $bg-color          $bg-color          $text-color
+#    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  }
+#}
 
 include ~/.config/sway/config.d/*
 
