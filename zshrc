@@ -119,3 +119,5 @@ fi
 if [ "$TERM" != "linux" -a "$TERM" != "dumb" ]; then
     printf "\033]1337;SetUserVar=%s=%s\007" is_toolbox `echo -n $IS_CONTAINER | base64`
 fi
+
+export PATH="/usr/local/bin:$PATH"

@@ -1,8 +1,8 @@
 [alacritty.variables]
 decorations = "none"
 [default.variables]
-font_family = "FiraCode Nerd Font"
-font_size = "11"
+font_family = "Jetbrains Mono"
+font_size = "10"
 kb_layout = "us_intl"
 xkb_layout = "us"
 xkb_variant = "intl"
