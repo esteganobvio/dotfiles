@@ -62,6 +62,9 @@ tmux = "~/.tmux.conf"
 [wezterm.files]
 "wezterm.lua" = "~/.wezterm.lua"
 
+[ghostty.files]
+ghostty = "~/.config/ghostty"
+
 [zsh.files]
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
