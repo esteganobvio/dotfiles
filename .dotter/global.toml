@@ -80,6 +80,10 @@ zprofile = "~/.zprofile"
 [nvim.files]
 nvim = "~/.config/nvim"
 
+[nvim.variables]
+coder_model = "qwen2.5-coder:14b"
+chater_model = "deepseek-r1:14b"
+
 # Default
 [default]
 depends = ["zsh", "nvim", "tmux"]

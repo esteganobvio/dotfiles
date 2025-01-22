@@ -17,7 +17,8 @@ local tools = {
   "tfsec",
   "shellcheck",
   "prettier",
-  "ruff"
+  "ruff",
+  "flake8",
 }
 
 local settings = {

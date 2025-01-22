@@ -20,6 +20,7 @@ local tools = {
 	"tfsec",
 	"yamlfix",
 	"yamllint",
+  "flake8",
 }
 
 return {
