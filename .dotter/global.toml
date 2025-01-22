@@ -1,5 +1,12 @@
 [helpers]
 
+[ollama.files]
+"ollama/ollama.container" = "~/.config/containers/systemd/ollama.container"
+"ollama/ollama-web-ui.container" = "~/.config/containers/systemd/ollama-web-ui.container"
+
+[ollama.variables]
+amd_gpu = true
+
 [rofi.files]
 rofi = "~/.config/rofi"
 

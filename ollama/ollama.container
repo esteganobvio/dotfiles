@@ -1,0 +1,17 @@
+[Container]
+ContainerName=ollama
+{{#if amd_gpu}}
+Image=docker.io/ollama/ollama:rocm
+{{else}}
+Image=docker.io/ollama/ollama:latest
+{{/if}}
+Volume=ollama:/root/.ollama
+Pull=newer
+AddDevice=/dev/kfd
+AddDevice=/dev/dri
+PublishPort=11434:11434
+SecurityLabelType=container_runtime_t
+
+[Install]
+# Start by default on boot
+WantedBy=multi-user.target default.target
