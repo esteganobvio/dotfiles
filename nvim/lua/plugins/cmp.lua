@@ -35,7 +35,6 @@ return {
 				Event = "",
 				Operator = "",
 				TypeParameter = "",
-				CodeCompanion = "",
 			}
 			-- find more here: https://www.nerdfonts.com/cheat-sheet
 			cmp.setup({
@@ -94,7 +93,6 @@ return {
 						-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 						vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 						vim_item.menu = ({
-							codecompanion = "[CC]",
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[NVIM_LUA]",
 							luasnip = "[Snippet]",
@@ -117,9 +115,6 @@ return {
 						option = {
 							additional_arguments = "--max-depth 6 --one-file-system --ignore-file ~/.config/nvim/ignore.rg",
 						},
-					},
-					per_file = {
-						{ name = "codecompanion" },
 					},
 				},
 				confirm_opts = {
