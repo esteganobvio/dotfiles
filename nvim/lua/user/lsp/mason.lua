@@ -5,20 +5,20 @@
 ---	"helm_ls",
 ---	"jsonls",
 ---	"lua_ls",
+---	"pyright",
 ---	"terraformls",
 ---	"tflint",
 ---	"yamlls",
----	"pyright",
 ---}
 ---
 ---local tools = {
----	"yamllint",
----	"yamlfix",
----	"tfsec",
----	"shellcheck",
+---	"flake8",
 ---	"prettier",
 ---	"ruff",
----	"flake8",
+---	"shellcheck",
+---	"tfsec",
+---	"yamlfix",
+---	"yamllint",
 ---}
 ---
 ---local settings = {
