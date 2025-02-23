@@ -2,7 +2,7 @@ local servers = {
 	"dockerls",
 	"gopls",
 	"helm_ls",
-  "bashls",
+	"bashls",
 	"jsonls",
 	"lua_ls",
 	"pyright",
@@ -20,7 +20,7 @@ local tools = {
 	"tfsec",
 	"yamlfix",
 	"yamllint",
-  "flake8",
+	"flake8",
 }
 
 return {
@@ -53,6 +53,9 @@ return {
 	},
 	{
 		"nvimtools/none-ls.nvim",
+		dependencies = {
+			"nvimtools/none-ls-extras.nvim",
+		},
 	},
 	{
 		"jay-babu/mason-null-ls.nvim",
@@ -72,7 +75,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			lspconfig.tilt_ls.setup({})
-      lspconfig.kcl.setup({})
+			lspconfig.kcl.setup({})
 			local opts = {}
 			for _, server in pairs(servers) do
 				opts = {

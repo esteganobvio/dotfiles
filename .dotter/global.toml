@@ -72,6 +72,9 @@ tmux = "~/.tmux.conf"
 [ghostty.files]
 ghostty = "~/.config/ghostty"
 
+[kitty.files]
+kitty = "~/.config/kitty/kitty.conf"
+
 [zsh.files]
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
