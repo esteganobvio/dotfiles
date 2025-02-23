@@ -1,8 +1,8 @@
 local servers = {
+	"bashls",
 	"dockerls",
 	"gopls",
 	"helm_ls",
-	"bashls",
 	"jsonls",
 	"lua_ls",
 	"pyright",
@@ -13,6 +13,7 @@ local servers = {
 
 local tools = {
 	"black",
+	"flake8",
 	"prettier",
 	"ruff",
 	"shellcheck",
@@ -20,7 +21,6 @@ local tools = {
 	"tfsec",
 	"yamlfix",
 	"yamllint",
-	"flake8",
 }
 
 return {
