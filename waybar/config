@@ -6,7 +6,7 @@
   "margin-top": 3,
   "margin-left": 2,
   "margin-right": 2,
-  "margin-bottom": 0,
+  "margin-bottom": 3,
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
@@ -15,16 +15,16 @@
     "wlr/workspaces"
   ],
   "modules-center": [
+    "clock",
+    "custom/dunst"
   ],
   "modules-right": [
     "keyboard-state",
     "tray",
     "idle_inhibitor",
-    "custom/dunst",
     "pulseaudio",
     "backlight",
-    "upower",
-    "clock"
+    "upower"
   ],
   // Modules configuration
   "wlr/workspaces": {
@@ -103,7 +103,7 @@
   "clock": {
     "timezone": "America/Buenos_Aires",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%H:%M %Y-%m-%d}"
   },
   "backlight": {
     "format": "{icon} {percent}%",

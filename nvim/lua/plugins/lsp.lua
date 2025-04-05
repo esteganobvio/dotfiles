@@ -18,6 +18,7 @@ local tools = {
 	"ruff",
 	"shellcheck",
 	"stylua",
+  "trivy",
 	"tfsec",
 	"yamlfix",
 	"yamllint",
