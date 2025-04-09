@@ -3,28 +3,30 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   "width": 0, // Waybar width
   "height": 30,
-  "margin-top": 3,
-  "margin-left": 2,
-  "margin-right": 2,
-  "margin-bottom": 3,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
     "sway/workspaces",
-    "wlr/workspaces"
+    "sway/window",
+    "sway/mode"
   ],
   "modules-center": [
     "clock",
     "custom/dunst"
   ],
   "modules-right": [
-    "keyboard-state",
+    "pulseaudio",
+    "mpris",
     "tray",
     "idle_inhibitor",
-    "pulseaudio",
     "backlight",
-    "upower"
+    "upower",
+    "power-profiles-daemon"
   ],
   // Modules configuration
   "wlr/workspaces": {
@@ -167,6 +169,7 @@
   },
   "mpris": {
 	"format": "{player_icon} ({status}) {dynamic}",
+  "dynamic-len": 20,
 	"format-paused": "{status_icon} ({status}) {dynamic}",
   "internal": "1",
 	"player-icons": {
@@ -175,7 +178,8 @@
 	},
 	"status-icons": {
 		"paused": "⏸"
-	},
+	}
+  },
   "power-profiles-daemon": {
   "format": "{icon}   {profile}",
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -187,6 +191,5 @@
     "power-saver": ""
   }
 }
- }
 }
 // vim: set filetype=jsonc :

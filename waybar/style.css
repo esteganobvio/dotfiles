@@ -2,12 +2,12 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono, Fira Mono, FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
-    border-radius: 3px;
+    border-radius: 0px;
     border: 1;
 }
 
 window#waybar {
-	background: rgba(0, 0, 0, 0);
+	background: #30343D;
 	color: #f3f4f5;
 }
 
@@ -25,6 +25,8 @@ window#waybar {
 
 #tags,
 #workspaces,
+#window,
+#mode,
 #wireplumber,
 #upower,
 #keyboard-state,
@@ -83,6 +85,7 @@ window#waybar {
 #backlight,
 #keyboard-state,
 #tray,
+#mpris,
 #custom-ddcutil,
 #custom-dunst,
 #upower {

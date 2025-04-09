@@ -9,6 +9,7 @@ config.line_height = 1.0
 config.color_scheme = "tokyonight"
 config.window_background_opacity = 1
 config.window_decorations = "TITLE|RESIZE"
+--config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.animation_fps = 60
 config.integrated_title_button_style = "Gnome"
 config.integrated_title_buttons = { 'Close' }
