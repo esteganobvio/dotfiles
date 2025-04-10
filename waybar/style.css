@@ -33,6 +33,7 @@ window#waybar {
 #pulseaudio,
 #idle_inhibitor,
 #custom-dunst,
+#power-profiles-daemon,
 #backlight,
 #tray {
 	/* background: #30343D; */
@@ -79,6 +80,9 @@ window#waybar {
 	color: #859900;
 }
 #taskbar,
+#window,
+#mode,
+#power-profiles-daemon,
 #idle_inhibitor,
 #clock,
 #pulseaudio,

@@ -59,6 +59,12 @@
       "default": ""
     }
   },
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 30,
+    "rewrite": {
+    }
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
@@ -181,7 +187,7 @@
 	}
   },
   "power-profiles-daemon": {
-  "format": "{icon}   {profile}",
+  "format": "{icon} ",
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   "tooltip": true,
   "format-icons": {
