@@ -69,6 +69,9 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin "sigugo/tokyo-night-tmux"
 set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'mrjones2014/smart-splits.nvim'
+
+
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com:user/plugin'
