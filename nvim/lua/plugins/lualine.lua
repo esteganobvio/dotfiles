@@ -50,7 +50,8 @@ return {
           "encoding",
           "fileformat",
           "filetype",
-        }, -- I added copilot here
+          {require('mcphub.extensions.lualine')},
+        },
       },
     })
   end,

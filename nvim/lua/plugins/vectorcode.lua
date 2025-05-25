@@ -1,7 +1,8 @@
 return {
   {
     "Davidyz/VectorCode",
-    version = "0.5.6",
+    version = "*",
+    build = "mise use -g pipx:vectorcode@latest",
     dependencies = {
       "nvim-lua/plenary.nvim"
     },

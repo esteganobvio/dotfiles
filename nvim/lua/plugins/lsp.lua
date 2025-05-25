@@ -6,6 +6,7 @@ local servers = {
 	"jsonls",
 	"lua_ls",
 	"pyright",
+  "ruff",
 	"terraformls",
 	"tflint",
 	"yamlls",
