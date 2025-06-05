@@ -4,6 +4,23 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup()
+    end,
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = function()
+      require('toggleterm').setup {
+        open_mapping = [[<c-\>]],
+      }
+    end,
+  },
+  {
     'mrjones2014/smart-splits.nvim',
     build = './kitty/install-kittens.bash',
     config = function()
@@ -53,12 +70,37 @@ return {
       -- add any opts here
       -- for example
       provider = 'gemini',
-      gemini = {
-        endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
-        model = 'gemini-2.5-flash-preview-05-20',
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
-        max_tokens = 8192,
+      providers = {
+        gemini = {
+          endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
+          model = 'gemini-2.5-flash-preview-05-20',
+          timeout = 30000, -- Timeout in milliseconds
+          extra_body_requests = {
+            temperature = 0,
+            max_tokens = 8192,
+          },
+        },
+        ollama = {
+          endpoint = 'http://127.0.0.1:11434',
+          model = 'gemma3:12b',
+          timeout = 30000, -- Timeout in milliseconds
+          extra_request_body = {
+            options = {
+              temperature = 0.75,
+              num_ctx = 20480,
+              keep_alive = '5m',
+            },
+          },
+        },
+      },
+      rag_service = {
+        enabled = false, -- Enables the RAG service
+        runner = 'docker',
+        host_mount = os.getenv 'HOME', -- Host mount path for the rag service
+        provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
+        llm_model = 'gemma3:12b', -- The LLM model to use for RAG service
+        embed_model = 'mxbai-embed-large:latest', -- The embedding model to use for RAG service
+        endpoint = 'http://localhost:11434', -- The API endpoint for RAG service
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
