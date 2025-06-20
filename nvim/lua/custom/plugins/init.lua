@@ -11,6 +11,7 @@ return {
       require('bufferline').setup()
     end,
   },
+  { 'towolf/vim-helm' },
   {
     'akinsho/toggleterm.nvim',
     version = '*',

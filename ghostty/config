@@ -1,6 +1,18 @@
 font-family = "{{ font_family }}"
 font-size = "{{ font_size }}"
 theme = "tokyonight"
+adw-toolbar-style = flat
 window-theme = "ghostty"
 window-height = 50
 window-width = 200
+window-inherit-working-directory = true
+shell-integration-features = cursor, no-cursor, sudo, no-sudo, title, no-title
+
+keybind = ctrl+a>h=goto_split:left
+keybind = ctrl+a>l=goto_split:right
+keybind = ctrl+a>j=goto_split:down
+keybind = ctrl+a>k=goto_split:up
+keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>\=new_split:right
+keybind = ctrl+a>-=new_split:down
+# vim: set filetype=config :
