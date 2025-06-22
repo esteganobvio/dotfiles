@@ -16,6 +16,7 @@ input {
             // layout "us,ru"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 	    layout "{{ xkb_layout }}"
+	    variant "{{ xkb_variant }}"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -27,15 +28,16 @@ input {
     touchpad {
         // off
         tap
-        // dwt
-        // dwtp
+        dwt
+        dwtp
         // drag false
         // drag-lock
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "two-finger"
         // disabled-on-external-mouse
+	click-method "clickfinger"
     }
 
     mouse {
@@ -78,7 +80,15 @@ output "Virtual-1" {
   background-color "#000000"
   backdrop-color "#000000"
 }
-
+output "AU Optronics 0xD291 Unknown" {
+  mode "1920x1200@60.026"
+  variable-refresh-rate
+  scale 1
+  transform "normal"
+  position x=0 y=0
+  background-color "#000000"
+  backdrop-color "#000000"
+}
 output "Samsung Electric Company LF24T35 H9VT204063" {
   mode "1920x1080@74.973"
   variable-refresh-rate
