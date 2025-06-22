@@ -35,6 +35,9 @@ depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gam
 [sway.files]
 sway = "~/.config/sway"
 
+[niri.files]
+niri = "~/.config/niri"
+
 [hyprland]
 depends = ["rofi", "dunst", "systemd-user", "ironbar", "waybar", "gammastep"]
 

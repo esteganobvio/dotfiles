@@ -3,6 +3,7 @@ local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smar
 local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/sessionizer.wezterm")
 local config = wezterm.config_builder()
 -- =>
+config.default_prog = { '/bin/zsh', '-l' }
 config.font = wezterm.font("{{ font_family }}")
 config.font_size = 10
 config.line_height = 1.0

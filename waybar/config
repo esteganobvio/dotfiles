@@ -13,7 +13,8 @@
     "hyprland/workspaces",
     "sway/workspaces",
     "sway/window",
-    "sway/mode"
+    "sway/mode",
+    "niri/workspaces"
   ],
   "modules-center": [
     "clock",
