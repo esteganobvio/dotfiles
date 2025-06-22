@@ -267,7 +267,7 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "clipman" "store" "--no-pe
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "keepassxc" "--minimized"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock" "-f" "timeout" "600" "niri" "msg" "actions" "power-off-monitors" "before-sleep" "swaylock" "-f"
+spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock -f" "timeout" "600" "niri msg actions power-off-monitors" "before-sleep" "swaylock -f"
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
