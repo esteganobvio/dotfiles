@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top", // Waybar position (top|bottom|left|right)
   "width": 0, // Waybar width
-  "height": 30,
+  "height": 20,
   "margin-top": 0,
   "margin-left": 0,
   "margin-right": 0,
@@ -30,21 +30,6 @@
     "power-profiles-daemon"
   ],
   // Modules configuration
-  "wlr/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "warp-on-scroll": false,
-    "format": "{name}: {icon} ",
-    "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "urgent": "",
-      //"active": "",
-      "default": ""
-    }
-  },
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
@@ -84,6 +69,20 @@
   "hyprland/window": {
     "icon": true,
     "icon-size": 14
+  },
+  "niri/workspaces": {
+    "disable-click": true,
+    "all-outputs": false,
+    "format": "{value}: {icon} ",
+    "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "urgent": "",
+      //"active": "",
+      "default": ""
+    }
   },
   "keyboard-state": {
     "numlock": false,
