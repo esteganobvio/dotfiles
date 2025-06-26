@@ -172,7 +172,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 2
@@ -183,10 +183,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#7aa2f7"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#1a1b26"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -208,11 +208,11 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        //off
 
         width 2
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        active-color "#7aa2f7"
+        inactive-color "#1a1b26"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -328,13 +328,13 @@ animations {
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
+//window-rule {
+//    // This regular expression is intentionally made as specific as possible,
+//    // since this is the default config, and we want no false positives.
+//    // You can get away with just app-id="wezterm" if you want.
+//    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+//    default-column-width {}
+//}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -347,7 +347,7 @@ window-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -360,7 +360,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -381,10 +381,10 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
-    Mod+A hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show"; }
+    Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Open web browser: Brave" { spawn "brave-browser" ;}
     Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-f"; }
-
+    Ctrl+Alt+H hotkey-overlay-title="Show clipboard history" { spawn "clipman" "pick" "-t" "CUSTOM" "-T" "fuzzel --dmenu"; }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }

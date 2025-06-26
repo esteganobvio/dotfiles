@@ -10,6 +10,9 @@ amd_gpu = true
 [rofi.files]
 rofi = "~/.config/rofi"
 
+[fuzzel.files]
+fuzzel = "~/.config/fuzzel"
+
 [i3status.files]
 i3status-top = "~/.config/i3status/i3status-top.toml"
 i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
@@ -36,7 +39,7 @@ depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gam
 sway = "~/.config/sway"
 
 [niri]
-depends = ["rofi", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
+depends = ["fuzzel", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
 
 [niri.files]
 niri = "~/.config/niri"
