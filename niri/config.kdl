@@ -8,6 +8,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
     keyboard {
+        track-layout "global"
         xkb {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
@@ -101,6 +102,22 @@ output "Samsung Electric Company LF24T35 H9VT204063" {
 output "Goldstar Company Ltd 23MP55" {
   mode "1920x1080@60.000"
   variable-refresh-rate
+  scale 1
+  transform "normal"
+  background-color "#000000"
+  backdrop-color "#000000"
+}
+
+output "Sharp Corporation 0x148D Unknown" {
+  mode "3840x2160@59.997"
+  scale 2
+  transform "normal"
+  background-color "#000000"
+  backdrop-color "#000000"
+}
+
+output "LG Electronics 23MP55 0x00004008" {
+  mode "1920x1080@60.000"
   scale 1
   transform "normal"
   background-color "#000000"
@@ -379,6 +396,12 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; } 
+    XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn  "brightnessctl" "s" "5%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "s" "+5%"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
