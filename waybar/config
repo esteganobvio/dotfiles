@@ -10,11 +10,8 @@
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces",
-    "sway/window",
-    "sway/mode",
-    "niri/workspaces"
+    "niri/workspaces",
+    "niri/window"
   ],
   "modules-center": [
     "clock",
@@ -31,11 +28,10 @@
     "power-profiles-daemon"
   ],
   // Modules configuration
-  "sway/workspaces": {
-    "disable-scroll": true,
+  "niri/workspaces": {
+    "disable-click": false,
     "all-outputs": false,
-    "warp-on-scroll": false,
-    "format": "{name}: {icon} ",
+    "format": "{icon}",
     "format-icons": {
       "1": "",
       "2": "󰖟",
@@ -46,44 +42,12 @@
       "default": ""
     }
   },
-  "sway/window": {
-    "format": "{title}",
-    "max-length": 30,
-    "rewrite": {
-    }
+  "niri/language": {
+    "format": "{short}"
   },
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "warp-on-scroll": false,
-    "format": "{id}: {icon} ",
-    "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "urgent": "",
-      //"active": "",
-      "default": ""
-    }
-  },
-  "hyprland/window": {
+  "niri/window": {
     "icon": true,
     "icon-size": 14
-  },
-  "niri/workspaces": {
-    "disable-click": true,
-    "all-outputs": false,
-    "format": "{value}: {icon} ",
-    "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "urgent": "",
-      //"active": "",
-      "default": ""
-    }
   },
   "keyboard-state": {
     "numlock": false,

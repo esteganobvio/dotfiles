@@ -1,30 +1,25 @@
 ---
-name: "dock"
-position: "right"
-anchor_to_edges: true
+name: dock
+position: bottom
+anchor_to_edges: false
 height: 36
-icon_theme: "Yaru-blue-dark"
+icon_theme: Yaru-blue-dark
 margin:
   top: 0
-  bottom: 5
+  bottom: 0
 start:
   - bar:
-    - type: image
-      name: logo
-      src: file://Pictures/Wallpapers/estrella-federal.svg
-      size: 48
+      - type: image
+        name: logo
+        src: file://Pictures/Wallpapers/estrella-federal.svg
+        size: 48
     class: guacho
     type: custom
-  - type: "launcher"
-    favorites:
-      - neovide
-      - org.wezfurlong.wezterm
-      - discord
-      - brave-browser
+  - type: launcher
+    favorites: [neovide, org.wezfurlong.wezterm, discord, brave-browser, org.gnome.Nautilus]
     show_name: false
     show_icons: true
     icon_size: 36
-
 #end:
-#  - type: "workspaces"
+#  - type: workspaces
 #    all_monitors: false
