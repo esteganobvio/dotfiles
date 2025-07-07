@@ -74,7 +74,7 @@ return {
       providers = {
         gemini = {
           endpoint = 'https://generativelanguage.googleapis.com/v1beta/models',
-          model = 'gemini-2.5-flash-preview-05-20',
+          model = 'gemini-2.5-flash',
           timeout = 30000, -- Timeout in milliseconds
           extra_body_requests = {
             temperature = 0,
@@ -84,7 +84,8 @@ return {
         ollama = {
           endpoint = 'http://127.0.0.1:11434',
           model = 'gemma3:12b',
-          timeout = 30000, -- Timeout in milliseconds
+          timeout = 30000, -- Timeout in millisecondsu can disable tools by setti
+          disable_tools = { 'web_search' },
           extra_request_body = {
             options = {
               temperature = 0.75,
@@ -96,12 +97,23 @@ return {
       },
       rag_service = {
         enabled = false, -- Enables the RAG service
-        runner = 'docker',
-        host_mount = os.getenv 'HOME', -- Host mount path for the rag service
-        provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
-        llm_model = 'gemma3:12b', -- The LLM model to use for RAG service
-        embed_model = 'mxbai-embed-large:latest', -- The embedding model to use for RAG service
-        endpoint = 'http://localhost:11434', -- The API endpoint for RAG service
+        host_mount = os.getenv 'HOME', -- Host mount path for the rag service (Docker will mount this path)
+        runner = 'docker', -- Runner for the RAG service (can use docker or nix)
+        llm = { -- Language Model (LLM) configuration for RAG service
+          provider = 'ollama', -- LLM provider
+          endpoint = 'http://127.0.0.1:11434', -- LLM API endpoint
+          api_key = '', -- Environment variable name for the LLM API key
+          model = 'gemma3:12b', -- LLM model name
+          extra = nil, -- Additional configuration options for LLM
+        },
+        embed = { -- Embedding model configuration for RAG service
+          provider = 'ollama', -- Embedding provider
+          endpoint = 'http://127.0.0.1:11434', -- Embedding API endpoint
+          api_key = '', -- Environment variable name for the embedding API key
+          model = 'mxbai-embed-large:latest', -- Embedding model name
+          extra = nil, -- Additional configuration options for the embedding model
+        },
+        docker_extra_args = '', -- Extra arguments to pass to the docker command
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

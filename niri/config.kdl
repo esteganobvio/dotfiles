@@ -97,7 +97,7 @@ output "Samsung Electric Company LF24T35 H9VT204063" {
   transform "normal"
   position x=0 y=0
   background-color "#1a1b26"
-  backdrop-color "#16161e"
+  backdrop-color "#1a1b26"
 }
 output "Goldstar Company Ltd 23MP55" {
   mode "1920x1080@60.000"
@@ -284,7 +284,7 @@ environment {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "/usr/libexec/xfce-polkit"
-spawn-at-startup "swaybg" "-i" "Pictures/nwp_1440x900.jpg"
+spawn-at-startup "swaybg" "-i" "Pictures/estrella-federal.png"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "gammastep-indicator"
@@ -360,8 +360,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 0
+window-rule {
+    geometry-corner-radius 5
     clip-to-geometry true
 }
 
@@ -628,4 +628,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Mod+Tab repeat=false { spawn "niri_fuzzel_switcher"; }
 }
