@@ -78,8 +78,8 @@ output "Virtual-1" {
   mode "1920x1080@60.000"
   scale 1
   transform "normal"
-  background-color "#000000"
-  backdrop-color "#000000"
+  background-color "#1a1b26"
+  backdrop-color "#1a1b26"
 }
 output "AU Optronics 0xD291 Unknown" {
   mode "1920x1200@60.026"
@@ -87,8 +87,8 @@ output "AU Optronics 0xD291 Unknown" {
   scale 1
   transform "normal"
   position x=0 y=0
-  background-color "#000000"
-  backdrop-color "#000000"
+  background-color "#1a1b26"
+  backdrop-color "#1a1b26"
 }
 output "Samsung Electric Company LF24T35 H9VT204063" {
   mode "1920x1080@74.973"
@@ -104,25 +104,31 @@ output "Goldstar Company Ltd 23MP55" {
   variable-refresh-rate
   scale 1
   transform "normal"
-  background-color "#000000"
-  backdrop-color "#000000"
+  background-color "#1a1b26"
+  backdrop-color "#1a1b26"
 }
 
 output "Sharp Corporation 0x148D Unknown" {
   mode "3840x2160@59.997"
   scale 2
   transform "normal"
-  background-color "#000000"
-  backdrop-color "#000000"
+  background-color "#1a1b26"
+  backdrop-color "#1a1b26"
 }
 
 output "LG Electronics 23MP55 0x00004008" {
   mode "1920x1080@60.000"
   scale 1
   transform "normal"
-  background-color "#000000"
-  backdrop-color "#000000"
+  background-color "#1a1b26"
+  backdrop-color "#1a1b26"
 }
+
+workspace "terminal" {}
+workspace "web" {}
+workspace "work" {}
+workspace "music" {}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -353,9 +359,15 @@ window-rule {
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
     block-out-from "screen-capture"
+    open-floating true
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="brave-browser" title="^Brave$"
+    open-floating true
 }
 
 // Example: enable rounded corners for all windows.
