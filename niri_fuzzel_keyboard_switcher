@@ -1,0 +1,7 @@
+#!/bin/bash
+
+result=$(niri msg keyboard-layouts | grep -v Key | fuzzel --counter --dmenu --index)
+
+if [ "x$result" != "x" ] && [ $result != -1 ]; then
+	niri msg action switch-layout "${result}"
+fi
