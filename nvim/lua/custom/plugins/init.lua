@@ -3,14 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('bufferline').setup()
-    end,
-  },
   { 'towolf/vim-helm' },
   {
     'akinsho/toggleterm.nvim',
@@ -55,14 +47,6 @@ return {
       'folke/snacks.nvim', -- optional
     },
   },
-  -- {
-  --   'olimorris/codecompanion.nvim',
-  --   opts = {},
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --     'nvim-treesitter/nvim-treesitter',
-  --   },
-  -- },
   {
     'yetone/avante.nvim',
     event = 'VeryLazy',
