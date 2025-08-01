@@ -2,24 +2,14 @@
 name: dock
 position: bottom
 anchor_to_edges: false
-height: 36
+height: 16
 icon_theme: Yaru-blue-dark
 margin:
   top: 0
-  bottom: 0
-start:
-  - bar:
-      - type: image
-        name: logo
-        src: file://Pictures/Wallpapers/estrella-federal.svg
-        size: 48
-    class: guacho
-    type: custom
+  bottom: 4
+center:
   - type: launcher
-    favorites: [neovide, org.wezfurlong.wezterm, discord, brave-browser, org.gnome.Nautilus]
+    favorites: [neovide, com.mitchellh.ghostty, brave-browser, discord, org.gnome.Nautilus]
     show_name: false
     show_icons: true
-    icon_size: 36
-#end:
-#  - type: workspaces
-#    all_monitors: false
+    icon_size: 38
