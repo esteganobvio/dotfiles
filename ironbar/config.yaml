@@ -12,4 +12,5 @@ center:
     favorites: [neovide, com.mitchellh.ghostty, brave-browser, discord, org.gnome.Nautilus]
     show_name: false
     show_icons: true
-    icon_size: 38
+    icon_size: 32
+

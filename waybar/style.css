@@ -7,20 +7,20 @@
 }
 
 window#waybar {
-	background: #1a1b26;
+	background: #292e42;
 	color: #7aa2f7;
 }
 
 .modules-right {
-  background: #1a1b26;
+  background: #292e42;
 }
 
 .modules-center {
-  background: #1a1b26;
+  background: #292e42;
 }
 
 .modules-left {
-  background: #1a1b26;
+  background: #292e42;
 }
 
 #tags,
@@ -51,19 +51,17 @@ window#waybar {
 
 #workspaces button {
 	padding: 0 8px;
-	color: #7aa2f7;
+	color: #545c7e;
 }
 
 #workspaces button.active {
   padding: 0 8px;
-  color: #f3f4f5;
-	background: #16161e;
+  color: #7aa2f7;
 }
 
 #workspaces button.focused {
   padding: 0 8px;
-  color: #f3f4f5;
-	background: #16161e;
+  color: #7aa2f7;
 }
 
 #workspaces button:hover {

@@ -141,6 +141,11 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+vim.o.expandtab = true -- convert tabs to spaces
+vim.o.shiftwidth = 2 -- number of scpaces inserted for each indentation
+vim.o.tabstop = 2 -- insert 2 spaces for a tab
+vim.o.titlestring = '%<%F - nvim'
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`

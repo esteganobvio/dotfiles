@@ -1,4 +1,4 @@
-@define-color color_bg #1a1b26;
+@define-color color_bg #292e42;
 @define-color color_bg_dark #16161e;
 @define-color color_border #545c7e;
 @define-color color_border_active #7aa2f7;
@@ -11,13 +11,17 @@
 }
 
 #bar {
-  border: 2px solid @color_border;
+  border: 1px solid @color_border;
 }
 
 box, button {
   background-color: @color_bg;
   background-image: none;
   box-shadow: none;
+}
+
+button:hover {
+    background-color: @color_bg_dark;
 }
 
 * {
@@ -37,23 +41,19 @@ box, button {
 }
 
 .launcher .ifix examtem:not(.focused):hover {
-    background-color: @color_bg;
+    background-color: @color_border;
 }
 
 .launcher .item.open {
-    border: 2px solid @color_border;
-    background-color: @color_bg;
-    box-shadow: inset 0 -3px @color_border_dark;
+    border-bottom: 5px solid @color_border;
 }
 
 .launcher .item.focused {
-    border: 2px solid @color_border_active;
-    background-color: @colog_bg_dark;
+    border-bottom: 5px solid @color_border_active;
 }
 
 .launcher .item.urgent {
-    border: 2px solid @color_urgent;
-    background-color: @color_bg_dark;
+    border-bottom: 5px solid @color_urgent;
 }
 
 .popup-launcher {
