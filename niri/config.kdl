@@ -28,7 +28,7 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
-        tap
+        // tap
         dwt
         dwtp
         // drag false
