@@ -1,4 +1,4 @@
-// This config is in the KDL format: https://kdl.dev
+// This config is in the KaL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
@@ -79,8 +79,6 @@ output "Virtual-1" {
   mode "1920x1080@60.000"
   scale 1
   transform "normal"
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 output "AU Optronics 0xD291 Unknown" {
   mode "1920x1200@60.026"
@@ -88,8 +86,6 @@ output "AU Optronics 0xD291 Unknown" {
   scale 1
   transform "normal"
   position x=0 y=0
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 output "Samsung Electric Company LF24T35 H9VT204063" {
   mode "1920x1080@74.973"
@@ -98,24 +94,18 @@ output "Samsung Electric Company LF24T35 H9VT204063" {
   scale 1
   transform "normal"
   position x=1920 y=0
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 output "Goldstar Company Ltd 23MP55" {
   mode "1920x1080@60.000"
   variable-refresh-rate
   scale 1
   transform "normal"
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 
 output "Sharp Corporation 0x148D Unknown" {
   mode "3840x2160@59.997"
   scale 2
   transform "normal"
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 
 output "LG Electronics 23MP55 0x00004008" {
@@ -123,8 +113,6 @@ output "LG Electronics 23MP55 0x00004008" {
   scale 1
   transform "normal"
   position x=0 y=0
-  background-color "#1a1b26"
-  backdrop-color "#1a1b26"
 }
 
 workspace "terminal" {
@@ -139,7 +127,9 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 5
+
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -222,7 +212,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         //off
 
-        width 1
+        width 3
         active-color "#7aa2f7"
         inactive-color "#545c7e"
 
@@ -383,7 +373,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 14
     clip-to-geometry true
 }
 
@@ -653,4 +643,18 @@ binds {
 
     Mod+Tab repeat=false { spawn "niri_fuzzel_switcher"; }
     Mod+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
+}
+
+// Make the wallpaper stationary, rather than moving with workspaces.
+layer-rule {
+    // This is for swaybg; change for other wallpaper tools.
+    // Find the right namespace by running niri msg layers.
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
 }
