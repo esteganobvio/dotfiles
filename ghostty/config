@@ -1,6 +1,7 @@
 font-family = "{{ font_family }}"
 font-size = "{{ font_size }}"
 theme = "tokyonight"
+background-opacity = 0.8
 adw-toolbar-style = flat
 window-theme = "ghostty"
 window-height = 50
