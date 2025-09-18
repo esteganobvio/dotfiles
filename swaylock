@@ -1,5 +1,8 @@
 image=~/Pictures/backiee-72749-landscape.jpg
 indicator-radius=100
-indicator-thickness=10
+indicator-thickness=7
 daemonize
 show-failed-attempts
+clock
+indicator
+effect-blur=7x5

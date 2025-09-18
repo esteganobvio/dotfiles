@@ -297,7 +297,7 @@ spawn-at-startup "dunst"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock -f" "timeout" "600" "niri msg actions power-off-monitors" "before-sleep" "swaylock -f"
+spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock -f" "timeout" "600" "niri msg action power-off-monitors" "timeout" "900" "systemctl suspend" "before-sleep" "swaylock -f" "after-resume" "niri msg action power-on-monitors" "lock" "swaylock -f"
 spawn-at-startup "niriswitcher"
 spawn-at-startup "waypaper" "--restore"
 
@@ -368,6 +368,8 @@ window-rule {
 window-rule {
     match app-id="brave-browser" title="^Brave$"
     match app-id="org.openrgb.OpenRGB"
+    match app-id="evolution-alarm-notify"
+    match app-id="org.gnome.Calculator"
     open-floating true
 }
 
@@ -381,7 +383,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 14
+    geometry-corner-radius 5
     clip-to-geometry true
 }
 
@@ -404,7 +406,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Open web browser: Brave" { spawn "brave-browser" ;}
-    Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-f"; }
+    Mod+Escape hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
     Ctrl+Alt+H hotkey-overlay-title="Show clipboard history" { spawn "clipman" "pick" "-t" "CUSTOM" "-T" "fuzzel --dmenu"; }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
