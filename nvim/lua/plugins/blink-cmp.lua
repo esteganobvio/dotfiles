@@ -39,6 +39,7 @@ return {
       },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
+        per_filetype = { 'codecompanion' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         },
@@ -47,5 +48,5 @@ return {
       fuzzy = { implementation = 'prefer_rust_with_warning' },
       signature = { enabled = true },
     },
-  }
+  },
 }

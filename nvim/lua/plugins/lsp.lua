@@ -34,33 +34,6 @@ return {
       },
     },
   },
---   {
---     'mason-org/mason.nvim',
---     lazy = false,
---     config = function()
---       require('mason').setup {
---         ui = {
---           border = 'none',
---           icons = {
---             package_installed = '◍',
---             package_pending = '◍',
---             package_uninstalled = '◍',
---           },
---         },
---         log_level = vim.log.levels.INFO,
---         max_concurrent_installers = 4,
---       }
---     end,
---   },
---   {
---     'mason-org/mason-lspconfig.nvim',
---     config = function()
---       require('mason-lspconfig').setup {
---         ensure_installed = servers,
---         automatic_instalation = true,
---       }
---     end,
---   },
   {
     'neovim/nvim-lspconfig',
     lazy = false,
@@ -256,6 +229,9 @@ return {
         pyright = {},
         terraformls = {},
         tflint = {},
+        dockerls = {},
+        helm_ls = {},
+        yamlls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -299,6 +275,13 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'flake8',
+        'autopep8',
+        'trivy',
+        'tfsec',
+        'yamllint',
+        'mypy',
+        'vulture',
+        'isort',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -317,5 +300,46 @@ return {
         },
       }
     end,
+  },
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    keys = {
+      {
+        '<leader>f',
+        function()
+          require('conform').format { async = true, lsp_format = 'fallback' }
+        end,
+        mode = '',
+        desc = '[F]ormat buffer',
+      },
+    },
+    opts = {
+      notify_on_error = false,
+      format_on_save = function(bufnr)
+        -- Disable "format_on_save lsp_fallback" for languages that don't
+        -- have a well standardized coding style. You can add additional
+        -- languages here or re-enable it for the disabled ones.
+        local disable_filetypes = { c = true, cpp = true }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return nil
+        else
+          return {
+            timeout_ms = 500,
+            lsp_format = 'fallback',
+          }
+        end
+      end,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        terraform = { 'terraformls' },
+        -- Conform can also run multiple formatters sequentially
+        python = { 'isort', 'ruff' },
+        --
+        -- You can use 'stop_after_first' to run the first available formatter from the list
+        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+    },
   },
 }
