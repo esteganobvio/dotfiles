@@ -79,7 +79,7 @@
   "clock": {
     "timezone": "America/Buenos_Aires",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%H:%M %Y-%m-%d}"
+    "format": "{:%H:%M %Y-%m-%d}"
   },
   "backlight": {
     "format": "{icon} {percent}%",
