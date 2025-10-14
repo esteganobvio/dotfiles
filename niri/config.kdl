@@ -298,8 +298,8 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "clipman" "store" "--no-pe
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock -f" "timeout" "600" "niri msg action power-off-monitors" "timeout" "900" "systemctl suspend" "before-sleep" "swaylock -f" "after-resume" "niri msg action power-on-monitors" "lock" "swaylock -f"
-spawn-at-startup "niriswitcher"
 spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "niri-switch-daemon"
 
 
 
@@ -371,6 +371,7 @@ window-rule {
     match app-id="evolution-alarm-notify"
     match app-id="org.gnome.Calculator"
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="com.saivert.pwvucontrol"
     match app-id="blueman-manager"
     match app-id="system-config-printer"
     match app-id="xfce-polkit"
@@ -655,12 +656,10 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Tab repeat=false { spawn "niri_fuzzel_switcher"; }
+    Mod+Tab repeat=false { spawn "niri-switch"; }
     Mod+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
-    Alt+Tab repeat=false { spawn "niriswitcherctl" "show" "--window"; }
-    Alt+Shift+Tab repeat=false { spawn "niriswitcherctl" "show" "--window"; }
-    Alt+U repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
-    Alt+I repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+    Alt+Tab repeat=false { spawn "niri-switch"; }
+    Alt+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
 
     Mod+M repeat=false { spawn "dunstctl" "close"; }
     Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }

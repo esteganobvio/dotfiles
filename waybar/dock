@@ -1,18 +1,25 @@
 {
   "layer": "top",
   "position": "bottom",
-  "width": 5,
+  "width": 0,
   "height": 28,
   "margin-bottom": 5,
+  "modules-left": [
+  ],
   "modules-center": [
     "wlr/taskbar"
+  ],
+  "modules-right": [
+    "privacy"
   ],
   "wlr/taskbar": {
 
     "sort-by-app-id": true,
     "on-click": "activate",
     "icon-size": 28
+  },
+  "privacy": {
+    "expand": true
   }
-
 }
 // vim: set filetype=jsonc :

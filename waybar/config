@@ -18,7 +18,8 @@
   ],
   "modules-right": [
     "mpris",
-    "pulseaudio",
+    "wireplumber#source",
+    "wireplumber",
     "tray",
     "idle_inhibitor",
     "backlight",
@@ -96,12 +97,19 @@
     "icon-size": 14,
     "hide-if-empty": true,
     "tooltip": true,
-    "tooltip-spacing": 20
+    "tooltip-spacing": 20,
+    "show-icon": false
   },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "󰝟 {volume}%",
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "󰍬 {volume}% ",
+    "format-muted": "󰍭 {volume}% ",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "scroll-step": 5
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}% ",
+    "format-muted": "󰝟 {volume}% ",
     "format-icons": {
       "headphone": " ",
       "hands-free": "",
@@ -115,7 +123,8 @@
         "󰕾"
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "flatpak run com.saivert.pwvucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/dunst.sh",
