@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "bottom",
   "width": 5,
-  "height": 36,
+  "height": 28,
   "margin-bottom": 5,
   "modules-center": [
     "wlr/taskbar"
@@ -11,7 +11,7 @@
 
     "sort-by-app-id": true,
     "on-click": "activate",
-    "icon-size": 36
+    "icon-size": 28
   }
 
 }

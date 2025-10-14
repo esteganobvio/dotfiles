@@ -21,19 +21,16 @@ i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 dunstrc = "~/.config/dunst/dunstrc"
 
 [i3]
-depends = ["rofi", "polybar", "dunst", "picom", "systemd-user", "gammastep"]
+depends = ["rofi", "dunst", "picom", "systemd-user", "gammastep"]
 
 [i3.files]
 i3 = "~/.config/i3"
-
-[polybar.files]
-polybar = "~/.config/polybar"
 
 [picom.files]
 picom = "~/.config/picom.conf"
 
 [sway]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep", "i3status", "polybar"]
+depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep", "i3status"]
 
 [sway.files]
 sway = "~/.config/sway"
@@ -45,7 +42,7 @@ depends = ["fuzzel", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
 niri = "~/.config/niri"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "ironbar", "waybar", "gammastep"]
+depends = ["rofi", "dunst", "systemd-user", "waybar", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -58,9 +55,6 @@ kanshi = "~/.config/kanshi/config"
 
 [waybar.files]
 waybar = "~/.config/waybar"
-
-[ironbar.files]
-ironbar = "~/.config/ironbar"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
