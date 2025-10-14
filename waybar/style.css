@@ -1,26 +1,41 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Jetbrains Mono, Fira Mono, FiraCode Nerd Font,FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Jetbrains Mono, sans-serif;
     font-size: 12px;
-    border-radius: 0px;
-    border: 1;
+    border-radius: 10px;
+    border: 1px;
 }
 
 window#waybar {
-	background: #292e42;
-	color: #7aa2f7;
+	background: transparent;
+	color: @theme_text_color;
+  /* border-bottom: 1px solid #292e42; */
 }
 
 .modules-right {
-  background: #292e42;
+  background: #1a1b26;
 }
 
 .modules-center {
-  background: #292e42;
+  background: #1a1b26;
 }
 
 .modules-left {
-  background: #292e42;
+  background: #1a1b26;
+}
+
+#taskbar {
+  /* border: 2px solid #292e42; */
+  padding: 0px 0px;
+  background: transparent;
+}
+
+#taskbar button.active {
+  border-bottom: 3px solid #7aa2f7;
+}
+
+#taskbar button {
+  border: 3px solid transparent;
 }
 
 #tags,
@@ -77,7 +92,6 @@ window#waybar {
 #upower {
 	color: #859900;
 }
-#taskbar,
 #window,
 #mode,
 #power-profiles-daemon,

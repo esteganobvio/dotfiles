@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "bottom",
   "width": 5,
-  "height": 30,
+  "height": 36,
   "margin-bottom": 5,
   "modules-center": [
     "wlr/taskbar"
