@@ -13,19 +13,15 @@
     "niri/workspaces",
   ],
   "modules-center": [
+    "niri/language",
     "clock",
     "custom/dunst"
   ],
   "modules-right": [
-    "mpris",
-    "wireplumber#source",
-    "wireplumber",
+    "group/audio",
     "tray",
-    "idle_inhibitor",
-    "backlight",
-    "upower",
-    "niri/language",
-    "power-profiles-daemon"
+    "group/screen",
+    "group/power"
   ],
   // Modules configuration
   "niri/workspaces": {
@@ -36,9 +32,9 @@
       "terminal": "",
       "web": "󰖟",
       "work": "",
-      "music": "",
+      "music": "",
       "urgent": "",
-      "active": "",
+      // "active": "",
       "default": ""
     }
   },
@@ -49,26 +45,6 @@
     "icon": true,
     "icon-size": 14
   },
-  "keyboard-state": {
-    "numlock": false,
-    "capslock": true,
-    "format": {
-      "numlock": "N {icon}",
-      "capslock": "C {icon}"
-    },
-    "format-icons": {
-      "locked": " ",
-      "unlocked": " "
-    }
-  },
-  "idle_inhibitor": {
-    "start-activated": true,
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "󰅶",
-      "deactivated": "󰾪"
-    }
-  },
   "tray": {
     "spacing": 8,
     "icon-size": 14
@@ -78,18 +54,11 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%H:%M %Y-%m-%d}"
   },
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+  "group/power": {
+    "orientation": "inherit",
+    "modules": [
+      "power-profiles-daemon",
+      "upower"
     ]
   },
   "upower": {
@@ -99,6 +68,39 @@
     "tooltip": true,
     "tooltip-spacing": 20,
     "show-icon": false
+  },
+  "power-profiles-daemon": {
+    "format": "{icon} ",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  "group/audio": {
+    "orientation": "inherit",
+    "modules": [
+      "mpris",
+      "wireplumber#source",
+      "wireplumber"
+    ]
+  },
+  "mpris": {
+    "format": "{player_icon} ({status}) {dynamic}",
+    "dynamic-len": 20,
+    "format-paused": "{status_icon} ({status}) {dynamic}",
+    "internal": "1",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+	"status-icons": {
+		"paused": "⏸"
+	  }
   },
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -126,16 +128,54 @@
     "on-click": "flatpak run com.saivert.pwvucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
+
   "custom/dunst": {
     "exec": "~/.config/waybar/scripts/dunst.sh",
     "on-click": "dunstctl set-paused toggle",
     "restart-interval": 1
   },
+
+  "group/screen": {
+    "orientation": "inherit",
+    "modules": [
+      "backlight",
+      "custom/ddcutil",
+      "idle_inhibitor"
+    ]
+  },
+  "idle_inhibitor": {
+    "start-activated": true,
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
+    }
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
   "custom/ddcutil": {
     "format": "{icon} {percentage}%",
     "format-icons": [
       "",
+      "",
+      "",
       "",
+      "",
+      "",
+      "",
+      "",
       ""
     ],
     "exec": "~/.config/waybar/scripts/ddcutil.sh",
@@ -145,30 +185,6 @@
     "on-click": "echo 'min' > /tmp/waybar-ddc-module-rx",
     "on-click-right": "echo 'max' > /tmp/waybar-ddc-module-rx",
     "tooltip": false
-  },
-  "mpris": {
-	"format": "{player_icon} ({status}) {dynamic}",
-  "dynamic-len": 20,
-	"format-paused": "{status_icon} ({status}) {dynamic}",
-  "internal": "1",
-	"player-icons": {
-		"default": "▶",
-		"mpv": "🎵"
-	},
-	"status-icons": {
-		"paused": "⏸"
-	}
-  },
-  "power-profiles-daemon": {
-  "format": "{icon} ",
-  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-  "tooltip": true,
-  "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
   }
-}
 }
 // vim: set filetype=jsonc :

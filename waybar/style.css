@@ -17,7 +17,7 @@ window#waybar {
 }
 
 .modules-center {
-  background: transparent;
+  background: #16161e;
 }
 
 .modules-left {
@@ -85,6 +85,9 @@ window#waybar {
 	text-shadow: inherit;
 }
 
+#privacy {
+  color: #f7768e;
+}
 
 #wireplumber {
 	color: #5294E2;
@@ -95,18 +98,18 @@ window#waybar {
 }
 
 #window,
-#mode,
-#power-profiles-daemon,
 #idle_inhibitor,
 #clock,
-#pulseaudio,
+#audio,
 #backlight,
 #keyboard-state,
 #tray,
 #mpris,
 #custom-ddcutil,
 #custom-dunst,
+#language,
 #privacy,
+#power-profiles-daemon,
 #upower {
 	padding: 0 8px;
 }

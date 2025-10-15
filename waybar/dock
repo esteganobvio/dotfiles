@@ -19,7 +19,20 @@
     "icon-size": 28
   },
   "privacy": {
-    "expand": true
+    "icon-spacing": 10,
+    "expand": true,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      }
+    ]
   }
 }
 // vim: set filetype=jsonc :
