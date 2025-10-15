@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "bottom",
   "width": 0,
-  "height": 28,
+  "height": 38,
   "margin-bottom": 5,
   "modules-left": [
   ],
@@ -16,7 +16,7 @@
 
     "sort-by-app-id": true,
     "on-click": "activate",
-    "icon-size": 28
+    "icon-size": 38
   },
   "privacy": {
     "icon-spacing": 10,
