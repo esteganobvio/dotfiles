@@ -92,13 +92,14 @@ output "Samsung Electric Company LF24T35 H9VT204063" {
   variable-refresh-rate
   scale 1
   transform "normal"
-  position x=1920 y=0
+  position x=0 y=0
 }
 output "Goldstar Company Ltd 23MP55" {
   mode "1920x1080@60.000"
   variable-refresh-rate
   scale 1
   transform "normal"
+  position x=1920 y=0
 }
 
 output "Sharp Corporation 0x148D Unknown" {
@@ -111,7 +112,7 @@ output "LG Electronics 23MP55 0x00004008" {
   mode "1920x1080@60.000"
   scale 1
   transform "normal"
-  position x=0 y=0
+  position x=1920 y=0
 }
 
 workspace "terminal" {
@@ -375,6 +376,7 @@ window-rule {
     match app-id="blueman-manager"
     match app-id="system-config-printer"
     match app-id="xfce-polkit"
+    match app-id="zoom"
     open-floating true
 }
 
