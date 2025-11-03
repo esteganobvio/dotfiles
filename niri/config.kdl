@@ -9,17 +9,7 @@
 input {
     keyboard {
         track-layout "global"
-        xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
-
-            // For example:
-            // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-	          // layout "{{ xkb_layout }}"
-	          // variant "{{ xkb_variant }}"
-        }
-
+        xkb {}
         // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
@@ -28,7 +18,7 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
-        // tap
+        tap
         dwt
         dwtp
         // drag false
@@ -38,7 +28,7 @@ input {
         // accel-profile "flat"
         scroll-method "two-finger"
         // disabled-on-external-mouse
-	click-method "clickfinger"
+        click-method "clickfinger"
     }
 
     mouse {
@@ -127,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 0
 
     background-color "transparent"
 
@@ -210,11 +200,11 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        //off
+        // off
 
-        width 3
+        width 2
         active-color "#7aa2f7"
-        inactive-color "#545c7e"
+        inactive-color "#1a1b26"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -226,7 +216,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        // on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -390,7 +380,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -512,7 +502,8 @@ binds {
     Mod+Shift+Page_Up   { move-workspace-up; }
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
-
+    Mod+Shift+Alt+L     { move-workspace-to-monitor-right; }
+    Mod+Shift+Alt+H     { move-workspace-to-monitor-left; }
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
     //
@@ -651,7 +642,7 @@ binds {
     // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { spawn "wlogout"; }
+    Mod+Shift+Q { spawn "wlogout"; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
@@ -660,9 +651,7 @@ binds {
 
     Mod+Tab repeat=false { spawn "niri-switch"; }
     Mod+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
-    Alt+Tab repeat=false { spawn "niri-switch"; }
-    Alt+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
-
+    Mod+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
     Mod+M repeat=false { spawn "dunstctl" "close"; }
     Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }
     Mod+Ctrl+M repeat=false { spawn "dunstctl" "context"; }

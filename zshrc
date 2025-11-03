@@ -101,6 +101,9 @@ eval "$(~/.local/bin/mise activate zsh)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 export EDITOR=nvim
+export BROWSER=brave-browser
+alias vi=nvim
+alias vim=nvim
 alias vim=nvim
 
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh

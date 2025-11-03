@@ -2,26 +2,27 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Jetbrains Mono, sans-serif;
     font-size: 12px;
-    border-radius: 10px;
+    border-radius: 0px;
     border: 1px;
 }
 
 window#waybar {
-	background: transparent;
+	background: #16161e;
 	color: @theme_text_color;
   /* border-bottom: 1px solid #292e42; */
+  border: 1px solid #292e42;
 }
 
 .modules-right {
-  background: #16161e;
+  background: transparent;
 }
 
 .modules-center {
-  background: #16161e;
+  background: transparent;
 }
 
 .modules-left {
-  background: #16161e;
+  background: transparent;
 }
 
 #taskbar {
