@@ -1,0 +1,131 @@
+@define-color color_bg #292e42;
+@define-color color_bg_dark #16161e;
+@define-color color_border #545c7e;
+@define-color color_border_active #7aa2f7;
+@define-color color_text #16161e;
+@define-color color_urgent #8f0a0a;
+
+
+.background {
+  background-color: @color_bg;
+}
+
+#bar {
+  border: 1px solid @color_border;
+}
+
+box, button {
+  background-color: @color_bg;
+  background-image: none;
+  box-shadow: none;
+}
+
+button:hover {
+    background-color: @color_bg_dark;
+}
+
+* {
+  font-family: "{{ font_family }}";
+  font-weight: normal;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* -- launcher -- */
+
+.launcher .item {
+  margin: 3px;
+  border: 1px solid @color_bg;
+  background-color: @color_bg;
+}
+
+.launcher .ifix examtem:not(.focused):hover {
+    background-color: @color_border;
+}
+
+.launcher .item.open {
+    border-bottom: 5px solid @color_border;
+}
+
+.launcher .item.focused {
+    border-bottom: 5px solid @color_border_active;
+}
+
+.launcher .item.urgent {
+    border-bottom: 5px solid @color_urgent;
+}
+
+.popup-launcher {
+  padding: 0;
+  background-color: @color_bg;
+}
+
+.popup-launcher .popup-item:not(:first-child) {
+  border: 1px solid @color_border;
+}
+
+.workspaces .item {
+  margin: 2px;
+  background-color: @color_bg;
+}
+.workspaces .item.focused {
+    box-shadow: inset 0 -3px @color_border_active;
+    background-color: @color_bg_dark;
+}
+
+.workspaces .item.urgent {
+    box-shadow: inset 0 -3px @color_urgent;
+}
+
+.workspaces .item:hover {
+    box-shadow: inset 0 -3px @color_border_active;
+}
+
+.clock {
+  margin: 2px;
+}
+
+.power-menu {
+    margin: 1px;
+}
+
+.power-menu #power-btn {
+    color: @color_text;
+    background-color: @color_bg_dark;
+}
+
+.power-menu #power-btn:hover {
+    background-color: @color_border_active;
+}
+
+.popup-power-menu {
+    padding: 1em;
+}
+
+.popup-power-menu #header {
+    color: @color_text;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+.popup-power-menu .power-btn {
+    color: white;
+    background-color: @color_bg_dark;
+    border: 1px solid @color_border_active;
+}
+
+/*.popup-power-menu .power-btn + .power-btn {
+    margin-left: 1em;
+}
+*/
+.popup-power-menu .power-btn:hover {
+    background-color: @color_border_active;
+}
+
+.guacho {
+  margin: 2px;
+  border: 2px solid @color_bg;
+  background-color: @color_bg;
+}

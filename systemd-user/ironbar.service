@@ -1,0 +1,14 @@
+[Unit]
+Description=Ironbar
+Documentation=https://github.com/JakeStanger/ironbar
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/ironbar
+ExecReload=/usr/bin/ironbar reload
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
