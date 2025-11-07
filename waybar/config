@@ -10,14 +10,16 @@
   "spacing": 1, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "niri/workspaces",
     "sway/workspaces",
+    "niri/workspaces",
+    "niri/window",
     "hyprland/workspaces"
   ],
   "modules-center": [
     "niri/language",
     "clock",
-    "custom/dunst"
+    "custom/dunst",
+    "privacy"
   ],
   "modules-right": [
     "group/audio",
@@ -26,6 +28,20 @@
     "group/power"
   ],
   // Modules configuration
+  "sway/workspaces": {
+    "disable-click": false,
+    "all-outputs": false,
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "urgent": "",
+      // "active": "",
+      "default": ""
+    }
+  },
   "niri/workspaces": {
     "disable-click": false,
     "all-outputs": false,
@@ -55,6 +71,23 @@
     "timezone": "America/Buenos_Aires",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%H:%M %Y-%m-%d}"
+  },
+  "privacy": {
+    "icon-spacing": 10,
+    "icon-size": 12,
+    "expand": true,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      }
+    ]
   },
   "group/power": {
     "orientation": "inherit",
