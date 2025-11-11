@@ -102,7 +102,7 @@
     "hide-if-empty": true,
     "tooltip": true,
     "tooltip-spacing": 20,
-    "show-icon": false
+    "show-icon": true
   },
   "power-profiles-daemon": {
     "format": "{icon} ",
