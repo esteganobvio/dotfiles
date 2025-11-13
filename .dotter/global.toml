@@ -13,20 +13,23 @@ fuzzel = "~/.config/fuzzel"
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
 
+[xdg-desktop-portal.files]
+xdg-desktop-portal = "~/.config/xdg-desktop-portal"
+
 [sway]
-depends = ["fuzzel", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 [niri]
-depends = ["fuzzel", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
 
 [niri.files]
 niri = "~/.config/niri"
 
 [hyprland]
-depends = ["rofi", "dunst", "systemd-user", "waybar", "gammastep"]
+depends = ["fuzzel", "dunst", "systemd-user", "waybar", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
