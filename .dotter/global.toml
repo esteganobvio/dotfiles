@@ -7,30 +7,14 @@
 [ollama.variables]
 amd_gpu = true
 
-[rofi.files]
-rofi = "~/.config/rofi"
-
 [fuzzel.files]
 fuzzel = "~/.config/fuzzel"
-
-[i3status.files]
-i3status-top = "~/.config/i3status/i3status-top.toml"
-i3status-bottom = "~/.config/i3status/i3status-bottom.toml"
 
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
 
-[i3]
-depends = ["rofi", "dunst", "picom", "systemd-user", "gammastep"]
-
-[i3.files]
-i3 = "~/.config/i3"
-
-[picom.files]
-picom = "~/.config/picom.conf"
-
 [sway]
-depends = ["rofi", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep", "i3status"]
+depends = ["fuzzel", "dunst", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
 
 [sway.files]
 sway = "~/.config/sway"
@@ -55,9 +39,6 @@ kanshi = "~/.config/kanshi/config"
 
 [waybar.files]
 waybar = "~/.config/waybar"
-
-[ironbar.files]
-ironbar = "~/.config/ironbar"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
