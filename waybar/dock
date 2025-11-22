@@ -1,38 +1,19 @@
 {
   "layer": "top",
   "position": "bottom",
-  "width": 0,
-  "height": 36,
+  "width": 5,
+  "height": 32,
   "margin-bottom": 0,
   "modules-left": [
   ],
   "modules-center": [
     "wlr/taskbar"
   ],
-  "modules-right": [
-    "privacy"
-  ],
   "wlr/taskbar": {
 
     "sort-by-app-id": true,
     "on-click": "activate",
-    "icon-size": 38
-  },
-  "privacy": {
-    "icon-spacing": 10,
-    "expand": true,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 16
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 16
-      }
-    ]
+    "icon-size": 32
   }
 }
 // vim: set filetype=jsonc :
