@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Jetbrains Mono, sans-serif;
-    font-size: 12px;
+    font-family: Inter ,Jetbrains Mono, sans-serif;
+    font-size: 10px;
     border-radius: 0px;
     border: 1px;
 }
