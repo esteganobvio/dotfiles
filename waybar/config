@@ -11,6 +11,7 @@
   // Choose the order of the modules
   "modules-left": [
     "sway/workspaces",
+    "sway/mode",
     "sway/window",
     "niri/workspaces",
     "niri/window",

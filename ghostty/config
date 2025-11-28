@@ -10,7 +10,7 @@ window-padding-x = 5
 window-padding-y = 5
 window-inherit-working-directory = true
 shell-integration-features = cursor, no-cursor, sudo, no-sudo, title, no-title
-
+command =  "/bin/zsh -l"
 #keybind = ctrl+a>h=goto_split:left
 #keybind = ctrl+a>l=goto_split:right
 #keybind = ctrl+a>j=goto_split:down

@@ -1,4 +1,5 @@
 image=~/Pictures/backiee-72749-landscape.jpg
+color=292e42
 indicator-radius=100
 indicator-thickness=7
 daemonize
