@@ -1,6 +1,6 @@
 font-family = "{{ font_family }}"
 font-size = "{{ font_size }}"
-theme = "tokyonight"
+theme = "TokyoNight Night"
 background-opacity = 1
 adw-toolbar-style = flat
 window-theme = "ghostty"
