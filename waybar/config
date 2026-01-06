@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "position": "top", // Waybar position (top|bottom|left|right)
   "width": 0, // Waybar width
   "height": 20,
   "margin-top": 0,
