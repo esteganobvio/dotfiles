@@ -60,4 +60,4 @@ vim.g.loaded_netrwPlugin = 1
 ---vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
 ---vim.cmd [[autocmd BufRead,BufNewFile Tiltfile,*.tiltfile set filetype=tiltfile]]
 
-vim.opt.termsync = false
+vim.opt.termsync = true

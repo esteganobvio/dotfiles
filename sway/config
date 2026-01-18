@@ -18,7 +18,7 @@ set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
+set $menu dms ipc call spotlight toggle
 #
 # Status Bar:
 #
@@ -38,13 +38,13 @@ client.urgent            #900000   #900000    #0D0F14   #900000   #900000
 
 default_border pixel 1
 default_floating_border pixel 1
-gaps inner 5
-gaps outer 5
+gaps inner 2
+gaps outer 2
 #gaps top 1
 #gaps bottom 1
 #hide_edge_borders --i3 smart
-corner_radius 5
-smart_corner_radius on
+#corner_radius 5
+#smart_corner_radius on
 #
 shadows enable
 shadows_on_csd disable
@@ -91,7 +91,7 @@ font Inter 8
 #    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 #  }
 #}
-
+set $DMS_DISABLE_MATUGEN 1
 include ~/.config/sway/config.d/*
 
 # vim: ft=swayconfig :
