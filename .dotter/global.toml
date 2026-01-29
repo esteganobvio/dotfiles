@@ -22,6 +22,12 @@ depends = ["xdg-desktop-portal", "fuzzel", "dunst", "systemd-user", "swaylock", 
 [sway.files]
 sway = "~/.config/sway"
 
+[mango]
+depends = ["xdg-desktop-portal", "systemd-user"]
+
+[mango.files]
+mango = "~/.config/mango"
+
 [niri]
 depends = ["xdg-desktop-portal", "fuzzel", "dunst", "systemd-user","swaylock", "waybar", "gammastep"]
 

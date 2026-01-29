@@ -18,6 +18,7 @@ set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
+#set $menu fuzzel
 set $menu dms ipc call spotlight toggle
 #
 # Status Bar:
@@ -43,12 +44,12 @@ gaps outer 2
 #gaps top 1
 #gaps bottom 1
 #hide_edge_borders --i3 smart
-#corner_radius 5
+corner_radius 5
 #smart_corner_radius on
 #
 shadows enable
 shadows_on_csd disable
-shadow_blur_radius 5
+shadow_blur_radius 15
 shadow_color #7aa2f7
 
 blur enable
@@ -91,7 +92,8 @@ font Inter 8
 #    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 #  }
 #}
-set $DMS_DISABLE_MATUGEN 1
+#set $DMS_DISABLE_MATUGEN 1
+set $GTK_IM_MODULE simple
 include ~/.config/sway/config.d/*
 
 # vim: ft=swayconfig :

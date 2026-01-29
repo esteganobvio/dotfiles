@@ -42,4 +42,8 @@ profile dragonfly {
   output "Samsung Electric Company LF24T35 H9VT204063" enable mode 1920x1080@75 position 0,0
 }
 
+profile dragonfly-dual {
+  output "Samsung Electric Company LF24T35 H9VT204063" enable mode 1920x1080@75 position 0,0
+  output "LG Electronics 23MP55 0x00004008" mode 1920x1080@60.000Hz scale 1 position 1920,0
+}
 # vim: ft=scfg :
