@@ -18,8 +18,8 @@ set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu fuzzel
-set $menu dms ipc call spotlight toggle
+set $menu fuzzel
+#set $menu dms ipc call spotlight toggle
 #
 # Status Bar:
 #
@@ -33,33 +33,33 @@ set $urgent-bg-color     #900000
 
 # windows                Border    Background Text      Indicator Child_border
 client.focused           #7aa2f7   #7aa2f7    #16161e   #7aa2f7   #7aa2f7
-client.unfocused         #16161e   #16161e    #f3f4f5   #16161e   #16161e
+client.unfocused         #7aa2f7   #16161e    #f3f4f5   #16161e   #16161e
 client.focused_inactive  #7aa2f7   #16161e    #f3f4f5   #7aa2f7   #7aa2f7
 client.urgent            #900000   #900000    #0D0F14   #900000   #900000
 
 default_border pixel 1
 default_floating_border pixel 1
-gaps inner 2
-gaps outer 2
+#gaps inner 2
+#gaps outer 2
 #gaps top 1
 #gaps bottom 1
 #hide_edge_borders --i3 smart
-corner_radius 5
+#corner_radius 10
 #smart_corner_radius on
 #
-shadows enable
-shadows_on_csd disable
-shadow_blur_radius 15
-shadow_color #7aa2f7
+#shadows disable
+#shadows_on_csd disable
+#shadow_blur_radius 15
+#shadow_color #7aa2f7
+#
+#blur disable
+#blur_xray disable
+#blur_radius 5
+#blur_passes 2
+#
+#titlebar_separator enable
 
-blur enable
-blur_xray disable
-blur_radius 5
-blur_passes 2
-
-titlebar_separator enable
-
-font Inter 8
+font Inter Display 8
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
