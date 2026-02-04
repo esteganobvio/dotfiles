@@ -1,5 +1,5 @@
 profile silverfly-undocked {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2
+  output "Sharp Corporation 0x148E Unknown" enable mode 3840x2160 scale 1.75
 }
 
 profile silverfly-docked {
@@ -8,18 +8,18 @@ profile silverfly-docked {
 }
 
 profile silverfly-mh {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position 0,1080
+  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 1.75 position 0,1080
   output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
 }
 
 profile silverfly-docked-work {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position -1920,0 disable
+  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 1.75 position -1920,0
   output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 adaptive_sync on scale 1 position 0,0
   output "LG Electronics 23MP55 0x00004008" mode 1920x1080@60.000Hz scale 1 position 1920,0
 }
 
 profile silverfly-work {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position -1920,0
+  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 1.75 position -1920,0
   output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 adaptive_sync on scale 1 position 0,0
   output "LG Electronics 23MP55 0x00004008" mode 1920x1080@60.000Hz scale 1 position 1920,0
 }
