@@ -39,25 +39,27 @@ client.urgent            #900000   #900000    #0D0F14   #900000   #900000
 
 default_border pixel 1
 default_floating_border pixel 1
-gaps inner 2
-gaps outer 2
+#gaps inner 2
+#gaps outer 2
 #gaps top 1
 #gaps bottom 1
 #hide_edge_borders --i3 smart
 #corner_radius 10
 #smart_corner_radius on
 #
-#shadows disable
-#shadows_on_csd disable
-#shadow_blur_radius 15
-#shadow_color #7aa2f7
-#
-#blur disable
-#blur_xray disable
-#blur_radius 5
-#blur_passes 2
-#
-#titlebar_separator enable
+shadows enable
+shadows_on_csd disable
+shadow_blur_radius 15
+shadow_color #7aa2f7
+
+blur disable
+blur_xray disable
+blur_radius 5
+blur_passes 2
+
+default_dim_inactive 0.2
+
+titlebar_separator enable
 
 font Inter Display 8
 # Start i3bar to display a workspace bar (plus the system information i3status
