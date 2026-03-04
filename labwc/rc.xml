@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <core>
+  <decoration>server</decoration></core>
+  <theme>
+    <name>Adwaita</name>
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
+    <icon>Yaru-blue-dark</icon>
+  </theme>
+  <resistance>
+    <unMaximizeTreshold>100</unMaximizeTreshold>
+  </resistance>
+</labwc_config>
