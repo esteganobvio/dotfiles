@@ -1,14 +1,96 @@
 <?xml version="1.0"?>
 <labwc_config>
   <core>
-  <decoration>server</decoration></core>
+    <decoration>server</decoration>
+  </core>
+  <desktops>
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+    </names>
+  </desktops>
   <theme>
     <name>Adwaita</name>
     <dropShadows>yes</dropShadows>
     <dropShadowsOnTiled>yes</dropShadowsOnTiled>
-    <icon>Yaru-blue-dark</icon>
+      <icon>Yaru-blue-dark</icon>
   </theme>
   <resistance>
     <unMaximizeTreshold>100</unMaximizeTreshold>
   </resistance>
+  <libinput>
+    <device>
+      <tap>no</tap>
+      <clickMethod>clickFinger</clickMethod>
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
+  <keyboard>
+    <keybind key="W-a">
+      <action name="Execute" command="fuzzel" />
+    </keybind>
+    <keybind key="W-Escape">
+      <action name="Execute" command="loginctl lock-session" />
+    </keybind>
+    <keybind key="W-S-Q">
+      <action name="Execute" command="wlogout" />
+    </keybind> 
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute" command="ghostty" />
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-Space">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 5%-" />
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 5%+" />
+    </keybind>
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="amixer sset Master toggle" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +10%" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 10%-" />
+    </keybind>
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1" wrap="no" toggle="no" />
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2" wrap="no" toggle="no" />
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3" wrap="no" toggle="no" />
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4" wrap="no" toggle="no" />
+    </keybind>
+    <keybind key="S-W-1">
+      <action name="SendToDesktop" to="1" follow="no" toggle="no" />
+    </keybind>
+    <keybind key="S-W-2">
+      <action name="SendToDesktop" to="2" follow="no" toggle="no" />
+    </keybind>
+    <keybind key="S-W-3">
+      <action name="SendToDesktop" to="3" follow="no" toggle="no" />
+    </keybind>
+    <keybind key="S-W-4">
+      <action name="SendToDesktop" to="4" follow="no" toggle="no" />
+    </keybind>
+
+  </keyboard>
 </labwc_config>

@@ -1,7 +1,7 @@
 font-family = "{{ font_family }}"
 font-size = "{{ font_size }}"
 theme = "TokyoNight Night"
-background-opacity = 0.9
+background-opacity = 1
 #adw-toolbar-style = flat
 window-theme = "ghostty"
 window-height = 50
@@ -11,6 +11,7 @@ window-padding-y = 5
 window-inherit-working-directory = true
 shell-integration-features = cursor, no-cursor, sudo, no-sudo, title, no-title
 command =  "/bin/zsh -l"
+window-decoration = "client"
 #keybind = ctrl+a>h=goto_split:left
 #keybind = ctrl+a>l=goto_split:right
 #keybind = ctrl+a>j=goto_split:down
