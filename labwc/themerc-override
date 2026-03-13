@@ -1,0 +1,50 @@
+# This file contains all themerc options with default values
+#
+# System-wide and local themes can be overridden by creating a copy of this
+# file and renaming it to $HOME/.config/labwc/themerc-override. Be careful
+# though - if you only want to override a small number of specific options,
+# make sure all other lines are commented out or deleted.
+
+# general
+border.width: 1
+padding.height: 3
+
+window.active.border.color: #23252e
+window.inactive.border.color: #23252e
+
+# Цвета заголовков окон
+window.active.title.bg.color: #23252e
+window.inactive.title.bg.color: #23252e
+
+window.active.label.text.color: #7aa2f7
+window.inactive.label.text.color: #dfdfdf
+window.label.text.justify: center
+
+window.active.button.unpressed.image.color: #dfdfdf
+window.inactive.button.unpressed.image.color: #dfdfdf
+
+#     window.active.button.iconify.unpressed.image.color: #333333
+
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+menu.width.min: 20
+menu.width.max: 200
+
+menu.items.bg.color: #282a33
+menu.items.text.color: #dfdfdf
+menu.items.active.bg.color: #dddad6
+menu.items.active.text.color: #000000
+menu.items.padding.x: 20
+menu.items.padding.y: 6
+
+menu.separator.width: 1
+menu.separator.padding.width: 6
+menu.separator.padding.height: 3
+menu.separator.color: #888888
+
+
+osd.bg.color: #282a33
+osd.border.color: #282a33
+osd.border.width: 1
+osd.label.text.color: #7aa2f7

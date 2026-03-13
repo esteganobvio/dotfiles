@@ -21,10 +21,20 @@
     <unMaximizeTreshold>100</unMaximizeTreshold>
   </resistance>
   <libinput>
-    <device>
+    <device category="touchpad">
       <tap>no</tap>
       <clickMethod>clickFinger</clickMethod>
       <naturalScroll>yes</naturalScroll>
+    </device>
+    <device category="touch">
+      <tap>no</tap>
+      <clickMethod>clickFinger</clickMethod>
+      <naturalScroll>yes</naturalScroll>
+    </device>
+    <device category="non-touch">
+      <tap>no</tap>
+      <clickMethod>clickFinger</clickMethod>
+      <naturalScroll>no</naturalScroll>
     </device>
   </libinput>
   <keyboard>
@@ -44,7 +54,7 @@
       <action name="PreviousWindow" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="ghostty" />
+      <action name="Execute" command="ghostty +new-window" />
     </keybind>
     <keybind key="W-q">
       <action name="Close" />
