@@ -1,27 +1,51 @@
-profile silverfly-undocked {
-  output "Sharp Corporation 0x148D Unknown" enable scale 2
+output "Sharp Corporation 0x148D Unknown" {
+  mode 3840x2160
+  scale 2
+  alias $SILVERFLY
+}
+
+output "Samsung Electric Company LF24T35 H9VT204063" {
+  mode 1920x1080@75
+  scale 1
+  alias $EXTERNAL1
+}
+
+output "LG Electronics 23MP55 0x00004008" { 
+  mode 1920x1080
+  scale 1
+  alias $EXTERNAL2
+}
+
+output "LTM LCD 0x01010101" {
+  mode 1920x1080
+  scale 1
+  alias $EXTERNAL3
+}
+
+profile silverfly {
+  output $SILVERFLY enable
 }
 
 profile silverfly-docked {
-  output "Sharp Corporation 0x148D Unknown" disable
-  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1
+  output $SILVERFLY disable
+  output $EXTERNAL1 enable
 }
 
 profile silverfly-mh {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position 0,1080
-  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 scale 1 position 0,0
+  output $SILVERFLY enable position 0,1080
+  output $EXTERNAL1 enable position 0,0
 }
 
 profile silverfly-docked-work {
-  output "Sharp Corporation 0x148D Unknown" disable
-  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 adaptive_sync on scale 1 position 0,0
-  output "LG Electronics 23MP55 0x00004008" mode 1920x1080@60.000Hz scale 1 position 1920,0
+  output $SILVERFLY disable
+  output $EXTERNAL1 enable position 0,0
+  output $EXTERNAL2 enable position 1920,0
 }
 
 profile silverfly-work {
-  output "Sharp Corporation 0x148D Unknown" enable mode 3840x2160 scale 2 position 0,1080
-  output "Samsung Electric Company LF24T35 H9VT204063" mode 1920x1080@75 adaptive_sync on scale 1 position 0,0
-  output "LG Electronics 23MP55 0x00004008" mode 1920x1080@60.000Hz scale 1 position 1920,0
+  output $SILVERFLY enable position 0,1080
+  output $EXTERNAL1 enable position 0,0
+  output $EXTERNAL2 enable position 1920,0
 }
 
 profile wonderfly-docked {

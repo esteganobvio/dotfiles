@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term ghostty
+set $term ghostty +new-window
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -47,7 +47,7 @@ default_floating_border pixel 1
 #corner_radius 10
 #smart_corner_radius on
 #
-shadows enable
+shadows disable
 shadows_on_csd disable
 shadow_blur_radius 15
 shadow_color #7aa2f7
@@ -57,7 +57,7 @@ blur_xray disable
 blur_radius 5
 blur_passes 2
 
-default_dim_inactive 0.2
+#default_dim_inactive 0.2
 
 titlebar_separator enable
 

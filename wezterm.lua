@@ -2,10 +2,10 @@ local wezterm = require("wezterm")
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/sessionizer.wezterm")
 local config = wezterm.config_builder()
--- =>
+
 config.default_prog = { "/bin/zsh", "-l" }
 config.font = wezterm.font("{{ font_family }}")
-config.font_size = 10
+config.font_size = 9
 config.line_height = 1.0
 config.color_scheme = "tokyonight"
 config.window_background_opacity = 1
@@ -20,7 +20,7 @@ config.front_end = "WebGpu"
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
 	font = wezterm.font({ family = "{{ font_family }}" }),
-	font_size = 10,
+	font_size = 9,
 	-- The overall background color of the tab bar when
 	-- the window is focused
 	active_titlebar_bg = "#1a1b26",
@@ -76,7 +76,7 @@ config.colors = {
 	},
 }
 
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "o", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
 		mods = "LEADER",

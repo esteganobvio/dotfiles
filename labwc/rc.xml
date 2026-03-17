@@ -54,7 +54,10 @@
       <action name="PreviousWindow" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="ghostty +new-window" />
+      <action name="Execute" command="wezterm" />
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute" command="brave-browser" />
     </keybind>
     <keybind key="W-q">
       <action name="Close" />
