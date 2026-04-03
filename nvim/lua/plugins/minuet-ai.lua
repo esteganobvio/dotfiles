@@ -23,15 +23,15 @@ return {
         --        },
         provider = 'openai_fim_compatible',
         n_completions = 1,
-        context_window = 512,
+        context_window = 1024,
         provider_options = {
           openai_fim_compatible = {
             api_key = 'TERM',
             name = 'wildfly',
             end_point = 'http://wildfly:9999/v1/completions',
-            model = 'sweep',
+            model = 'zeta-2',
             optional = {
-              max_tokens = 56,
+              max_tokens = 1024,
               top_p = 0.9,
             },
           },
