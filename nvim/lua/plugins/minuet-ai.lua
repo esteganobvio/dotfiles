@@ -2,6 +2,43 @@ return {
   {
     'milanglacier/minuet-ai.nvim',
     config = function()
+      require('vectorcode').setup(
+        ---@type VectorCode.Opts
+        {
+          cli_cmds = {
+            vectorcode = 'vectorcode',
+          },
+          ---@type VectorCode.RegisterOpts
+          async_opts = {
+            debounce = 10,
+            events = { 'BufWritePost', 'InsertEnter', 'BufReadPost' },
+            exclude_this = true,
+            n_query = 1,
+            notify = false,
+            query_cb = require('vectorcode.utils').make_surrounding_lines_cb(-1),
+            run_on_register = false,
+          },
+          async_backend = 'default', -- or "lsp"
+          exclude_this = true,
+          n_query = 1,
+          notify = true,
+          timeout_ms = 5000,
+          on_setup = {
+            update = false, -- set to true to enable update when `setup` is called.
+            lsp = false,
+          },
+          sync_log_env_var = false,
+        }
+      )
+      local has_vc, vectorcode_config = pcall(require, 'vectorcode.config')
+      local vectorcode_cacher = nil
+      if has_vc then
+        vectorcode_cacher = vectorcode_config.get_cacher_backend()
+      end
+
+      -- roughly equate to 2000 tokens for LLM
+      local RAG_Context_Window_Size = 8000
+
       require('minuet').setup {
         -- Your configuration options here
         --        virtualtext = {
@@ -39,8 +76,16 @@ return {
           -- Therefore, we must disable it and manually populate the special
           -- tokens required for FIM completion.
           template = {
-            prompt = function(context_before_cursor, context_after_cursor, _)
-              return '<|fim_prefix|>' .. context_before_cursor .. '<|fim_suffix|>' .. context_after_cursor .. '<|fim_middle|>'
+            prompt = function(pref, suff, _)
+              local prompt_message = ''
+              if has_vc then
+                for _, file in ipairs(vectorcode_cacher.query_from_cache(0)) do
+                  prompt_message = prompt_message .. '<|file_sep|>' .. file.path .. '\n' .. file.document
+                end
+              end
+
+              prompt_message = vim.fn.strcharpart(prompt_message, 0, RAG_Context_Window_Size)
+              return '<|fim_prefix|>' .. pref .. '<|fim_suffix|>' .. suff .. '<|fim_middle|>'
             end,
             suffix = false,
           },

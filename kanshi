@@ -1,6 +1,6 @@
 output "Sharp Corporation 0x148D Unknown" {
   mode 3840x2160
-  scale 2
+  scale 1.75
   alias $SILVERFLY
 }
 
