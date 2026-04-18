@@ -117,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 1
+    gaps 2
 
     background-color "transparent"
 
@@ -678,7 +678,7 @@ binds {
     // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+Q { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Mod+Shift+Q { spawn "wlogout"; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
