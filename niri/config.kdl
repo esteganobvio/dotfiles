@@ -117,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 2
+    gaps 6
 
     background-color "transparent"
 
@@ -452,10 +452,9 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-5"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && swayosd-client --custom-message 'Microphone' --custom-icon 'source-volume-muted-symbolic' || swayosd-client --custom-message 'Microphone' --custom-icon 'source-volume-high-symbolic')"; }
-    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
-    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
-    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; } 
-    XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "swayosd-client" "--playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "swayosd-client" "--playerctl" "previous"; }
+    XF86AudioPlay allow-when-locked=true { spawn "swayosd-client" "--playerctl" "play-pause"; } 
     XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
 
