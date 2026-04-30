@@ -1,0 +1,116 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "proxy": "",
+  "cli_default_open_behavior": "existing_window",
+  "diff_view_style": "unified",
+  "tab_size": 2,
+  "relative_line_numbers": "enabled",
+  "cursor_shape": "block",
+  "text_rendering_mode": "subpixel",
+  "agent_buffer_font_size": 10.0,
+  "agent_ui_font_size": 14.0,
+  "ui_font_family": "Inter Display",
+  "buffer_font_family": "JetBrains Mono",
+  "agent": {
+    "default_model": {
+      "provider": "dragonfly",
+      "model": "gemma-4",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+    "commit_message_model": {
+      "provider": "wildfly",
+      "model": "gemma-4",
+    },
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "open_ai_compatible_api",
+    "open_ai_compatible_api": {
+      "prompt_format": "infer",
+      "model": "sweep",
+      "api_url": "http://wildfly:9998/v1/completions",
+    },
+  },
+  "language_models": {
+    "openai_compatible": {
+      "dragonfly": {
+        "api_url": "http://dragonfly:9999",
+        "available_models": [
+          {
+            "name": "gemma-4",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+      "wildfly": {
+        "api_url": "http://wildfly:9999",
+        "available_models": [
+          {
+            "name": "gemma-4",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": "{{ context7_key }}",
+      },
+    },
+  },
+  "agent_servers": {
+    "gemini": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "vim_mode": true,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "system",
+    "light": "Tokyo Night Light",
+    "dark": "Tokyo Night",
+  },
+}
