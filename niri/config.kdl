@@ -117,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 6
+    gaps 20
 
     background-color "transparent"
 
@@ -256,15 +256,17 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        left -18
+        right -18
+        top -18
+        bottom -18
     }
     tab-indicator {
-        place-within-column
+        width 6
+        gap 1
         position "left"
         corner-radius 2
+        length total-proportion=0.8
     }
 }
 environment {
@@ -390,7 +392,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -687,11 +689,13 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     //Mod+Tab repeat=false { spawn "niri-switch"; }
-    Mod+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
+    //Mod+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
     //Mod+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
     Mod+M repeat=false { spawn "dunstctl" "close"; }
     Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }
     Mod+Ctrl+M repeat=false { spawn "dunstctl" "context"; }
+
+    Mod+Space { spawn "bash" "-c" "echo toggle > $XDG_RUNTIME_DIR/dockbar-search"; }
 }
 
 // Make the wallpaper stationary, rather than moving with workspaces.
