@@ -76,7 +76,7 @@ config.colors = {
 	},
 }
 
-config.leader = { key = "o", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "m", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	{
 		mods = "LEADER",
