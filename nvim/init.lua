@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require 'user.options'
 require('lazy').setup 'plugins'
 
+vim.o.termsync = false
+
 if vim.g.neovide then
   vim.o.guifont = '{{ font_family }}:h{{ font_size }}'
   vim.g.neovide_opacity = 1

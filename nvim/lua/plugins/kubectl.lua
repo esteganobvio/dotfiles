@@ -8,7 +8,6 @@ return {
     dependencies = 'saghen/blink.download',
     config = function()
       require('kubectl').setup()
-      vim.keymap.set('n', '<leader>k', '<cmd>lua require("kubectl").toggle({ tab: boolean })<cr>', { noremap = true, silent = true })
     end,
   },
 }

@@ -7,6 +7,10 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
+        disable_filetypes = {
+          statusline = { 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles', 'AgenticDiagnostics' },
+          winbar = { 'AgenticChat', 'AgenticInput', 'AgenticCode', 'AgenticFiles', 'AgenticDiagnostics' },
+        },
       },
       extensions = {
         'toggleterm',

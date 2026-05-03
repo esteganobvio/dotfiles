@@ -47,7 +47,7 @@ return {
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer', 'ripgrep', 'tmux', 'minuet' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer', 'ripgrep', 'tmux' },
         --per_filetype = { 'codecompanion' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
@@ -72,18 +72,14 @@ return {
               trigger_chars = { '.' },
             },
           },
-          minuet = {
-            name = 'minuet',
-            module = 'minuet.blink',
-            async = true,
-            timeout_ms = 3000,
-            score_offset = 50,
-          },
         },
       },
       snippets = { preset = 'luasnip' },
       fuzzy = { implementation = 'prefer_rust_with_warning' },
       signature = { enabled = true },
+      enabled = function()
+        return not vim.tbl_contains({ 'AgenticInput' }, vim.bo.filetype)
+      end,
     },
   },
 }
