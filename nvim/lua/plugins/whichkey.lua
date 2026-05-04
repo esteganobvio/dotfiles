@@ -173,6 +173,13 @@ return {
       },
       { '<leader>s', group = 'Search', nowait = true, remap = false },
       {
+        '<leader>sP',
+        ':Telescope projections <cr>',
+        desc = 'Projects',
+        nowait = true,
+        remap = false,
+      },
+      {
         '<leader>sC',
         ':Telescope commands <cr>',
         desc = 'Commands',
