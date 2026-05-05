@@ -441,7 +441,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty" "+new-window"; }
-    Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+A hotkey-overlay-title="Run an Application: " { spawn-sh "echo toggle > $XDG_RUNTIME_DIR/dockbar-launcher"; }
     Mod+B hotkey-overlay-title="Open web browser: Brave" { spawn "flatpak" "run" "com.brave.Browser" ;}
     Mod+Escape hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
     Ctrl+Alt+H hotkey-overlay-title="Show clipboard history" { spawn "clipman" "pick" "-t" "CUSTOM" "-T" "fuzzel --dmenu"; }
