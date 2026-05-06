@@ -15,7 +15,7 @@ return {
         function()
           require('agentic').toggle()
         end,
-        mode = { 'n', 'v', 'i' },
+        mode = { 'n', 'v' },
         desc = 'Toggle Agentic Chat',
       },
       {
@@ -23,7 +23,7 @@ return {
         function()
           require('agentic').switch_provider()
         end,
-        mode = { 'n', 'v', 'i' },
+        mode = { 'n', 'v' },
         desc = 'Switch acp provider',
       },
       {
@@ -39,7 +39,7 @@ return {
         function()
           require('agentic').new_session()
         end,
-        mode = { 'n', 'v', 'i' },
+        mode = { 'n', 'v' },
         desc = 'New Agentic Session',
       },
       {
@@ -49,7 +49,7 @@ return {
         end,
         desc = 'Agentic Restore session',
         silent = true,
-        mode = { 'n', 'v', 'i' },
+        mode = { 'n', 'v' },
       },
       {
         '<leader>ad', -- ai Diagnostics
