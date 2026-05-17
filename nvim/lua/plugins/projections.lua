@@ -1,5 +1,6 @@
 return {
   'gnikdroy/projections.nvim',
+  branch = 'pre_release',
   config = function()
     require('projections').setup {
       workspaces = { -- Default workspaces to search for
