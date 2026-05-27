@@ -13,7 +13,7 @@ window-padding-y = 5
 window-inherit-working-directory = true
 shell-integration-features = cursor, no-cursor, sudo, no-sudo, title, no-title, ssh-terminfo, ssh-env
 command =  "/bin/zsh -l"
-#window-decoration = "auto"
+window-decoration = "client"
 #keybind = ctrl+a>h=goto_split:left
 #keybind = ctrl+a>l=goto_split:right
 #keybind = ctrl+a>j=goto_split:down

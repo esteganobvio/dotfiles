@@ -7,6 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "terminal": {
+    "dock": "bottom",
+  },
+  "window_decorations": "server",
+  "use_system_window_tabs": false,
+  "tabs": {
+    "file_icons": false,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+  },
   "proxy": "",
   "cli_default_open_behavior": "existing_window",
   "diff_view_style": "unified",
@@ -19,6 +43,8 @@
   "ui_font_family": "Inter Display",
   "buffer_font_family": "JetBrains Mono",
   "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
     "default_model": {
       "provider": "dragonfly",
       "model": "gemma-4",
@@ -32,11 +58,11 @@
     },
   },
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
     "provider": "open_ai_compatible_api",
     "open_ai_compatible_api": {
-      "prompt_format": "infer",
-      "model": "sweep",
+      "prompt_format": "qwen",
+      "model": "qwen-3.5",
       "api_url": "http://wildfly:9998/v1/completions",
     },
   },
@@ -90,10 +116,16 @@
     },
   },
   "agent_servers": {
+    "cursor": {
+      "type": "registry",
+    },
     "gemini": {
       "type": "registry",
     },
     "claude-acp": {
+      "favorite_config_option_values": {
+        "model": ["claude-opus-4-6"],
+      },
       "type": "registry",
     },
     "opencode": {
@@ -101,7 +133,7 @@
     },
   },
   "icon_theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
@@ -109,8 +141,9 @@
   "ui_font_size": 14.0,
   "buffer_font_size": 12.0,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Tokyo Night Light",
-    "dark": "Tokyo Night",
+    "dark": "Tokyo Night Storm",
   },
+  "lsp_document_colors": "background",
 }
