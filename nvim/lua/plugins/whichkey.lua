@@ -54,13 +54,6 @@ return {
         nowait = true,
         remap = false,
       },
-      {
-        '<leader>c',
-        ':bdelete!<CR>',
-        desc = 'Close Buffer',
-        nowait = true,
-        remap = false,
-      },
       { '<leader>g', group = 'Git', nowait = true, remap = false },
       {
         '<leader>gc',
