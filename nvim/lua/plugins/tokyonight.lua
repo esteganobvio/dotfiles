@@ -5,8 +5,9 @@ return {
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require('tokyonight').setup {
+      style = 'night',
       transparent = true,
-      style = {
+      styles = {
         comments = { italic = false },
       },
     }

@@ -74,7 +74,6 @@ plugins=(git git-auto-fetch fzf kube-ps1 brew)
 
 eval "$(brew shellenv)"
 source $ZSH/oh-my-zsh.sh
-eval "$(~/.local/bin/mise activate zsh)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

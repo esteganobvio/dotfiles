@@ -1,13 +1,126 @@
 local wezterm = require("wezterm")
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/sessionizer.wezterm")
+local agent_deck = wezterm.plugin.require("https://github.com/Eric162/wezterm-agent-deck")
 local config = wezterm.config_builder()
+
+agent_deck.apply_to_config(config, {
+	update_interval = 500, -- ms between status checks
+
+	colors = {
+		working = "#A6E22E", -- green: agent processing
+		waiting = "#E6DB74", -- yellow: needs input
+		idle = "#66D9EF", -- blue: ready
+		inactive = "#888888", -- gray: no agent
+	},
+
+	icons = {
+		style = "unicode", -- or 'nerd', 'emoji'
+		unicode = { working = "●", waiting = "◔", idle = "○", inactive = "◌" },
+	},
+
+	notifications = { enabled = true, on_waiting = true },
+	right_status = { enabled = false },
+
+	agents = {
+		-- claudecode.nvim runs `claude` as a direct child of nvim, so detection
+		-- relies on the child-process walk matching these patterns. Mirrors the
+		-- plugin's built-in defaults; declared explicitly to keep intent visible.
+		claude = {
+			patterns = { "claude", "claude%-code" },
+			executable_patterns = {
+				"@anthropic%-ai/claude%-code",
+				"/claude%-code/",
+				"%.claude/bin/claude",
+				"linuxbrew/bin/claude",
+				"/claude$",
+				"^claude$",
+			},
+			argv_patterns = {
+				"@anthropic%-ai/claude%-code",
+				"claude%-code",
+				"%.claude/bin/claude",
+				"^claude%s",
+				"^claude$",
+			},
+			title_patterns = {
+				"claude code",
+				"claude",
+			},
+		},
+		agentic = {
+			patterns = { "agentic" },
+			title_patterns = {
+				"agentic",
+				"Agentic Chat",
+				"AgenticInput",
+				"Mode: Agent",
+				"Mode: chat",
+			},
+			status_patterns = {
+				working = {
+					"thinking",
+					"processing",
+					"generating",
+					"analyzing",
+					"searching",
+					"running tool",
+					"esc to interrupt",
+				},
+				waiting = {
+					"allow once",
+					"allow always",
+					"reject",
+					"permission",
+					"pending",
+					"%(y/n%)",
+					"%(Y/n%)",
+					"approve",
+					"confirm",
+				},
+				-- Leave idle empty: Prompt winbar stays visible during permission
+				-- prompts, and split-pane rows false-match bare "Prompt" patterns.
+				idle = {},
+			},
+		},
+	},
+})
+
+config.status_update_interval = 1000
+
+wezterm.on("update-status", function(window, pane)
+	for _, tab in ipairs(window:mux_window():tabs()) do
+		for _, p in ipairs(tab:panes()) do
+			agent_deck.update_pane(p)
+		end
+	end
+
+	local counts = agent_deck.count_agents_by_status()
+	local cfg = agent_deck.get_config()
+	local items = {}
+
+	if counts.waiting > 0 then
+		table.insert(items, { Foreground = { Color = cfg.colors.waiting } })
+		table.insert(items, { Text = counts.waiting .. " waiting " })
+		table.insert(items, { Text = " | " })
+	end
+	if counts.working > 0 then
+		table.insert(items, { Foreground = { Color = cfg.colors.working } })
+		table.insert(items, { Text = counts.working .. " working " })
+		table.insert(items, { Text = " | " })
+	end
+
+	table.insert(items, { Foreground = { Color = "#a9b1d6" } })
+	table.insert(items, { Text = wezterm.strftime("%a %b %-d  %H:%M") .. "  " })
+
+	window:set_right_status(wezterm.format(items))
+end)
 
 config.default_prog = { "/bin/zsh", "-l" }
 config.font = wezterm.font("{{ font_family }}")
 config.font_size = 9
 config.line_height = 1.0
-config.color_scheme = "tokyonight"
+config.color_scheme = "tokyonight_night"
 config.window_background_opacity = 1
 config.window_decorations = "TITLE | RESIZE"
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -17,7 +130,9 @@ config.animation_fps = 60
 config.enable_wayland = true
 config.front_end = "WebGpu"
 -- config.disable_default_key_bindings = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
+config.use_fancy_tab_bar = true
+config.tab_bar_at_bottom = true
 config.window_frame = {
 	font = wezterm.font({ family = "{{ font_family }}" }),
 	font_size = 9,
@@ -132,6 +247,14 @@ config.keys = {
 	},
 }
 
+for i = 1, 9 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "ALT",
+		action = wezterm.action.ActivateTab(i - 1),
+	})
+end
+
 smart_splits.apply_to_config(config, {
 	-- the default config is here, if you'd like to use the default keys,
 	-- you can omit this configuration table parameter and just use
@@ -143,12 +266,12 @@ smart_splits.apply_to_config(config, {
 	-- can also do this:
 	direction_keys = {
 		move = { "h", "j", "k", "l" },
-		resize = { "LeftArrow", "DownArrow", "UpArrow", "RightArrow" },
+		-- META+h/j/k/l matches Neovim <A-h>/<A-j>/<A-k>/<A-l> resize maps
+		resize = { "h", "j", "k", "l" },
 	},
-	-- modifier keys to combine with direction_keys
 	modifiers = {
-		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
-		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
+		move = "CTRL",
+		resize = "META",
 	},
 })
 
@@ -163,4 +286,4 @@ sessionizer.configure(config)
 
 return config
 
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=3 sts=2 sw=2 et

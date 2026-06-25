@@ -1,6 +1,14 @@
 return {
   'coder/claudecode.nvim',
   dependencies = { 'folke/snacks.nvim' },
+  opts = {
+    terminal_cmd = '/home/linuxbrew/.linuxbrew/bin/claude', -- Point to local installation
+    focus_after_send = true,
+    terminal = {
+      split_side = 'right',
+      split_width_percentage = 0.40,
+    },
+  },
   config = true,
   keys = {
     { '<leader>c', nil, desc = 'Claude Code' },
