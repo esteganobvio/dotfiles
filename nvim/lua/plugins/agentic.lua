@@ -1,3 +1,5 @@
+local tmux_agent = require('user.tmux-agent-indicator')
+
 return {
   {
     'carlos-algms/agentic.nvim',
@@ -10,6 +12,17 @@ return {
         ['cursor-acp'] = {
           initial_model = 'claude-opus-4-8',
         },
+      },
+      hooks = {
+        on_prompt_submit = function()
+          tmux_agent.set_state('cursor', 'running')
+        end,
+        on_request_permission = function()
+          tmux_agent.set_state('cursor', 'needs-input')
+        end,
+        on_response_complete = function()
+          tmux_agent.set_state('cursor', 'done')
+        end,
       },
     },
 

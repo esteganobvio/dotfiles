@@ -38,9 +38,9 @@ bind Escape copy-mode
 unbind p
 bind p paste-buffer
 
-# extra commands for interacting with the ICCCM clipboard
-bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
-bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
+# extra commands for interacting with the system clipboard
+bind C-c run-shell "tmux save-buffer - | wl-copy 2>/dev/null || tmux save-buffer - | xclip -i -sel clipboard 2>/dev/null"
+bind C-v run-shell 'tmux set-buffer "$(wl-paste --no-newline 2>/dev/null || xclip -o -sel clipboard 2>/dev/null)"; tmux paste-buffer'
 
 # easy-to-remember split pane commands
 bind | split-window -h -c "#{pane_current_path}"
@@ -76,7 +76,8 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin "sigugo/tokyo-night-tmux"
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'mrjones2014/smart-splits.nvim'
-
+set -g @plugin 'accessd/tmux-agent-indicator'
+set -g @agent-indicator-icons 'claude=🤖,codex=🧠,opencode=💻,cursor=⬡,default=🤖'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -85,3 +86,7 @@ set -g @plugin 'mrjones2014/smart-splits.nvim'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+
+# tokyo-night-tmux sets status-right with broken ~/.config/tmux paths; override after plugins load
+set -g status-right-length 150
+set -g status-right '#(~/.tmux/plugins/tmux-agent-indicator/scripts/indicator.sh) #[fg=white,bg=#24283B] %Y-%m-%d #[]❬ %H:%M #(~/.tmux/plugins/tokyo-night-tmux/src/git-status.sh #{pane_current_path})'
