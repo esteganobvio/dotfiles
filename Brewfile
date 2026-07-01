@@ -1,0 +1,8 @@
+brew "go"
+brew  "gh"
+brew "tmux-sessionizer"
+brew "sassc"
+brew "neovim"
+tap "anomalyco/tap"
+brew "opencode"
+cask "claude-code"
