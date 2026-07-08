@@ -6,7 +6,9 @@ return {
     focus_after_send = true,
     terminal = {
       split_side = 'right',
-      split_width_percentage = 0.40,
+    },
+    diff_opts = {
+      open_in_new_tab = true,
     },
   },
   config = true,
