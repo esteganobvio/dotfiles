@@ -276,7 +276,8 @@ environment {
   XCURSOR_THEME "Yaru"
   XCURSOR_SIZE "24"
   GTK_IM_MODULE "simple"
-  //GTK_THEME "Tokyonight-Dark-Compact"
+  GTK_THEME "Tokyonight-Dark-Compact"
+  GTK_ICON_THEME "Yaru-blue-dark"
 }
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
