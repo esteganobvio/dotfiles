@@ -456,7 +456,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty" "+new-window"; }
     Mod+A hotkey-overlay-title="Run an Application: " { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+B hotkey-overlay-title="Open web browser: " { spawn "~/AppImages/helium.appimage" ;}
-    Mod+Escape hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia msg screen-lock"; }
+    Mod+Escape hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia msg session lock"; }
     Ctrl+Alt+H hotkey-overlay-title="Show clipboard history" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -729,5 +729,11 @@ layer-rule {
 overview {
     workspace-shadow {
         off
+    }
+}
+
+switch-events {
+    lid-close {
+        spawn "noctalia" "msg" "session" "lock"
     }
 }
