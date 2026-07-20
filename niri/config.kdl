@@ -271,7 +271,7 @@ layout {
 }
 environment {
   DISPLAY ":0"
-  QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORM "wayland;xcb"
   GDK_BACKEND "wayland"
   XCURSOR_THEME "Yaru"
   XCURSOR_SIZE "24"
@@ -403,7 +403,7 @@ window-rule {
 
 // Floating Noctalia settings window.
 window-rule {
-  match app-id="dev.noctalia.Noctalia.Settings"
+  match app-id="dev.noctalia.Noctalia"
   open-floating true
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
@@ -706,9 +706,9 @@ binds {
     //Mod+Tab repeat=false { spawn "niri-switch"; }
     Mod+Shift+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
     //Mod+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
-    Mod+M repeat=false { spawn "dunstctl" "close"; }
-    Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }
-    Mod+Ctrl+M repeat=false { spawn "dunstctl" "context"; }
+    //Mod+M repeat=false { spawn "dunstctl" "close"; }
+    //Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }
+    //Mod+Ctrl+M repeat=false { spawn "dunstctl" "context"; }
 
     //Mod+Space { spawn "qs" "-c" "dockbar" "ipc" "call" "dockbar" "toggleSearch"; }
 }
