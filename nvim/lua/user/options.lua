@@ -60,4 +60,7 @@ vim.g.loaded_netrwPlugin = 1
 ---vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
 ---vim.cmd [[autocmd BufRead,BufNewFile Tiltfile,*.tiltfile set filetype=tiltfile]]
 
+-- Prepend mise shims to PATH
+vim.env.PATH = vim.env.HOME .. '/.local/share/mise/shims:' .. vim.env.PATH
+
 vim.opt.termsync = true
