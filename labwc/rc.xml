@@ -2,8 +2,16 @@
 <labwc_config>
   <core>
     <decoration>server</decoration>
+    <gap>10</gap>
+    <adaptiveSync>yes</adaptiveSync>
+    <allowTearing>no</allowTearing>
+    <autoEnableOutputs>yes</autoEnableOutputs>
+    <hdr>yes</hdr>
   </core>
   <desktops>
+    <popupTime>
+      0
+    </popupTime>
     <names>
       <name>1</name>
       <name>2</name>
@@ -11,6 +19,14 @@
       <name>4</name>
     </names>
   </desktops>
+  <windowSwitcher preview="yes" outlines="yes">
+    <osd show="yes" style="thumbnail" output="all" thumbnailLabelFormat="%T" />
+    <fields>
+      <field content="icon" width="5%" />
+      <field content="desktop_entry_name" width="30%" />
+      <field content="title" width="65%" />
+    </fields>
+  </windowSwitcher>
   <theme>
     <name>Adwaita</name>
     <dropShadows>yes</dropShadows>
@@ -39,25 +55,25 @@
   </libinput>
   <keyboard>
     <keybind key="W-a">
-      <action name="Execute" command="fuzzel" />
+      <action name="Execute" command="noctalia msg panel-toggle launcher" />
     </keybind>
     <keybind key="W-Escape">
       <action name="Execute" command="loginctl lock-session" />
     </keybind>
     <keybind key="W-S-Q">
-      <action name="Execute" command="wlogout" />
+      <action name="Execute" command="noctalia msg panel-toggle session" />
     </keybind> 
     <keybind key="A-Tab">
-      <action name="NextWindow" />
+      <action name="NextWindow" workspace="all" />
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow" />
+      <action name="PreviousWindow" workspace="all" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="wezterm" />
+      <action name="Execute" command="ghostty +new-window" />
     </keybind>
     <keybind key="W-x">
-      <action name="Execute" command="brave-browser" />
+      <action name="Execute" command="~/AppImages/helium.appimage" />
     </keybind>
     <keybind key="W-q">
       <action name="Close" />
@@ -66,19 +82,19 @@
       <action name="ToggleMaximize" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer sset Master 5%-" />
+      <action name="Execute" command="noctalia msg volume-down" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer sset Master 5%+" />
+      <action name="Execute" command="noctalia msg volume-up" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="amixer sset Master toggle" />
+      <action name="Execute" command="noctalia msg volume-mute" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +10%" />
+      <action name="Execute" command="noctalia msg brightness-up" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 10%-" />
+      <action name="Execute" command="noctalia msg brightness-down" />
     </keybind>
     <keybind key="W-1">
       <action name="GoToDesktop" to="1" wrap="no" toggle="no" />
@@ -104,6 +120,5 @@
     <keybind key="S-W-4">
       <action name="SendToDesktop" to="4" follow="no" toggle="no" />
     </keybind>
-
   </keyboard>
 </labwc_config>
