@@ -64,10 +64,10 @@
       <action name="Execute" command="noctalia msg panel-toggle session" />
     </keybind> 
     <keybind key="A-Tab">
-      <action name="NextWindow" workspace="all" />
+      <action name="NextWindow" />
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow" workspace="all" />
+      <action name="PreviousWindow" />
     </keybind>
     <keybind key="W-Return">
       <action name="Execute" command="ghostty +new-window" />
@@ -121,4 +121,170 @@
       <action name="SendToDesktop" to="4" follow="no" toggle="no" />
     </keybind>
   </keyboard>
+
+  <!--
+    Multiple <mousebind> can exist within one <context>
+    Multiple <actions> can exist within one <mousebind>
+
+    Use <mouse><default /> to load all the default mousebinds (those listed
+    below). If the default mousebinds are largely what you want, a sensible
+    approach could be to start the <mouse> section with a <default />
+    element, and then (re-)define any special binds you need such as launching
+    a custom menu when right-clicking on your desktop. See rc.xml for an
+    example.
+  -->
+  <mouse>
+
+    <!-- time is in ms -->
+    <doubleClickTime>500</doubleClickTime>
+
+    <context name="Frame">
+      <mousebind button="W-Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="W-Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Right" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+
+    <context name="Border">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+
+    <context name="TitleBar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="Unshade" />
+        <action name="Focus" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="Unfocus" />
+        <action name="Shade" />
+      </mousebind>
+    </context>
+
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
+
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ToggleMaximize" direction="horizontal" />
+      </mousebind>
+      <mousebind button="Middle" action="Click">
+        <action name="ToggleMaximize" direction="vertical" />
+      </mousebind>
+    </context>
+
+    <context name="WindowMenu">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Icon">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Shade">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleShade" />
+      </mousebind>
+    </context>
+
+    <context name="AllDesktops">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleOmnipresent" />
+      </mousebind>
+    </context>
+
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify" />
+      </mousebind>
+    </context>
+
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close" />
+      </mousebind>
+    </context>
+
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+    </context>
+
+    <context name="Root">
+      <mousebind button="Left" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+        <!-- openbox default, swap with above line to activate -->
+        <!-- <action name="ShowMenu" menu="client-list-combined-menu" /> -->
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="GoToDesktop" to="left" wrap="yes" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="GoToDesktop" to="right" wrap="yes" />
+      </mousebind>
+    </context>
+
+  </mouse>
+
 </labwc_config>
