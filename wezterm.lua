@@ -130,9 +130,9 @@ config.animation_fps = 60
 config.enable_wayland = true
 config.front_end = "WebGpu"
 -- config.disable_default_key_bindings = true
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.window_frame = {
 	font = wezterm.font({ family = "{{ font_family }}" }),
 	font_size = 9,

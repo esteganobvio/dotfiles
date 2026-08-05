@@ -117,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 0
 
     background-color "transparent"
 
@@ -200,9 +200,9 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        // off
+        on
 
-        width 4
+        width 1
         active-color "#7aa2f7"
         inactive-color "#1a1b26"
 
@@ -216,7 +216,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -256,10 +256,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     // struts {
-    //     left -6
-    //     right -6
-    //     top -8
-    //     bottom -8
+    //     left 5
+    //     right 0
+    //     top 0
+    //     bottom 0
     // }
     tab-indicator {
         width 6
@@ -286,19 +286,9 @@ environment {
 
 // spawn-at-startup "/usr/libexec/xfce-polkit"
 spawn-at-startup "noctalia"
-// This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
-// spawn-at-startup "gammastep-indicator"
-// spawn-at-startup "blueman-applet"
-// spawn-at-startup "dunst"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "clipman" "store" "--no-persist"
 spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "swayidle" "-w" "timeout" "300" "swaylock -f" "timeout" "600" "niri msg action power-off-monitors" "timeout" "900" "systemctl suspend" "before-sleep" "swaylock -f" "after-resume" "niri msg action power-on-monitors" "lock" "swaylock -f"
-// spawn-at-startup "waypaper" "--restore"
-// spawn-at-startup "swayosd-server"
-
-
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -323,7 +313,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 0.5
+    slowdown 1.5
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -397,8 +387,9 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0
     clip-to-geometry true
+    draw-border-with-background true
 }
 
 // Floating Noctalia settings window.
@@ -407,6 +398,13 @@ window-rule {
   open-floating true
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
+}
+
+window-rule {
+  match title="^Wine Desktop"
+  open-floating true
+  default-column-width { fixed 1024; }
+  default-window-height { fixed 768; }
 }
 
 recent-windows {
