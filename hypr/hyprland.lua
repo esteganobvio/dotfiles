@@ -261,7 +261,7 @@ local closeWindowBind = hl.bind(mainMod .. " + q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center"))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(ipc .. " screen-lock"))
+hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(ipc .. " session lock"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
