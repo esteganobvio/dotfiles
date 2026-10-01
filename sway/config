@@ -18,7 +18,7 @@ set $term ghostty +new-window
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
+set $menu "noctalia msg panel-toggle launcher"
 #set $menu dms ipc call spotlight toggle
 #
 # Status Bar:
@@ -47,19 +47,7 @@ default_floating_border pixel 1
 #corner_radius 10
 #smart_corner_radius on
 #
-shadows disable
-shadows_on_csd disable
-shadow_blur_radius 15
-shadow_color #7aa2f7
-
-blur disable
-blur_xray disable
-blur_radius 5
-blur_passes 2
-
 #default_dim_inactive 0.2
-
-titlebar_separator enable
 
 font Inter Display 8
 # Start i3bar to display a workspace bar (plus the system information i3status
