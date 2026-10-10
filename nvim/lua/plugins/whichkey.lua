@@ -135,6 +135,7 @@ return {
         nowait = true,
         remap = false,
       },
+      { '<leader>o', group = 'OpenCode', nowait = true, remap = false },
       { '<leader>p', group = 'Plugins', nowait = true, remap = false },
       {
         '<leader>pS',
