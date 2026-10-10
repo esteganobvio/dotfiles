@@ -364,7 +364,6 @@ window-rule {
     match app-id="blueman-manager"
     match app-id="system-config-printer"
     match app-id="xfce-polkit"
-    match app-id="dev.zed.Zed" title="^Zed — Settings$"
     open-floating true
 }
 
@@ -704,9 +703,6 @@ binds {
     //Mod+Tab repeat=false { spawn "niri-switch"; }
     Mod+Shift+Space repeat=false { spawn "niri_fuzzel_keyboard_switcher"; }
     //Mod+Shift+Tab repeat=false { spawn "niri-switch" "--previous"; }
-    //Mod+M repeat=false { spawn "dunstctl" "close"; }
-    //Mod+Shift+M repeat=false { spawn "dunstctl" "history-pop"; }
-    //Mod+Ctrl+M repeat=false { spawn "dunstctl" "context"; }
 
     //Mod+Space { spawn "qs" "-c" "dockbar" "ipc" "call" "dockbar" "toggleSearch"; }
 }

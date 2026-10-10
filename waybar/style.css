@@ -48,7 +48,6 @@ window#waybar {
 #keyboard-state,
 #pulseaudio,
 #idle_inhibitor,
-#custom-dunst,
 #power-profiles-daemon,
 #backlight,
 #tray {
@@ -107,7 +106,6 @@ window#waybar {
 #tray,
 #mpris,
 #custom-ddcutil,
-#custom-dunst,
 #language,
 #privacy,
 #power-profiles-daemon,

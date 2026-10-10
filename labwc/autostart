@@ -1,8 +1,0 @@
-systemctl --user start labwc-session.target
-
-wl-paste --type text --watch clipman store --no-persist  2>&1 &
-wl-paste --type image --watch clipman store --no-persist 2>&1 &
-
-systemctl --user import-environment
-
-noctalia &

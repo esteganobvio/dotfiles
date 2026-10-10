@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "position": "top", // Waybar position (top|bottom|left|right)
   "width": 0, // Waybar width
   "height": 20,
   "margin-top": 0,
@@ -15,12 +15,12 @@
     "sway/window",
     "niri/workspaces",
     "niri/window",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window",
   ],
   "modules-center": [
     "niri/language",
     "clock",
-    "custom/dunst",
     "privacy"
   ],
   "modules-right": [
@@ -45,6 +45,24 @@
     }
   },
   "sway/window": {
+    "icon": true,
+    "icon-size": 14
+  },
+  "hyprland/workspaces": {
+    "disable-click": false,
+    "all-outputs": false,
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "urgent": "",
+      // "active": "",
+      "default": ""
+    }
+  },
+  "hyprland/window": {
     "icon": true,
     "icon-size": 14
   },
@@ -168,12 +186,6 @@
     },
     "on-click": "flatpak run com.saivert.pwvucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-  },
-
-  "custom/dunst": {
-    "exec": "~/.config/waybar/scripts/dunst.sh",
-    "on-click": "dunstctl set-paused toggle",
-    "restart-interval": 1
   },
 
   "group/screen": {
