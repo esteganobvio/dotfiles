@@ -32,8 +32,6 @@ This repository is a collection of configuration files (dotfiles) for a customiz
 ### Desktop Environment
 *   **Fuzzel:** Application launcher config at `fuzzel/fuzzel.ini`.
 *   **Gammastep:** Screen color temperature manager at `gammastep`.
-*   **Kanshi:** Output/display manager config at `kanshi`.
-*   **Swaylock:** Screen locker config at `swaylock`.
 *   **XDG Desktop Portal:** Portal configuration in `xdg-desktop-portal/`.
 
 ### Shell & Terminal Tools

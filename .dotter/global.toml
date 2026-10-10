@@ -7,29 +7,23 @@ fuzzel = "~/.config/fuzzel"
 xdg-desktop-portal = "~/.config/xdg-desktop-portal"
 
 [sway]
-depends = ["xdg-desktop-portal", "fuzzel", "systemd-user", "swaylock", "kanshi", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "systemd-user"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 
 [niri]
-depends = ["xdg-desktop-portal", "fuzzel", "systemd-user","swaylock", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "systemd-user"]
 
 [niri.files]
 niri = "~/.config/niri"
 
 [hyprland]
-depends = ["fuzzel", "systemd-user", "gammastep"]
+depends = ["systemd-user"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
-
-[swaylock.files]
-swaylock = "~/.config/swaylock/config"
-
-[kanshi.files]
-kanshi = "~/.config/kanshi/config"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
@@ -62,8 +56,6 @@ zprofile = "~/.zprofile"
 nvim = "~/.config/nvim"
 
 [nvim.variables]
-coder_model = "qwen2.5-coder:14b"
-chater_model = "deepseek-r1:14b"
 
 # Default
 [default]

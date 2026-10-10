@@ -1,9 +1,0 @@
-image=~/Pictures/backiee-72749-landscape.jpg
-color=000000
-indicator-radius=100
-indicator-thickness=7
-daemonize
-show-failed-attempts
-clock
-indicator
-effect-blur=7x5
