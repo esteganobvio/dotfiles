@@ -30,7 +30,6 @@ This repository is a collection of configuration files (dotfiles) for a customiz
 *   **Neovim:** Editor customizations in `nvim/lua/`. Plugins defined in `nvim/lua/plugins.lua`.
 
 ### Desktop Environment
-*   **Waybar:** Status bar configuration in `waybar/`. Includes `config`, `style.css`, and scripts in `waybar/scripts/`.
 *   **Fuzzel:** Application launcher config at `fuzzel/fuzzel.ini`.
 *   **Gammastep:** Screen color temperature manager at `gammastep`.
 *   **Kanshi:** Output/display manager config at `kanshi`.

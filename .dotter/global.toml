@@ -7,20 +7,20 @@ fuzzel = "~/.config/fuzzel"
 xdg-desktop-portal = "~/.config/xdg-desktop-portal"
 
 [sway]
-depends = ["xdg-desktop-portal", "fuzzel", "systemd-user", "swaylock", "kanshi", "waybar", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "systemd-user", "swaylock", "kanshi", "gammastep"]
 
 [sway.files]
 sway = "~/.config/sway"
 
 
 [niri]
-depends = ["xdg-desktop-portal", "fuzzel", "systemd-user","swaylock", "waybar", "gammastep"]
+depends = ["xdg-desktop-portal", "fuzzel", "systemd-user","swaylock", "gammastep"]
 
 [niri.files]
 niri = "~/.config/niri"
 
 [hyprland]
-depends = ["fuzzel", "systemd-user", "waybar", "gammastep"]
+depends = ["fuzzel", "systemd-user", "gammastep"]
 
 [hyprland.files]
 hypr = "~/.config/hypr"
@@ -30,9 +30,6 @@ swaylock = "~/.config/swaylock/config"
 
 [kanshi.files]
 kanshi = "~/.config/kanshi/config"
-
-[waybar.files]
-waybar = "~/.config/waybar"
 
 [systemd-user.files]
 systemd-user = "~/.config/systemd/user"
