@@ -75,7 +75,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin "sigugo/tokyo-night-tmux"
 set -g @plugin 'tmux-plugins/tmux-yank'
-set -g @plugin 'mrjones2014/smart-splits.nvim'
+set -g @plugin 'smart-splits-nvim/backend-tmux'
 set -g @plugin 'accessd/tmux-agent-indicator'
 set -g @agent-indicator-icons 'claude=🤖,codex=🧠,opencode=💻,cursor=⬡,default=🤖'
 

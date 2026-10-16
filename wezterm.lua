@@ -1,5 +1,10 @@
 local wezterm = require("wezterm")
-local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
+-- smart-splits v3 moved the WezTerm plugin to its own backend repo; the old
+-- mrjones2014 URL now serves a repo layout without plugin/init.lua, which
+-- broke wezterm.plugin.require. The v3 WezTerm half works standalone (no
+-- nvim core required) and wezterm never auto-updates a cloned plugin, so
+-- this stays pinned until wezterm.plugin.update_all() is run.
+local smart_splits = wezterm.plugin.require("https://github.com/smart-splits-nvim/backend-wezterm")
 local sessionizer = wezterm.plugin.require("https://github.com/ElCapitanSponge/sessionizer.wezterm")
 local agent_deck = wezterm.plugin.require("https://github.com/Eric162/wezterm-agent-deck")
 local config = wezterm.config_builder()
@@ -24,10 +29,21 @@ agent_deck.apply_to_config(config, {
 
 	agents = {
 		-- claudecode.nvim runs `claude` as a direct child of nvim, so detection
-		-- relies on the child-process walk matching these patterns. Mirrors the
-		-- plugin's built-in defaults; declared explicitly to keep intent visible.
+		-- relies on the child-process walk matching these patterns. Declared
+		-- explicitly to keep intent visible.
+		--
+		-- False-positive hardening:
+		--  * `patterns` are matched (unanchored) against the executable path AND
+		--    its basename. The bare word "claude" would flag any tool with
+		--    "claude" in its name (claude-flow, claude-mcp, ...). The real
+		--    binary is already covered by the anchored executable_patterns
+		--    below, so anchor the generic pattern to an exact name.
+		--  * `title_patterns` is a last-resort fallback checked against the pane
+		--    title. The bare word "claude" would flag any pane whose title merely
+		--    mentions claude (custom tab titles, notes panes). Real agent panes
+		--    are caught by the process walk, so only keep the specific phrase.
 		claude = {
-			patterns = { "claude", "claude%-code" },
+			patterns = { "^claude$", "claude%-code" },
 			executable_patterns = {
 				"@anthropic%-ai/claude%-code",
 				"/claude%-code/",
@@ -45,7 +61,6 @@ agent_deck.apply_to_config(config, {
 			},
 			title_patterns = {
 				"claude code",
-				"claude",
 			},
 		},
 		agentic = {
@@ -58,25 +73,28 @@ agent_deck.apply_to_config(config, {
 				"Mode: chat",
 			},
 			status_patterns = {
+				-- Only specific phrases. Generic words ("thinking",
+				-- "processing", ...) match agent prose, and because working is
+				-- checked before waiting they mask real permission prompts —
+				-- which suppresses the attention notification.
 				working = {
-					"thinking",
-					"processing",
-					"generating",
-					"analyzing",
-					"searching",
 					"running tool",
 					"esc to interrupt",
 				},
 				waiting = {
 					"allow once",
 					"allow always",
-					"reject",
-					"permission",
-					"pending",
+					-- Tightened from bare words: "reject" matched "Connection
+					-- rejected", "permission" matched ssh/sudo "Permission
+					-- denied", "pending" matched git rebase output, and
+					-- "confirm" matched apt/sudo prompts.
+					"reject%s+this",
+					"permission%s+(requested|needed)",
+					"pending%s+approval",
 					"%(y/n%)",
 					"%(Y/n%)",
 					"approve",
-					"confirm",
+					"confirm%s+(this|to)%s+run",
 				},
 				-- Leave idle empty: Prompt winbar stays visible during permission
 				-- prompts, and split-pane rows false-match bare "Prompt" patterns.
@@ -118,24 +136,28 @@ end)
 
 config.default_prog = { "/bin/zsh", "-l" }
 config.font = wezterm.font("{{ font_family }}")
-config.font_size = 9
+config.font_size = 10
 config.line_height = 1.0
 config.color_scheme = "tokyonight_night"
 config.window_background_opacity = 1
 -- config.window_decorations = "TITLE | RESIZE"
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.animation_fps = 60
-config.integrated_title_button_style = "Gnome"
+-- config.integrated_title_button_style = "Gnome"
 config.integrated_title_buttons = { "Close" }
-config.enable_wayland = false
+-- Wayland CSD double-titlebar fixed upstream in #7601 (merged 2026-08-03):
+-- without TITLE in window_decorations, wezterm no longer requests
+-- server-side decorations nor paints its fallback frame. Requires a
+-- build from ~2026-08-03 or newer (AppImage 20261010).
+config.enable_wayland = true
 config.front_end = "WebGpu"
 -- config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = false
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.window_frame = {
 	font = wezterm.font({ family = "{{ font_family }}" }),
-	font_size = 9,
+	font_size = 10,
 	-- The overall background color of the tab bar when
 	-- the window is focused
 	active_titlebar_bg = "#1a1b26",
