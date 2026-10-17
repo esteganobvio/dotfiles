@@ -18,6 +18,7 @@ return {
         nowait = true,
         remap = false,
       },
+      { '<leader>a', group = 'Agents', nowait = true, remap = false },
       { '<leader>b', group = 'Buffers', nowait = true, remap = false },
       {
         '<leader>bb',
