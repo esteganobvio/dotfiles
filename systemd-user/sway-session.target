@@ -1,0 +1,6 @@
+[Unit]
+Description=Sway user session
+Wants=graphical-session.target
+After=graphical-session.target
+BindsTo=graphical-session.target
+PartOf=graphical-session.target
