@@ -51,6 +51,7 @@ kitty = "~/.config/kitty/kitty.conf"
 zshrc = "~/.zshrc"
 zshenv = "~/.zshenv"
 zprofile = "~/.zprofile"
+profile = "~/.profile"
 
 [nvim.files]
 nvim = "~/.config/nvim"
