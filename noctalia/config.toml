@@ -7,7 +7,7 @@ color = "primary"
 end = [ "cat", "bar", "bar_3", "tray", "clipboard", "group:g2", "group:g1", "group:g3", "group:g4", "session" ]
 font_weight = 400
 margin_ends = 0
-radius = 10
+radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
@@ -85,7 +85,7 @@ icon_size = 36
 launcher_position = "end"
 main_axis_padding = 8
 margin_edge = 0
-radius = 10
+radius = 0
 reserve_space = false
 shadow = false
 show_dots = true
@@ -137,6 +137,10 @@ enabled = [
 ]
 
 [shell]
+corner_radius_scale = 0
+button_borders        = true
+popup_borders         = true
+card_borders          = true
 app_icon_color = "primary"
 avatar_path = "/var/home/dixie/Imágenes/Dw19ytsXgAEYxCf.jpg:large.jpg"
 font_family = "Inter Display"
@@ -160,7 +164,6 @@ time_format = "{:%H:%M:%S}"
 
 [theme]
 builtin = "Tokyo-Night"
-community_palette = "Ayu Blue"
 
     [theme.templates]
     enable_builtin_templates = false
