@@ -1,0 +1,228 @@
+[audio]
+enable_overdrive = true
+
+[bar.default]
+center = [ "clock", "notifications", "keyboard_layout" ]
+color = "primary"
+end = [ "cat", "bar", "bar_3", "tray", "clipboard", "group:g2", "group:g1", "group:g3", "group:g4", "session" ]
+font_weight = 400
+margin_ends = 0
+radius = 10
+radius_top_left = 0
+radius_top_right = 0
+shadow = false
+start = [ "workspaces", "spacer_2", "active_window" ]
+thickness = 24
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "media", "input_volume", "volume" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "bar_2", "network", "bluetooth" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "power_profile", "battery" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "brightness", "caffeine" ]
+    opacity = 1.0
+    padding = 6.0
+
+[brightness]
+enable_ddcutil = true
+
+[desktop_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1772.0001220703125
+    cy = 118.00000762939453
+    rotation = 0.0
+    type = "weather"
+
+[dock]
+background_opacity = 0.99999997764825821
+border = "primary"
+border_width = 1.0
+concave_edge_corners = false
+enabled = true
+icon_size = 36
+launcher_position = "end"
+main_axis_padding = 8
+margin_edge = 0
+radius = 10
+reserve_space = false
+shadow = false
+show_dots = true
+show_instance_count = false
+smart_auto_hide = true
+
+[hooks]
+battery_low_percent_threshold = 15
+
+[idle]
+behavior_order = [ "lock", "screen-off", "suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660
+
+    [idle.behavior.suspend]
+    action = "suspend"
+    enabled = true
+    lock_before_suspend = true
+    timeout = 900
+
+[nightlight]
+enabled = true
+temperature_day = 5700
+temperature_night = 4600
+
+[osd]
+position = "top_center"
+
+[plugin_settings."rylos/syncthing"]
+notify_events = false
+
+[plugins]
+enabled = [
+    "dotnetrob/cat",
+    "felipeartur/ai-usagebar",
+    "rylos/syncthing",
+    "rylos/tailnet",
+    "raycursive/github-prs",
+    "hy4ri/github-notifications",
+    "dunarand/tmux-provider"
+]
+
+[shell]
+app_icon_color = "primary"
+avatar_path = "/var/home/dixie/Imágenes/Dw19ytsXgAEYxCf.jpg:large.jpg"
+font_family = "Inter Display"
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+telemetry_enabled = false
+time_format = "{:%H:%M:%S}"
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher.providers.windows]
+    global = true
+
+    [shell.panel]
+    attach_clipboard = true
+    shadow = false
+
+    [shell.shadow]
+    direction = "center"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Ayu Blue"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/var/home/dixie/Imágenes/Wallpapers"
+
+    [wallpaper.default]
+    path = "/var/home/dixie/Imágenes/Wallpapers/wallpaper.png"
+
+    [wallpaper.last]
+    path = "/var/home/dixie/Imágenes/Wallpapers/wallpaper.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/var/home/dixie/Imágenes/Wallpapers/wallpaper.png"
+
+[widget.bar]
+type = "felipeartur/ai-usagebar:bar"
+
+[widget.bar_2]
+show_count = false
+type = "rylos/tailnet:bar"
+
+[widget.bar_3]
+type = "rylos/syncthing:bar"
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+cat_color = "primary"
+cat_color_mode = "custom"
+show_cpu_percent = true
+type = "dotnetrob/cat:cat"
+walk_threshold = 5
+
+[widget.clock]
+anchor = true
+
+[widget.input_volume]
+show_label = false
+
+[widget.media]
+max_length = 120
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.workspaces]
+capsule = false
+empty_color = "tertiary"
+hide_when_empty = true
+pill_scale = 0.90000000000000002
+style = "minimal"

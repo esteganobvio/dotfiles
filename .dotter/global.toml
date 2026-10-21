@@ -31,6 +31,10 @@ systemd-user = "~/.config/systemd/user"
 [gammastep.files]
 gammastep = "~/.config/gammastep/config.ini"
 
+# Desktop shell
+[noctalia.files]
+noctalia = "~/.config/noctalia"
+
 # Terminals
 [alacritty.files]
 alacritty = "~/.config/alacritty/alacritty.toml"
