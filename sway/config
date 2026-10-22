@@ -51,9 +51,9 @@ shadows enable
 blur enable
 
 titlebar_padding 1
-titlebar_border_thickness 0
+titlebar_border_thickness 1
 titlebar_separator disable
-font pango:monospace 1
+font pango:monospace 2
 
 #font Inter Display 8
 # Start i3bar to display a workspace bar (plus the system information i3status
