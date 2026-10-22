@@ -27,7 +27,7 @@ hl.monitor({
 
 -- Set programs that you use
 local ipc = "noctalia msg"
-local terminal = "ghostty +new-window"
+local terminal = "~/AppImages/wezterm.appimage"
 local fileManager = "nautilus"
 local menu = "fuzzel"
 
