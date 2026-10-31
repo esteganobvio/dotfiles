@@ -77,7 +77,7 @@ output "AU Optronics 0xD291 Unknown" {
   position x=1920 y=0
 }
 output "Samsung Electric Company LF24T35 H9VT204063" {
-  mode "1920x1080@60.000"
+  mode "1920x1080@74.973"
   focus-at-startup
   variable-refresh-rate
   scale 1
@@ -117,7 +117,7 @@ workspace "music" {}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 2
+    gaps 0
 
     background-color "transparent"
 
@@ -202,7 +202,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         on
 
-        width 1
+        width 2
         active-color "#7aa2f7"
         inactive-color "#1a1b26"
 
@@ -255,12 +255,12 @@ layout {
     // Left and right struts will cause the next window to the side to always be visible.
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
-    // struts {
-    //     left 5
-    //     right 0
-    //     top 0
-    //     bottom 0
-    // }
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
     tab-indicator {
         width 6
         gap 1
@@ -313,7 +313,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 1.5
+    slowdown 0.5
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -386,7 +386,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0 // 8 8 0 0 
     clip-to-geometry true
     draw-border-with-background true
 }
