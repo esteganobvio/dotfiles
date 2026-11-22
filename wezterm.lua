@@ -100,17 +100,17 @@ agent_deck.apply_to_config(config, {
 				-- prompts, and split-pane rows false-match bare "Prompt" patterns.
 				idle = {},
 			},
-		-- pi runs as a node process that sets `process.title = "pi"`, so the
-		-- foreground process name AND its argv are both exactly "pi". The
-		-- executable is a generic node binary (not pi-specific), so we cannot
-		-- anchor on the path; anchor on the exact name/argv with ^...$ instead.
-		-- The bare word "pi" would false-positive on pip, python, pihole, and
-		-- any tool with "pi" in its name.
-		pi = {
-			patterns = { "^pi$" },
-			argv_patterns = { "^pi$" },
-			title_patterns = { "^pi$" },
-		},
+			-- pi runs as a node process that sets `process.title = "pi"`, so the
+			-- foreground process name AND its argv are both exactly "pi". The
+			-- executable is a generic node binary (not pi-specific), so we cannot
+			-- anchor on the path; anchor on the exact name/argv with ^...$ instead.
+			-- The bare word "pi" would false-positive on pip, python, pihole, and
+			-- any tool with "pi" in its name.
+			pi = {
+				patterns = { "^pi$" },
+				argv_patterns = { "^pi$" },
+				title_patterns = { "^pi$" },
+			},
 		},
 	},
 })
@@ -164,7 +164,7 @@ config.enable_wayland = true
 config.front_end = "WebGpu"
 -- config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = false
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
 config.window_frame = {
 	font = wezterm.font({ family = "{{ font_family }}" }),

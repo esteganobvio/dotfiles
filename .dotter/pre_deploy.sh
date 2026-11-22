@@ -13,9 +13,3 @@ fi
 if [ ! -f "$HOME"/.cargo/bin/rustup ]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
-
-if command -v brew &>/dev/null; then
-  brew bundle --file="$HOME/.dotfiles/Brewfile"
-fi
-
-
